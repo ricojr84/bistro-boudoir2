@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Lato", sans-serif;
+  
+  --color-gold: #D4AF37;
+  --color-light-gold: #F4E4BC;
+  --color-deep-black: #0A0A0A;
+  --color-off-black: #1A1A1A;
+  --color-cream: #F5F5DC;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1A1A1A;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #D4AF37;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #F4E4BC;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.parallax-bg {
+    background-image: url('/images/backgroundBoudoir.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Disable fixed background on mobile to prevent jitter */
+@media (hover: none) {
+    .parallax-bg {
+        background-attachment: scroll;
+    }
+}
+

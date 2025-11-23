@@ -1,0 +1,293 @@
+import { Translations } from './types';
+
+export const CONTENT: Record<string, Translations> = {
+  nl: {
+    nav: {
+      home: 'Home',
+      menu: 'Menu',
+      gallery: 'Galerij',
+      contact: 'Contact',
+      map: 'Kaart'
+    },
+    home: {
+      title: 'Welkom in Bistro Boudoir',
+      subtitle: 'Authentieke Franse Keuken in het Hart van Knokke',
+      description: 'Welkom bij Bistro Boudoir, waar Franse elegantie en Belgische verfijning elkaar omarmen. Gelegen aan de stijlvolle Lippenslaan – het kloppende hart van Knokke – biedt deze culinaire parel een zintuiglijke belevenis vol charme en klasse. Gastvrouw Daniela Nistreanu verwelkomt je met een warme glimlach en feilloze finesse. Chef Ivan Chuhunnikov creëert verfijnde Frans-Belgische gerechten, geïnspireerd door de seizoenen. Bistro Boudoir is geen restaurant. Het is een ervaring.',
+      button: 'Bekijk Ons Menu'
+    },
+    menu: {
+      title: 'Ons Menu',
+      subtitle: 'Een culinaire reis door Frankrijk',
+      allergenNotice: 'Voor vragen i.v.m. allergenen gelieve u tot ons te richten.',
+      childrenNote: 'EEN FRISSE SALADE KAN STEEDS BESTELD WORDEN ALS SUPPLEMENT +3€',
+      categories: {
+        starters: {
+          title: 'Voorgerechten',
+          items: [
+            { name: 'Trio van Huisgemaakte Paté', description: 'Rund, kip & eend • Luikse siroop • seizoensfruit • toast', price: '€ 22' },
+            { name: 'Foie Gras', description: 'Gebakken • gemarineerde peren • brioche • demi-glacesaus', price: '€ 31', extra: 'aangepaste wijn: Château Simon – Sauternes – Bordeaux – Frankrijk € 9,50 per glas' },
+            { name: 'Garnalenkroketten', description: 'Handgepelde Zeebrugse garnalen • crème van de Noordzee • citroen (1-2 stuks)', price: '€ 15-23' },
+            { name: 'Handgepelde Zeebrugse Garnalen', description: 'Sappige tomaat op tomatencrumble • handgepelde garnalen • huisgemaakte cocktailsaus', price: '€ 26' },
+            { name: 'Sint-Jakobsnoten', description: 'Gebakken • champagnesaus • zalmkaviaar', price: '€ 29' }
+          ]
+        },
+        mains: {
+          title: 'Hoofdgerechten',
+          items: [
+            { name: 'Rund', description: 'Filet pur • frietjes • keuze uit Roquefort-, champignon- of pepersaus', price: '€ 39' },
+            { name: 'Eendenborst', description: 'Kersensaus • rode bieten-gelée • krokante parmezaan • pavé', price: '€ 36' },
+            { name: 'Tarbot', description: 'Filet • champagnesaus • seizoensgroenten • krielaardappeltje', price: '€ 52', extra: '* extra handgepelde Zeebrugse garnalen + € 5 *' },
+            { name: 'Zeetong', description: 'Gebakken • frietjes • tartaarsaus', price: '€ 49' },
+            { name: 'Kabeljauw', description: 'Haasje • garnalenbisque • handgepelde Zeebrugse garnalen • zalmkaviaar • puree', price: '€ 41' },
+            { name: 'Noordzee Bouillabaisse', description: 'Toast • rouille • gruyère', price: '€ 38' },
+            { name: 'Vol au Vent Klassiek', description: 'Hoevekip • bladerdeeg • gehaktballetjes • champignons • frietjes', price: '€ 28' },
+            { name: 'Kalf', description: 'Gebakken kalfszwezeriken • seizoensgroenten • honing-mosterdsaus • krielaardappelen', price: '€ 48' }
+          ]
+        },
+        gourmand: {
+          title: 'Menu Gourmand',
+          note: 'DE MENU\'S WORDEN PER TAFEL GESERVEERD.',
+          items: [
+            { name: 'Voorgerecht', description: 'NOORDZEE BOUILLABAISE\nToast • rouille • gruyère\nof\nRUNDSTONG CARPACCIO\nRemouladesaus • kappertjes • olijfolie', price: '' },
+            { name: 'Hoofdgerecht', description: 'ZEETONG\nGebakken • frietjes • tartaarsaus (+ € 12)\nof\nVARKENSWANGETJES\nGroenten • krieltjes • saus van donker kasteelbier', price: '' },
+            { name: 'Dessert', description: 'Dame Blanche\nof\nIrish Coffee', price: '' },
+            { name: 'Prijs', description: 'per persoon', price: '€ 58' }
+          ]
+        },
+        specials: {
+          title: 'Specials',
+          items: [
+            { name: 'Jamon Iberico de Bellota', description: 'Tapas bord van 50 gr voor 2 personen', price: '€ 20' },
+            { name: 'Aperitief Assortiment', description: '3 soorten verfijnde apero-balletjes', price: '€ 15' }
+          ]
+        },
+        drinks: {
+          title: 'Aperitief',
+          items: [
+            { name: 'Coupe Champagne', price: '€ 14' },
+            { name: 'Glaasje Cava "Pont de Ferro"', price: '€ 9' },
+            { name: 'Kirr witte wijn', price: '€ 9' },
+            { name: 'Kirr royal (Champagne)', price: '€ 14' },
+            { name: 'Porto \'10 years\' rood', price: '€ 10' },
+            { name: 'Martini wit/rood', price: '€ 9' },
+            { name: 'Pineau des Charentes', price: '€ 8' },
+            { name: 'Picon witte wijn', price: '€ 11' },
+            { name: 'Ricard', price: '€ 9' },
+            { name: 'Campari met vers fruitsap', price: '€ 14' },
+            { name: 'Gin + Tonic', description: 'Bombay • Fever Tree Mediterranean € 15\nHendrickx • Fever Tree Indian tonic € 16\nMonkey 47 • Fever Tree Indian tonic € 16\nGin Mare • Fever Tree Mediterranean € 16', price: '' },
+            { name: 'Cocktails', description: 'Espresso Martini (Vodka • koffielikeur • espresso) € 15\nPornstar Martini (Vodka • passievruchtlikeur • Cava on the side) € 15\nMojito (witte rum • limoen • munt • soda water) € 15\nMoscow mule (Vodka • limoen • gingerbeer) € 15\nNegroni (Campari • rode Martini • Gin) € 14\nApérol Spritz (Apérol • Cava • bruiswater) € 13\nLimoncello spritz (Limoncello • Cava • bruiswater) € 13', price: '' },
+            { name: 'Mocktails 0%', description: 'Boudoir (gingerbeer • veenbes • sinaas) € 11\nMojito 0% (limoen • munt • soda water) € 11\nGin boudoir 0% (Fever Tree raspberry & rhubarb) € 14', price: '' },
+            { name: 'Bier op Fles', description: 'Stella € 4\nLeffe blond € 5\nDuvel € 5\nRochefort € 5\nStella 0% € 4', price: '' }
+          ]
+        },
+        warmDrinks: {
+          title: 'Warme Dranken',
+          items: [
+            { name: 'by Nespresso', description: 'Lungo classic/ deca € 4,5\nEspresso € 4\nDouble espresso € 5\nCappuccino € 5,5\nLatte Macchiato € 6', price: '' },
+            { name: 'THEE by Tea Coach Ken', description: 'Witte thee\n• White peach (perzik/appel/vlierbes) € 6\n\nGroene thee\n• Green peppermint (geserveerd met verse munt)\n• Fresh lemon (citroengras/citroen aroma)\n• Berry rose (Chinese sencha/framboos/rozenblaadjes)\n\nZwarte infusies\n• Superior Earl Grey (zwarte thee blend/natuurlijke bergamot)\n• Sexy goji (zeste van sinaasappel, gojibessen, aroma, wortelvlokken, gele rozenknopjes, saffloer)\n\nKruidenthee\n• Ginger orange (gember/kamille/peper/appelsien)\n• Ginger lemon (gember/zoethout/citroengras/citroenschillen/pepermunt/peperkorrels)\n• Relaxing Camomille (venkel/rozenbottelschil/kamillebloempjes/brandnetel/lavendelbloem)', price: '' }
+          ]
+        },
+        desserts: {
+          title: 'Desserts',
+          items: [
+            { name: 'Warme appeltaart', description: 'vanille-ijs', price: '€ 12' },
+            { name: 'Dame blanche', price: '€ 10' },
+            { name: 'Crème brulée', price: '€ 10' },
+            { name: 'Sabayon', description: 'van kriekenbier of Champagne', price: '€ 12' },
+            { name: 'Chocolade moelleux', price: '€ 12' },
+            { name: 'Cheesecake huisgemaakt', description: 'frisse topping - smelt in de mond', price: '€ 14' },
+            { name: 'POUSSE CAFÉ', description: 'Irish Coffee (whisky) € 12\nFrench Coffee (cognac) € 12\nItalian Coffee (Amaretto) € 12\nLimoncello € 10\nAmaretto € 10\nBaileys € 10\nGrand Marnier € 10\nCointreau € 10\nHasseltse Jenever € 8\nGrappa € 10\nSambuca € 10\nEau de vie Poire Williams € 12\nCalvados € 10\nCognac Hennessy € 10\nCuarenta Y Tres € 10\nJack Daniels € 16\nDon Papa rhum € 16\nLagavulin € 16', price: '' }
+          ]
+        }
+      }
+    },
+    gallery: {
+      title: 'Galerij',
+      subtitle: 'Sfeerbeelden'
+    },
+    contact: {
+      title: 'Contacteer Ons',
+      subtitle: 'We horen graag van u',
+      address: 'Adres',
+      phone: 'Telefoon',
+      email: 'E-mail',
+      hours: 'Openingstijden',
+      reservationButton: 'Reserveer een Tafel',
+      form: {
+        name: 'Uw Naam',
+        email: 'Uw E-mail',
+        phone: 'Uw Telefoon',
+        message: 'Uw Bericht',
+        submit: 'Verstuur Bericht',
+        success: 'Bedankt! We hebben uw bericht ontvangen en nemen zo spoedig mogelijk contact met u op.',
+        error: 'Vul alstublieft alle verplichte velden in.'
+      }
+    },
+    footer: {
+      copyright: '© 2024 Bistro Boudoir. Alle rechten voorbehouden.',
+      tagline: 'Bon appétit!',
+      openingHours: {
+        title: 'OPENINGSTIJDEN',
+        days: [
+          { day: 'Maandag', time: 'Gesloten' },
+          { day: 'Dinsdag', time: '12:00 - 15:00 | 18:00 - 21:00' },
+          { day: 'Woensdag', time: '12:00 - 15:00 | 18:00 - 21:00' },
+          { day: 'Donderdag', time: '12:00 - 15:00 | 18:00 - 21:00' },
+          { day: 'Vrijdag', time: '12:00 - 15:00 | 18:00 - 21:00' },
+          { day: 'Zaterdag', time: '12:00 - 15:00 | 18:00 - 21:00' },
+          { day: 'Zondag', time: '12:00 - 15:00' }
+        ]
+      },
+      address: 'Lippenslaan 141, 8300 Knokke',
+      phone: '+32 (0)50 66 03 23',
+      reservationButton: 'RESERVEER EEN TAFEL',
+      experience: 'EXPERIENCE EXCELLENT DINING AT BOUDIOR'
+    }
+  },
+  fr: {
+    nav: {
+      home: 'Accueil',
+      menu: 'Menu',
+      gallery: 'Galerie',
+      contact: 'Contact',
+      map: 'Carte'
+    },
+    home: {
+      title: 'Bienvenue au Bistro Boudoir',
+      subtitle: 'Cuisine Française Authentique au Cœur de Knokke',
+      description: 'Bienvenue au Bistro Boudoir, où l\'élégance française et le raffinement belge se rencontrent. Situé sur la prestigieuse Lippenslaan – le cœur battant de Knokke – cette perle culinaire offre une expérience sensorielle pleine de charme et de classe. L\'hôtesse Daniela Nistreanu vous accueille avec un sourire chaleureux et une finesse irréprochable. Le chef Ivan Chuhunnikov crée des plats raffinés franco-belges, inspirés par les saisons. Bistro Boudoir n\'est pas un restaurant. C\'est une expérience.',
+      button: 'Voir Notre Menu'
+    },
+    menu: {
+      title: 'Notre Menu',
+      subtitle: 'Un voyage culinaire à travers la France',
+      allergenNotice: 'Pour toute question concernant les allergènes, veuillez nous contacter.',
+      childrenNote: 'Enfants jusqu\'à 12 ans. Tous les plats sont disponibles pour nos enfants à la moitié du prix.',
+      categories: {
+        starters: {
+          title: 'Entrées',
+          items: [
+            { name: 'Coquilles Saint-Jacques', description: 'Poêlées / sauce champagne / caviar de saumon', price: '€ 29' },
+            { name: 'Carpaccio de Tomates', description: 'Crevettes de Zeebrugge épluchées à la main / mayonnaise / roquette / œufs de caille', price: '€ 26' },
+            { name: 'Vitello Tonnato', description: 'Mayonnaise au thon / câpres / tomates pelées / parmesan', price: '€ 22' },
+            { name: 'Soupe de Poisson', description: 'Toast & rouille', price: '€ 18' },
+            { name: 'Steak Tartare Nature', description: 'Échalotes / câpres / persil / cornichons / jaune d\'œuf', price: '€ 26' },
+            { name: 'Croquettes de Crevettes', description: 'Persil frit / citron (1-2 pièces)', price: '€ 14-22' },
+            { name: 'Salade Caprese', description: 'Mozzarella de bufflonne / tomates / basilic / balsamique', price: '€ 24' },
+            { name: 'Salade de Saumon', description: 'Mélange de salade / saumon / avocat / sauce césar / parmesan / œufs de caille / graines de sésame', price: '€ 30' }
+          ]
+        },
+        mains: {
+          title: 'Plats Principaux',
+          items: [
+            { name: 'Bœuf', description: 'Filet pur / frites / salade / sauce Roquefort, champignon ou poivre', price: '€ 39' },
+            { name: 'Caille', description: 'Raisins / champignons / sauce au vin aux herbes / pommes de terre', price: '€ 34' },
+            { name: 'Turbot', description: 'Filet / grillé / sauce champagne / légumes de saison adaptés / pommes de terre nouvelles', price: '€ 52', extra: '* crevettes de Zeebrugge épluchées à la main supplémentaires + € 5 *' },
+            { name: 'Sole', description: 'Poêlée / salade / frites / sauce tartare', price: '€ 49' },
+            { name: 'Cabillaud', description: 'Filet / bisque de crevettes / crevettes de Zeebrugge épluchées à la main / moules / purée', price: '€ 41' },
+            { name: 'Vol au Vent Deluxe', description: 'Poulet de ferme / pâte feuilletée / ris de veau / crevettes de Zeebrugge épluchées à la main / frites', price: '€ 41' },
+            { name: 'Veau', description: 'Ris de veau poêlés / légumes de saison adaptés / sauce miel-moutarde / pommes de terre nouvelles', price: '€ 48' },
+            { name: 'Végétarien', description: 'Légumes grillés / sauce à l\'ail / mozzarella de bufflonne', price: '€ 32' }
+          ]
+        },
+        gourmand: {
+          title: 'Menu Gourmand',
+          note: 'Les menus sont servis par table.',
+          items: [
+            { name: 'Entrée', description: 'Coquilles Saint-Jacques - Carpaccio / vinaigrette aux agrumes / bergamote\nOU\nBœuf - Carpaccio / aïoli aux anchois / parmesan', price: '' },
+            { name: 'Plat Principal', description: 'Sole - Poêlée / salade / frites / tartare (+ € 12)\nOU\nEntrecôte Simmental - Classique / poivre concassé / flambé / sauce au poivre / frites / salade', price: '' },
+            { name: 'Dessert', description: 'Dame Blanche\nOU\nCoupe Colonel', price: '' },
+            { name: 'Prix', description: 'par personne', price: '€ 56' }
+          ]
+        },
+        specials: {
+          title: 'Spécialités',
+          items: [
+            { name: 'Jamon Iberico de Bellota', description: 'Assiette de tapas de 50 gr pour 2 personnes', price: '€ 20' },
+            { name: 'Huîtres "Gillardeau"', description: 'Sauce mignonnette (3 pièces / 6 pièces)', price: '€ 14 / 24' }
+          ]
+        },
+        drinks: {
+          title: 'Apéritif & Boissons',
+          items: [
+            { name: 'Coupe Champagne', price: '€ 14' },
+            { name: 'Glaasje Cava "Pont de Ferro"', price: '€ 9' },
+            { name: 'Kirr witte wijn', price: '€ 9' },
+            { name: 'Kirr royal (Champagne)', price: '€ 14' },
+            { name: 'Porto \'10 ans\' rouge', price: '€ 10' },
+            { name: 'Martini blanc/rouge', price: '€ 9' },
+            { name: 'Pineau des Charentes', price: '€ 8' },
+            { name: 'Picon vin blanc', price: '€ 11' },
+            { name: 'Ricard', price: '€ 9' },
+            { name: 'Campari avec jus de fruits frais', price: '€ 14' },
+            { name: 'Gin + Tonic', description: 'Bombay • Fever Tree Mediterranean € 15\nHendrickx • Fever Tree Indian tonic € 16\nMonkey 47 • Fever Tree Indian tonic € 16\nGin Mare • Fever Tree Mediterranean € 16', price: '' },
+            { name: 'Cocktails', description: 'Espresso Martini (Vodka • liqueur de café • espresso) € 15\nPornstar Martini (Vodka • liqueur de fruit de la passion • Cava à côté) € 15\nMojito (rhum blanc • citron vert • menthe • eau gazeuse) € 15\nMoscow mule (Vodka • citron vert • gingerbeer) € 15\nNegroni (Campari • Martini rouge • Gin) € 14\nApérol Spritz (Apérol • Cava • eau pétillante) € 13\nLimoncello spritz (Limoncello • Cava • eau pétillante) € 13', price: '' },
+            { name: 'Mocktails 0%', description: 'Boudoir (gingerbeer • canneberge • orange) € 11\nMojito 0% (citron vert • menthe • eau gazeuse) € 11\nGin boudoir 0% (Fever Tree framboise & rhubarbe) € 14', price: '' },
+            { name: 'Bière en Bouteille', description: 'Stella € 4\nLeffe blond € 5\nDuvel € 5\nRochefort € 5\nStella 0% € 4', price: '' }
+          ]
+        },
+        warmDrinks: {
+          title: 'Boissons Chaudes',
+          items: [
+            { name: 'by Nespresso', description: 'Lungo classic/ deca € 4,5\nEspresso € 4\nDouble espresso € 5\nCappuccino € 5,5\nLatte Macchiato € 6', price: '' },
+            { name: 'THÉ by Tea Coach Ken', description: 'Thé blanc\n• White peach (pêche/pomme/sureau) € 6\n\nThé vert\n• Green peppermint (servi avec menthe fraîche)\n• Fresh lemon (citronnelle/arôme citron)\n• Berry rose (sencha chinois/framboise/pétales de rose)\n\nInfusions noires\n• Superior Earl Grey (mélange de thé noir/bergamote naturelle)\n• Sexy goji (zeste d\'orange, baies de goji, arôme, flocons de carotte, boutons de rose jaunes, carthame)\n\nTisanes\n• Ginger orange (gingembre/camomille/poivre/orange)\n• Ginger lemon (gingembre/réglisse/citronnelle/écorces de citron/menthe poivrée/grains de poivre)\n• Relaxing Camomille (fenouil/écorce d\'églantier/fleurs de camomille/ortie/fleur de lavande)', price: '' }
+          ]
+        },
+        desserts: {
+          title: 'Desserts',
+          items: [
+            { name: 'Tarte aux pommes chaude', description: 'glace vanille', price: '€ 12' },
+            { name: 'Dame blanche', price: '€ 10' },
+            { name: 'Crème brûlée', price: '€ 10' },
+            { name: 'Sabayon', description: 'à la bière de cerises ou Champagne', price: '€ 12' },
+            { name: 'Moelleux au chocolat', price: '€ 12' },
+            { name: 'Cheesecake maison', description: 'topping frais - fond dans la bouche', price: '€ 14' },
+            { name: 'POUSSE CAFÉ', description: 'Irish Coffee (whisky) € 12\nFrench Coffee (cognac) € 12\nItalian Coffee (Amaretto) € 12\nLimoncello € 10\nAmaretto € 10\nBaileys € 10\nGrand Marnier € 10\nCointreau € 10\nGenièvre de Hasselt € 8\nGrappa € 10\nSambuca € 10\nEau de vie Poire Williams € 12\nCalvados € 10\nCognac Hennessy € 10\nCuarenta Y Tres € 10\nJack Daniels € 16\nDon Papa rhum € 16\nLagavulin € 16', price: '' }
+          ]
+        }
+      }
+    },
+    gallery: {
+      title: 'Galerie',
+      subtitle: 'Ambiance'
+    },
+    contact: {
+      title: 'Contactez-Nous',
+      subtitle: 'Nous serions ravis d\'avoir de vos nouvelles',
+      address: 'Adresse',
+      phone: 'Téléphone',
+      email: 'E-mail',
+      hours: 'Heures d\'Ouverture',
+      reservationButton: 'RÉSERVER UNE TABLE',
+      form: {
+        name: 'Votre Nom',
+        email: 'Votre E-mail',
+        phone: 'Votre Téléphone',
+        message: 'Votre Message',
+        submit: 'Envoyer le Message',
+        success: 'Merci! Nous avons reçu votre message et vous contacterons dès que possible.',
+        error: 'Veuillez remplir tous les champs obligatoires.'
+      }
+    },
+    footer: {
+      copyright: '© 2024 Bistro Boudoir. Tous droits réservés.',
+      tagline: 'Bon appétit!',
+      openingHours: {
+        title: 'HEURES D\'OUVERTURE',
+        days: [
+          { day: 'Lundi', time: 'Fermé' },
+          { day: 'Mardi', time: '12:00 - 15:00 | 18:00 - 21:00' },
+          { day: 'Mercredi', time: '12:00 - 15:00 | 18:00 - 21:00' },
+          { day: 'Jeudi', time: '12:00 - 15:00 | 18:00 - 21:00' },
+          { day: 'Vendredi', time: '12:00 - 15:00 | 18:00 - 21:00' },
+          { day: 'Samedi', time: '12:00 - 15:00 | 18:00 - 21:00' },
+          { day: 'Dimanche', time: '12:00 - 15:00' }
+        ]
+      },
+      address: 'Lippenslaan 141, 8300 Knokke',
+      phone: '+32 (0)50 66 03 23',
+      reservationButton: 'RÉSERVER UNE TABLE',
+      experience: 'EXPERIENCE EXCELLENT DINING AT BOUDIOR'
+    }
+  }
+};
