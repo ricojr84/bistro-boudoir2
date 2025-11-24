@@ -1,6 +1,5 @@
 import React from 'react';
 import { Translations } from '../types';
-import { ChevronDown } from 'lucide-react';
 
 interface HeroProps {
   t: Translations;
@@ -47,9 +46,18 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
           {t.home.button}
         </button>
         
-        {/* Scroll Indicator */}
-        <div className="mt-[10px] flex justify-center animate-bounce">
-          <ChevronDown className="text-gold w-10 h-10 opacity-80" />
+        {/* Mouse Scroll Animation */}
+        <div className="mt-[30px] flex justify-center">
+          <div className="mouse-scroll">
+            <div className="mouse">
+              <div className="wheel"></div>
+            </div>
+            <div className="mouse-arrow">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
