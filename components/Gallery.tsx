@@ -36,13 +36,14 @@ export const Gallery: React.FC<GalleryProps> = ({ t }) => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4">
           {images.map((img, index) => (
             <div key={index} className="group relative aspect-square overflow-hidden cursor-pointer border-2 border-transparent hover:border-gold transition-all duration-300">
               <img 
                 src={img.url} 
                 alt={`Bistro Boudoir ${index + 1}`}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                loading="lazy"
               />
             </div>
           ))}

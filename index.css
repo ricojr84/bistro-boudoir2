@@ -41,8 +41,18 @@ html {
     background-size: cover;
 }
 
-/* Disable fixed background on mobile to prevent jitter */
-@media (hover: none) {
+/* Disable fixed background on mobile to prevent jitter and ensure visibility */
+@media (hover: none) and (pointer: coarse) {
+    .parallax-bg {
+        background-attachment: scroll;
+        background-position: center center;
+        background-size: cover;
+        min-height: 100vh;
+    }
+}
+
+/* Additional mobile fix for iOS Safari */
+@supports (-webkit-touch-callout: none) {
     .parallax-bg {
         background-attachment: scroll;
     }
