@@ -162,7 +162,7 @@ export const CONTENT: Record<string, Translations> = {
       title: 'Notre Menu',
       subtitle: 'Un voyage culinaire à travers la France',
       allergenNotice: 'Pour toute question concernant les allergènes, veuillez nous contacter.',
-      childrenNote: 'Enfants jusqu\'à 12 ans. Tous les plats sont disponibles pour nos enfants à la moitié du prix.',
+      childrenNote: 'UNE SALADE FRAÎCHE PEUT TOUJOURS ÊTRE COMMANDÉE EN SUPPLÉMENT +3€',
       categories: {
         starters: {
           title: 'Entrées',
@@ -270,7 +270,7 @@ export const CONTENT: Record<string, Translations> = {
       }
     },
     footer: {
-      copyright: '© 2024 Bistro Boudoir. Tous droits réservés.',
+      copyright: '© 2025 Bistro Boudoir. Tous droits réservés.',
       tagline: 'Bon appétit!',
       openingHours: {
         title: 'HEURES D\'OUVERTURE',
