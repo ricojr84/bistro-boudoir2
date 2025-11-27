@@ -6,6 +6,7 @@ export const CONTENT: Record<string, Translations> = {
       home: 'Home',
       menu: 'Menu',
       gallery: 'Galerij',
+      suggesties: 'Suggesties',
       contact: 'Contact',
       map: 'Kaart'
     },
@@ -104,6 +105,10 @@ export const CONTENT: Record<string, Translations> = {
       title: 'Galerij',
       subtitle: 'Sfeerbeelden'
     },
+    suggestions: {
+      title: 'Onze Suggesties',
+      comingSoon: 'Binnenkort'
+    },
     contact: {
       title: 'Contacteer Ons',
       subtitle: 'We horen graag van u',
@@ -148,6 +153,7 @@ export const CONTENT: Record<string, Translations> = {
       home: 'Accueil',
       menu: 'Menu',
       gallery: 'Galerie',
+      suggesties: 'Suggestions',
       contact: 'Contact',
       map: 'Carte'
     },
@@ -245,6 +251,10 @@ export const CONTENT: Record<string, Translations> = {
     gallery: {
       title: 'Galerie',
       subtitle: 'Ambiance'
+    },
+    suggestions: {
+      title: 'Nos Suggestions',
+      comingSoon: 'Bientôt'
     },
     contact: {
       title: 'Contactez-Nous',

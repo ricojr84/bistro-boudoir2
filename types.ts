@@ -18,6 +18,7 @@ export interface Translations {
     home: string;
     menu: string;
     gallery: string;
+    suggesties: string;
     contact: string;
     map: string;
   };
@@ -44,6 +45,10 @@ export interface Translations {
   gallery: {
     title: string;
     subtitle: string;
+  };
+  suggestions: {
+    title: string;
+    comingSoon: string;
   };
   contact: {
     title: string;

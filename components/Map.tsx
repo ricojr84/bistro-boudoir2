@@ -24,7 +24,7 @@ export const Map: React.FC<MapProps> = ({ t }) => {
             loading="lazy" 
             allowFullScreen 
             referrerPolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=Bistro+Boudoir,Lippenslaan+141,Knokke-Heist,Belgium">
+            src="https://www.google.com/maps/embed?pb=!4v1764275419468!6m8!1m7!1svqc3IKj7aoNSD-V1tsR6Jg!2m2!1d51.34588307525023!2d3.288148095280725!3f275.71082!4f0!5f0.7820865974627469">
           </iframe>
         </div>
       </div>

@@ -6,9 +6,11 @@ interface NavbarProps {
   lang: Language;
   setLang: (lang: Language) => void;
   t: Translations;
+  currentPage: 'home' | 'suggesties';
+  setCurrentPage: (page: 'home' | 'suggesties') => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
+export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t, currentPage, setCurrentPage }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -24,19 +26,61 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
     setLang(lang === 'nl' ? 'fr' : 'nl');
   };
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      const offset = 80;
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = element.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
+  const handleNavigation = (id: string) => {
+    if (id === 'suggesties') {
+      setCurrentPage('suggesties');
+      // Scroll to top and then to suggestions section
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      setTimeout(() => {
+        const element = document.getElementById('suggesties');
+        if (element) {
+          const offset = 80;
+          const bodyRect = document.body.getBoundingClientRect().top;
+          const elementRect = element.getBoundingClientRect().top;
+          const elementPosition = elementRect - bodyRect;
+          const offsetPosition = elementPosition - offset;
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }, 100);
+    } else if (id === 'home') {
+      setCurrentPage('home');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      // For other sections, navigate to home page first if needed, then scroll
+      if (currentPage === 'suggesties' && (id === 'menu' || id === 'gallery')) {
+        setCurrentPage('home');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        setTimeout(() => {
+          const element = document.getElementById(id);
+          if (element) {
+            const offset = 80;
+            const bodyRect = document.body.getBoundingClientRect().top;
+            const elementRect = element.getBoundingClientRect().top;
+            const elementPosition = elementRect - bodyRect;
+            const offsetPosition = elementPosition - offset;
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }
+        }, 100);
+      } else {
+        const element = document.getElementById(id);
+        if (element) {
+          const offset = 80;
+          const bodyRect = document.body.getBoundingClientRect().top;
+          const elementRect = element.getBoundingClientRect().top;
+          const elementPosition = elementRect - bodyRect;
+          const offsetPosition = elementPosition - offset;
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }
     }
     setIsOpen(false);
   };
@@ -46,7 +90,7 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
       scrolled || isOpen ? 'bg-off-black shadow-lg py-3' : 'bg-transparent py-5'
     }`}>
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <div className="z-50 cursor-pointer" onClick={() => scrollToSection('home')}>
+        <div className="z-50 cursor-pointer" onClick={() => handleNavigation('home')}>
            {/* Logo Text - resized as requested */}
            <h1 className="font-serif text-lg md:text-xl text-gold tracking-widest uppercase border-b-2 border-transparent hover:border-gold transition-all duration-300">
              Bistro Boudoir
@@ -55,10 +99,10 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8">
-          {['home', 'menu', 'gallery', 'contact', 'map'].map((item) => (
+          {['home', 'menu', 'gallery', 'suggesties', 'contact', 'map'].map((item) => (
             <button
               key={item}
-              onClick={() => scrollToSection(item)}
+              onClick={() => handleNavigation(item)}
               className="text-sm uppercase tracking-widest text-gray-300 hover:text-gold transition-colors relative group"
             >
               {t.nav[item as keyof typeof t.nav]}
@@ -92,10 +136,10 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
         <div className={`fixed inset-0 bg-off-black bg-opacity-95 flex flex-col items-center justify-center space-y-8 transition-transform duration-500 ease-in-out md:hidden ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}>
-          {['home', 'menu', 'gallery', 'contact', 'map'].map((item) => (
+          {['home', 'menu', 'gallery', 'suggesties', 'contact', 'map'].map((item) => (
             <button
               key={item}
-              onClick={() => scrollToSection(item)}
+              onClick={() => handleNavigation(item)}
               className="text-2xl font-serif text-white hover:text-gold transition-colors uppercase tracking-widest"
             >
               {t.nav[item as keyof typeof t.nav]}
