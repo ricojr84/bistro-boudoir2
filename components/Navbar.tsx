@@ -145,6 +145,20 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t, currentPage, s
               {t.nav[item as keyof typeof t.nav]}
             </button>
           ))}
+          <button
+            onClick={() => {
+              window.open(
+                'https://bookings.zenchef.com/results?rid=366006&pid=1001',
+                'Reservation',
+                'width=800,height=700,scrollbars=yes,resizable=yes,left=' + 
+                (window.screen.width / 2 - 400) + ',top=' + (window.screen.height / 2 - 350)
+              );
+              setIsOpen(false);
+            }}
+            className="mt-4 px-4 py-2 bg-gold border-2 border-gold text-off-black font-serif text-xs tracking-widest uppercase hover:bg-light-gold hover:border-light-gold transition-all duration-300"
+          >
+            {t.contact.reservationButton}
+          </button>
         </div>
       </div>
     </nav>

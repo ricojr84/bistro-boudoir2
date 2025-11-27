@@ -40,103 +40,100 @@ export const Menu: React.FC<MenuProps> = ({ t }) => {
           </p>
         </div>
 
-        <div className="flex flex-col gap-5">
-          {/* Main Layout: Left Column (Voorgerechten + Menu Gourmand) | Right Column (Hoofdgerechten + Specials + Warm Drinks) */}
-          <div className="flex flex-col lg:flex-row gap-5 items-start">
-            {/* Left Column: Voorgerechten + Menu Gourmand + Desserts */}
-            <div className="flex flex-col gap-5 lg:w-1/2">
-              <div className="bg-white p-6 shadow-xl border-t-4 border-gold">
-                <h3 className="font-serif text-3xl text-center text-off-black mb-6 border-b border-gold pb-3">
-                  {categories.starters.title}
-                </h3>
-                <div className="space-y-5">
-                  {categories.starters.items.map((item, idx) => (
-                    <MenuItemCard key={idx} item={item} />
-                  ))}
-                </div>
-              </div>
-
-              <div className="bg-gray-100 p-8 shadow-xl border-t-4 border-gold">
-                <h3 className="font-serif text-3xl text-center text-off-black mb-2 pb-4 border-b border-gold">
-                  {categories.gourmand.title}
-                </h3>
-                <p className="text-center text-gray-600 italic text-sm mb-8">{categories.gourmand.note}</p>
-                <div className="space-y-8">
-                  {categories.gourmand.items.map((item, idx) => (
-                    <div key={idx} className="text-center">
-                      <h4 className="font-serif text-xl text-off-black mb-2">{item.name}</h4>
-                       {item.price && <span className="block text-2xl font-bold mb-2 text-off-black">{item.price}</span>}
-                      {item.description && (
-                        <p className="font-serif text-gray-600 text-sm whitespace-pre-line">{item.description}</p>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="bg-white p-8 shadow-xl border-t-4 border-gold">
-                <h3 className="font-serif text-3xl text-center text-off-black mb-8 border-b border-gold pb-4">
-                  {categories.desserts.title}
-                </h3>
-                <div className="space-y-2.5">
-                  {categories.desserts.items.map((item, idx) => (
-                    <MenuItemCard key={idx} item={item} />
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Right Column: Hoofdgerechten + Specials + Warm Drinks + Aperitief */}
-            <div className="flex flex-col gap-5 lg:w-1/2">
-              <div className="bg-white p-8 shadow-xl border-t-4 border-gold">
-                <h3 className="font-serif text-3xl text-center text-off-black mb-8 border-b border-gold pb-4">
-                  {categories.mains.title}
-                </h3>
-                <div className="space-y-6">
-                  {categories.mains.items.map((item, idx) => (
-                    <MenuItemCard key={idx} item={item} />
-                  ))}
-                </div>
-                <div className="mt-8 p-4 bg-gray-100 text-center italic text-sm text-gray-600">
-                  {t.menu.childrenNote}
-                </div>
-              </div>
-
-              <div className="bg-white p-6 shadow-xl border-t-4 border-gold">
-                <h3 className="font-serif text-3xl text-center text-off-black mb-6 border-b border-gold pb-3">
-                  {categories.specials.title}
-                </h3>
-                <div className="space-y-5">
-                  {categories.specials.items.map((item, idx) => (
-                    <MenuItemCard key={idx} item={item} />
-                  ))}
-                </div>
-              </div>
-
-              <div className="bg-white p-6 shadow-xl border-t-4 border-gold">
-                <h3 className="font-serif text-3xl text-center text-off-black mb-6 border-b border-gold pb-3">
-                  {categories.warmDrinks.title}
-                </h3>
-                <div className="space-y-5">
-                  {categories.warmDrinks.items.map((item, idx) => (
-                    <MenuItemCard key={idx} item={item} />
-                  ))}
-                </div>
-              </div>
-
-              <div className="bg-white p-8 shadow-xl border-t-4 border-gold">
-                <h3 className="font-serif text-3xl text-center text-off-black mb-8 border-b border-gold pb-4">
-                  {categories.drinks.title}
-                </h3>
-                <div className="space-y-2.5">
-                  {categories.drinks.items.map((item, idx) => (
-                    <MenuItemCard key={idx} item={item} />
-                  ))}
-                </div>
-              </div>
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-5">
+          {/* Voorgerechten - Order 1 on mobile */}
+          <div className="bg-white p-2.5 shadow-xl border-t-4 border-gold order-1 lg:order-none">
+            <h3 className="font-serif text-3xl text-center text-off-black mb-6 border-b border-gold pb-3">
+              {categories.starters.title}
+            </h3>
+            <div className="space-y-5">
+              {categories.starters.items.map((item, idx) => (
+                <MenuItemCard key={idx} item={item} />
+              ))}
             </div>
           </div>
 
+          {/* Hoofdgerechten - Order 2 on mobile */}
+          <div className="bg-white p-2.5 shadow-xl border-t-4 border-gold order-2 lg:order-none">
+            <h3 className="font-serif text-3xl text-center text-off-black mb-8 border-b border-gold pb-4">
+              {categories.mains.title}
+            </h3>
+            <div className="space-y-6">
+              {categories.mains.items.map((item, idx) => (
+                <MenuItemCard key={idx} item={item} />
+              ))}
+            </div>
+            <div className="mt-8 p-2.5 bg-gray-100 text-center italic text-sm text-gray-600">
+              {t.menu.childrenNote}
+            </div>
+          </div>
+
+          {/* Menu Gourmand - Order 3 on mobile */}
+          <div className="bg-gray-100 p-2.5 shadow-xl border-t-4 border-gold order-3 lg:order-none">
+            <h3 className="font-serif text-3xl text-center text-off-black mb-2 pb-4 border-b border-gold">
+              {categories.gourmand.title}
+            </h3>
+            <p className="text-center text-gray-600 italic text-sm mb-8">{categories.gourmand.note}</p>
+            <div className="space-y-8">
+              {categories.gourmand.items.map((item, idx) => (
+                <div key={idx} className="text-center">
+                  <h4 className="font-serif text-xl text-off-black mb-2">{item.name}</h4>
+                   {item.price && <span className="block text-2xl font-bold mb-2 text-off-black">{item.price}</span>}
+                  {item.description && (
+                    <p className="font-serif text-gray-600 text-sm whitespace-pre-line">{item.description}</p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Specials - Order 4 on mobile */}
+          <div className="bg-white p-2.5 shadow-xl border-t-4 border-gold order-4 lg:order-none">
+            <h3 className="font-serif text-3xl text-center text-off-black mb-6 border-b border-gold pb-3">
+              {categories.specials.title}
+            </h3>
+            <div className="space-y-5">
+              {categories.specials.items.map((item, idx) => (
+                <MenuItemCard key={idx} item={item} />
+              ))}
+            </div>
+          </div>
+
+          {/* Warm Drinks - Order 5 on mobile */}
+          <div className="bg-white p-2.5 shadow-xl border-t-4 border-gold order-5 lg:order-none">
+            <h3 className="font-serif text-3xl text-center text-off-black mb-6 border-b border-gold pb-3">
+              {categories.warmDrinks.title}
+            </h3>
+            <div className="space-y-5">
+              {categories.warmDrinks.items.map((item, idx) => (
+                <MenuItemCard key={idx} item={item} />
+              ))}
+            </div>
+          </div>
+
+          {/* Desserts - Order 6 on mobile */}
+          <div className="bg-white p-2.5 shadow-xl border-t-4 border-gold order-6 lg:order-none">
+            <h3 className="font-serif text-3xl text-center text-off-black mb-8 border-b border-gold pb-4">
+              {categories.desserts.title}
+            </h3>
+            <div className="space-y-2.5">
+              {categories.desserts.items.map((item, idx) => (
+                <MenuItemCard key={idx} item={item} />
+              ))}
+            </div>
+          </div>
+
+          {/* Aperitief - Order 7 on mobile */}
+          <div className="bg-white p-2.5 shadow-xl border-t-4 border-gold order-7 lg:order-none">
+            <h3 className="font-serif text-3xl text-center text-off-black mb-8 border-b border-gold pb-4">
+              {categories.drinks.title}
+            </h3>
+            <div className="space-y-2.5">
+              {categories.drinks.items.map((item, idx) => (
+                <MenuItemCard key={idx} item={item} />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

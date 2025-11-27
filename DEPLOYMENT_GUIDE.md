@@ -170,6 +170,133 @@ If you prefer Netlify:
 - **Cause:** SSL certificate is still being provisioned
 - **Solution:** Wait a few minutes after DNS propagates
 
+### www Subdomain Shows "Invalid Configuration" in Vercel
+
+**Symptom:** `www.bistroboudoir.be` shows "Invalid Configuration" in Vercel dashboard
+
+**Cause:** The www subdomain isn't properly configured in DNS
+
+**Solution Options:**
+
+#### Option 1: Use CNAME Record (Recommended - Keep Current Nameservers)
+
+1. **In Vercel Dashboard:**
+   - Go to your project → **Settings** → **Domains**
+   - Click on `www.bistroboudoir.be`
+   - Switch to **DNS Records** tab (not "Vercel DNS")
+   - You'll see a CNAME record you need to add
+
+2. **In one.com DNS Settings:**
+   - Log in to one.com
+   - Go to **DNS Settings** for `bistroboudoir.be`
+   - Add a new CNAME record:
+     - **Type:** CNAME
+     - **Name:** www
+     - **Value:** `cname.vercel-dns.com` (or the exact value Vercel shows)
+     - **TTL:** 3600
+
+3. **Wait for propagation** (15-30 minutes)
+4. **Click "Refresh" in Vercel** to verify
+
+#### Option 2: Use Vercel DNS (Change Nameservers)
+
+**Note:** This requires changing your domain's nameservers entirely to Vercel's.
+
+1. **In Vercel Dashboard:**
+   - Go to **Settings** → **Domains**
+   - Click on `www.bistroboudoir.be`
+   - Click **"Vercel DNS"** tab
+   - Copy the nameservers shown:
+     - `ns1.vercel-dns.com`
+     - `ns2.vercel-dns.com`
+
+2. **In one.com Domain Settings:**
+   - Log in to one.com
+   - Go to **Domain Settings** → **Nameservers**
+   - Change nameservers to:
+     - `ns1.vercel-dns.com`
+     - `ns2.vercel-dns.com`
+   - Save changes
+
+3. **Important Notes:**
+   - This will transfer ALL DNS management to Vercel
+   - You'll need to recreate any other DNS records (email, etc.) in Vercel
+   - Nameserver changes can take 24-48 hours to propagate
+   - All subdomains will then be managed in Vercel
+
+**Recommendation:** Use **Option 1 (CNAME)** unless you want Vercel to manage all your DNS records.
+
+### How to Check Current Nameservers
+
+To see what nameservers your domain is currently using:
+
+```bash
+# Using dig command (if available)
+dig NS bistroboudoir.be +short
+
+# Or use online tools:
+# - https://www.whatsmydns.net/#NS/bistroboudoir.be
+# - https://mxtoolbox.com/SuperTool.aspx?action=ns%3abistroboudoir.be
+```
+
+### Invalid IPv6 Record: `a0947f7a061c9a16.vercel-dns-017.com`
+
+**Symptom:** Vercel shows an invalid IPv6 (AAAA) record with a value like `a0947f7a061c9a16.vercel-dns-017.com`
+
+**Cause:** This is typically shown when:
+1. Vercel is using its own DNS system and expects a specific AAAA record
+2. The AAAA record is missing or incorrectly configured
+3. Your DNS provider doesn't support IPv6 properly
+
+**Solution:**
+
+#### If Using Vercel DNS (Nameservers):
+1. **In one.com:** Make sure you've updated nameservers to:
+   - `ns1.vercel-dns.com`
+   - `ns2.vercel-dns.com`
+2. **In Vercel:** The AAAA record will be automatically managed by Vercel
+3. **Wait for nameserver propagation** (24-48 hours)
+4. **Click "Refresh" in Vercel** after propagation
+
+#### If Using Custom DNS (CNAME/A Records):
+1. **Check if one.com supports IPv6:**
+   - Log in to one.com
+   - Go to DNS Settings
+   - Look for AAAA record options
+   
+2. **Add AAAA Record (if supported):**
+   - **Type:** AAAA
+   - **Name:** @ (for root) or www (for subdomain)
+   - **Value:** Vercel will show you the IPv6 address in the DNS Records tab
+   - **TTL:** 3600
+
+3. **If one.com doesn't support IPv6:**
+   - This is usually fine - IPv6 is optional
+   - The site will work with IPv4 (A records) only
+   - Vercel may show a warning but the site will still function
+   - You can ignore the IPv6 warning if IPv4 records are correct
+
+**Note:** Most websites work fine with IPv4 only. IPv6 support is optional and won't prevent your site from working.
+
+### Verify DNS Configuration
+
+After making changes:
+
+1. **Check DNS Propagation:**
+   - Visit https://dnschecker.org
+   - Enter `www.bistroboudoir.be`
+   - Select "CNAME" record type
+   - Check if it shows `cname.vercel-dns.com` globally
+
+2. **In Vercel:**
+   - Go to **Settings** → **Domains**
+   - Click **"Refresh"** next to your domain
+   - Status should change from "Invalid Configuration" to "Valid Configuration"
+
+3. **Test in Browser:**
+   - Visit `https://www.bistroboudoir.be`
+   - Should load your Vercel deployment
+
 ---
 
 ## Quick Checklist
