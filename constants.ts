@@ -18,7 +18,6 @@ export const CONTENT: Record<string, Translations> = {
     menu: {
       title: 'Ons Menu',
       subtitle: 'Een culinaire reis door Frankrijk',
-      allergenNotice: 'Voor vragen i.v.m. allergenen gelieve u tot ons te richten.',
       childrenNote: 'EEN FRISSE SALADE KAN STEEDS BESTELD WORDEN ALS SUPPLEMENT +3€',
       categories: {
         starters: {
@@ -124,7 +123,7 @@ export const CONTENT: Record<string, Translations> = {
       }
     },
     footer: {
-      copyright: '© 2024 Bistro Boudoir. Alle rechten voorbehouden.',
+      copyright: '© 2025 Bistro Boudoir. Alle rechten voorbehouden.',
       tagline: 'Bon appétit!',
       openingHours: {
         title: 'OPENINGSTIJDEN',
@@ -161,50 +160,46 @@ export const CONTENT: Record<string, Translations> = {
     menu: {
       title: 'Notre Menu',
       subtitle: 'Un voyage culinaire à travers la France',
-      allergenNotice: 'Pour toute question concernant les allergènes, veuillez nous contacter.',
       childrenNote: 'UNE SALADE FRAÎCHE PEUT TOUJOURS ÊTRE COMMANDÉE EN SUPPLÉMENT +3€',
       categories: {
         starters: {
           title: 'Entrées',
           items: [
-            { name: 'Coquilles Saint-Jacques', description: 'Poêlées / sauce champagne / caviar de saumon', price: '€ 29' },
-            { name: 'Carpaccio de Tomates', description: 'Crevettes de Zeebrugge épluchées à la main / mayonnaise / roquette / œufs de caille', price: '€ 26' },
-            { name: 'Vitello Tonnato', description: 'Mayonnaise au thon / câpres / tomates pelées / parmesan', price: '€ 22' },
-            { name: 'Soupe de Poisson', description: 'Toast & rouille', price: '€ 18' },
-            { name: 'Steak Tartare Nature', description: 'Échalotes / câpres / persil / cornichons / jaune d\'œuf', price: '€ 26' },
-            { name: 'Croquettes de Crevettes', description: 'Persil frit / citron (1-2 pièces)', price: '€ 14-22' },
-            { name: 'Salade Caprese', description: 'Mozzarella de bufflonne / tomates / basilic / balsamique', price: '€ 24' },
-            { name: 'Salade de Saumon', description: 'Mélange de salade / saumon / avocat / sauce césar / parmesan / œufs de caille / graines de sésame', price: '€ 30' }
+            { name: 'Trio de Pâtés Maison', description: 'Bœuf, poulet & canard • sirop de Liège • fruits de saison • toast', price: '€ 22' },
+            { name: 'Foie Gras', description: 'Poêlé • poires marinées • brioche • sauce demi-glace', price: '€ 31', extra: 'vin adapté: Château Simon – Sauternes – Bordeaux – France € 9,50 par verre' },
+            { name: 'Croquettes de Crevettes', description: 'Crevettes de Zeebrugge épluchées à la main • crème de la Mer du Nord • citron (1-2 pièces)', price: '€ 15-23' },
+            { name: 'Crevettes de Zeebrugge Épluchées à la Main', description: 'Tomate juteuse sur crumble de tomate • crevettes épluchées à la main • sauce cocktail maison', price: '€ 26' },
+            { name: 'Coquilles Saint-Jacques', description: 'Poêlées • sauce champagne • caviar de saumon', price: '€ 29' }
           ]
         },
         mains: {
           title: 'Plats Principaux',
           items: [
-            { name: 'Bœuf', description: 'Filet pur / frites / salade / sauce Roquefort, champignon ou poivre', price: '€ 39' },
-            { name: 'Caille', description: 'Raisins / champignons / sauce au vin aux herbes / pommes de terre', price: '€ 34' },
-            { name: 'Turbot', description: 'Filet / grillé / sauce champagne / légumes de saison adaptés / pommes de terre nouvelles', price: '€ 52', extra: '* crevettes de Zeebrugge épluchées à la main supplémentaires + € 5 *' },
-            { name: 'Sole', description: 'Poêlée / salade / frites / sauce tartare', price: '€ 49' },
-            { name: 'Cabillaud', description: 'Filet / bisque de crevettes / crevettes de Zeebrugge épluchées à la main / moules / purée', price: '€ 41' },
-            { name: 'Vol au Vent Deluxe', description: 'Poulet de ferme / pâte feuilletée / ris de veau / crevettes de Zeebrugge épluchées à la main / frites', price: '€ 41' },
-            { name: 'Veau', description: 'Ris de veau poêlés / légumes de saison adaptés / sauce miel-moutarde / pommes de terre nouvelles', price: '€ 48' },
-            { name: 'Végétarien', description: 'Légumes grillés / sauce à l\'ail / mozzarella de bufflonne', price: '€ 32' }
+            { name: 'Bœuf', description: 'Filet pur • frites • choix de sauce Roquefort, champignon ou poivre', price: '€ 39' },
+            { name: 'Magret de Canard', description: 'Sauce aux cerises • gelée de betteraves rouges • parmesan croustillant • pavé', price: '€ 36' },
+            { name: 'Turbot', description: 'Filet • sauce champagne • légumes de saison • pommes de terre nouvelles', price: '€ 52', extra: '* crevettes de Zeebrugge épluchées à la main supplémentaires + € 5 *' },
+            { name: 'Sole', description: 'Poêlée • frites • sauce tartare', price: '€ 49' },
+            { name: 'Cabillaud', description: 'Filet • bisque de crevettes • crevettes de Zeebrugge épluchées à la main • caviar de saumon • purée', price: '€ 41' },
+            { name: 'Bouillabaisse de la Mer du Nord', description: 'Toast • rouille • gruyère', price: '€ 38' },
+            { name: 'Vol au Vent Classique', description: 'Poulet de ferme • pâte feuilletée • boulettes de viande • champignons • frites', price: '€ 28' },
+            { name: 'Veau', description: 'Ris de veau poêlés • légumes de saison • sauce miel-moutarde • pommes de terre nouvelles', price: '€ 48' }
           ]
         },
         gourmand: {
           title: 'Menu Gourmand',
-          note: 'Les menus sont servis par table.',
+          note: 'LES MENUS SONT SERVIS PAR TABLE.',
           items: [
-            { name: 'Entrée', description: 'Coquilles Saint-Jacques - Carpaccio / vinaigrette aux agrumes / bergamote\nOU\nBœuf - Carpaccio / aïoli aux anchois / parmesan', price: '' },
-            { name: 'Plat Principal', description: 'Sole - Poêlée / salade / frites / tartare (+ € 12)\nOU\nEntrecôte Simmental - Classique / poivre concassé / flambé / sauce au poivre / frites / salade', price: '' },
-            { name: 'Dessert', description: 'Dame Blanche\nOU\nCoupe Colonel', price: '' },
-            { name: 'Prix', description: 'par personne', price: '€ 56' }
+            { name: 'Entrée', description: 'BOUILLABAISSE DE LA MER DU NORD\nToast • rouille • gruyère\nou\nCARPACCIO DE LANGUE DE BŒUF\nSauce rémoulade • câpres • huile d\'olive', price: '' },
+            { name: 'Plat Principal', description: 'SOLE\nPoêlée • frites • sauce tartare (+ € 12)\nou\nJOUES DE PORC\nLégumes • pommes de terre nouvelles • sauce à la bière brune de château', price: '' },
+            { name: 'Dessert', description: 'Dame Blanche\nou\nIrish Coffee', price: '' },
+            { name: 'Prix', description: 'par personne', price: '€ 58' }
           ]
         },
         specials: {
           title: 'Spécialités',
           items: [
             { name: 'Jamon Iberico de Bellota', description: 'Assiette de tapas de 50 gr pour 2 personnes', price: '€ 20' },
-            { name: 'Huîtres "Gillardeau"', description: 'Sauce mignonnette (3 pièces / 6 pièces)', price: '€ 14 / 24' }
+            { name: 'Assortiment Apéritif', description: '3 sortes de boulettes apéritives raffinées', price: '€ 15' }
           ]
         },
         drinks: {

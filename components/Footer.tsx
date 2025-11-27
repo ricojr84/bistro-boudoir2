@@ -12,8 +12,8 @@ export const Footer: React.FC<FooterProps> = ({ t }) => {
         <h2 className="font-serif text-2xl text-gold mb-6 tracking-widest">Bistro Boudoir</h2>
         <p className="font-serif italic text-lg mb-4">{t.footer.tagline}</p>
         <p className="text-sm font-sans tracking-wider opacity-60">{t.footer.copyright}</p>
-        <p className="text-xs font-sans tracking-wider opacity-40 mt-6">
-          Made with ❤️ by RICO
+        <p className="text-xs font-sans tracking-wider opacity-60 mt-6">
+          Made by RICO
         </p>
       </div>
     </footer>

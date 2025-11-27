@@ -30,7 +30,6 @@ export interface Translations {
   menu: {
     title: string;
     subtitle: string;
-    allergenNotice: string;
     childrenNote: string;
     categories: {
       starters: MenuCategory;
