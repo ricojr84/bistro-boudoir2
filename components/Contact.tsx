@@ -32,30 +32,30 @@ export const Contact: React.FC<ContactProps> = ({ t }) => {
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Info */}
           <div className="space-y-8">
-            <div className="flex items-start space-x-6 p-6 bg-white shadow-lg border-l-4 border-gold hover:translate-x-2 transition-transform">
+            <div className="flex items-start space-x-6 p-[5px] bg-white shadow-lg border-l-4 border-gold hover:translate-x-2 transition-transform">
               <MapPin className="text-gold w-8 h-8 mt-1 flex-shrink-0" />
               <div>
                 <h3 className="font-serif text-xl text-off-black mb-2 uppercase">{t.contact.address}</h3>
                 <p className="font-sans text-gray-600">Lippenslaan 141, 8300 Knokke</p>
               </div>
             </div>
-            <div className="flex items-start space-x-6 p-6 bg-white shadow-lg border-l-4 border-gold hover:translate-x-2 transition-transform">
+            <div className="flex items-start space-x-6 p-[5px] bg-white shadow-lg border-l-4 border-gold hover:translate-x-2 transition-transform">
               <Phone className="text-gold w-8 h-8 mt-1 flex-shrink-0" />
               <div>
                 <h3 className="font-serif text-xl text-off-black mb-2 uppercase">{t.contact.phone}</h3>
                 <p className="font-sans text-gray-600">+32 (0)50 66 03 23</p>
               </div>
             </div>
-            <div className="flex items-start space-x-6 p-6 bg-white shadow-lg border-l-4 border-gold hover:translate-x-2 transition-transform">
+            <div className="flex items-start space-x-6 p-[5px] bg-white shadow-lg border-l-4 border-gold hover:translate-x-2 transition-transform">
               <Mail className="text-gold w-8 h-8 mt-1 flex-shrink-0" />
               <div>
                 <h3 className="font-serif text-xl text-off-black mb-2 uppercase">{t.contact.email}</h3>
-                <a href="mailto:Info@bistro-boudoir.be" className="font-sans text-gray-600 hover:text-gold transition-colors">
-                  Info@bistro-boudoir.be
+                <a href="mailto:bistro-boudoir@outlook.com" className="font-sans text-gray-600 hover:text-gold transition-colors">
+                  bistro-boudoir@outlook.com
                 </a>
               </div>
             </div>
-            <div className="flex items-start space-x-6 p-6 bg-white shadow-lg border-l-4 border-gold hover:translate-x-2 transition-transform">
+            <div className="flex items-start space-x-6 p-[5px] bg-white shadow-lg border-l-4 border-gold hover:translate-x-2 transition-transform">
               <Clock className="text-gold w-8 h-8 mt-1 flex-shrink-0" />
               <div className="w-full">
                 <h3 className="font-serif text-xl text-off-black mb-4 uppercase">{t.contact.hours}</h3>
