@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Menu } from './components/Menu';
@@ -46,6 +47,7 @@ const App: React.FC = () => {
       <Map t={t} />
       <Footer t={t} />
       <FloatingReservationButton t={t} />
+      <Analytics />
     </div>
   );
 };
