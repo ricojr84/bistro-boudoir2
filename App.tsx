@@ -35,8 +35,8 @@ const App: React.FC = () => {
       <Hero t={t} />
       {currentPage === 'home' && (
         <>
-          <Menu t={t} />
-          <Gallery t={t} />
+      <Menu t={t} />
+      <Gallery t={t} />
         </>
       )}
       {currentPage === 'suggesties' && (

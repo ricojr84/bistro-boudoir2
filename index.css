@@ -153,3 +153,34 @@ html {
     animation: fadeIn 0.3s ease-in-out;
 }
 
+/* Instagram New Post Animation */
+@keyframes pulse-new-post {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.1);
+    }
+}
+
+@keyframes ping-new-post {
+    0% {
+        transform: scale(1);
+        opacity: 0.75;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+.animate-pulse-new-post {
+    animation: pulse-new-post 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-ping-new-post {
+    animation: ping-new-post 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+

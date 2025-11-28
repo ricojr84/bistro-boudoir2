@@ -17,15 +17,15 @@ export const Map: React.FC<MapProps> = ({ t }) => {
         </div>
         
         <div className="w-full h-[500px] border-4 border-gold shadow-2xl">
-          <iframe 
-            width="100%" 
-            height="100%" 
+           <iframe 
+             width="100%" 
+             height="100%" 
             style={{ border: 0 }}
-            loading="lazy" 
-            allowFullScreen 
-            referrerPolicy="no-referrer-when-downgrade"
+             loading="lazy" 
+             allowFullScreen 
+             referrerPolicy="no-referrer-when-downgrade"
             src="https://www.google.com/maps/embed?pb=!4v1764275419468!6m8!1m7!1svqc3IKj7aoNSD-V1tsR6Jg!2m2!1d51.34588307525023!2d3.288148095280725!3f275.71082!4f0!5f0.7820865974627469">
-          </iframe>
+           </iframe>
         </div>
       </div>
     </section>

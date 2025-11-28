@@ -98,10 +98,13 @@ export const Contact: React.FC<ContactProps> = ({ t }) => {
                 href="https://www.facebook.com/profile.php?id=100063110746117"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-off-black hover:text-gold transition-colors duration-300"
+                className="text-off-black hover:text-gold transition-colors duration-300 relative"
                 aria-label="Facebook"
               >
-                <Facebook size={28} strokeWidth={1.5} />
+                <Facebook size={35} strokeWidth={1.5} />
+                <span className="absolute -top-1 -right-1 w-3 h-3 bg-gold rounded-full animate-pulse-new-post">
+                  <span className="absolute inset-0 bg-gold rounded-full animate-ping-new-post opacity-75"></span>
+                </span>
               </a>
               <a
                 href="https://www.instagram.com/bistro_boudoir_knokke?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
@@ -110,7 +113,10 @@ export const Contact: React.FC<ContactProps> = ({ t }) => {
                 className="text-off-black hover:text-gold transition-colors duration-300 relative"
                 aria-label="Instagram"
               >
-                <Instagram size={28} strokeWidth={1.5} />
+                <Instagram size={35} strokeWidth={1.5} />
+                <span className="absolute -top-1 -right-1 w-3 h-3 bg-gold rounded-full animate-pulse-new-post">
+                  <span className="absolute inset-0 bg-gold rounded-full animate-ping-new-post opacity-75"></span>
+                </span>
               </a>
             </div>
           </div>
