@@ -1,22 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Translations } from '../types';
-import { X } from 'lucide-react';
 
 interface SuggestionsProps {
   t: Translations;
 }
 
 export const Suggestions: React.FC<SuggestionsProps> = ({ t }) => {
-  const [isPdfModalOpen, setIsPdfModalOpen] = useState(false);
-
-  const openPdfModal = () => {
-    setIsPdfModalOpen(true);
-    document.body.style.overflow = 'hidden'; // Prevent background scrolling
-  };
-
-  const closePdfModal = () => {
-    setIsPdfModalOpen(false);
-    document.body.style.overflow = 'unset'; // Restore scrolling
+  const openPdfInNewWindow = () => {
+    const pdfUrl = `/images/${encodeURIComponent('BistroBoudoir-wijnkaart-2024 2.pdf')}`;
+    window.open(pdfUrl, '_blank', 'width=1200,height=800');
   };
 
   return (
@@ -48,13 +40,13 @@ export const Suggestions: React.FC<SuggestionsProps> = ({ t }) => {
             />
           </div>
 
-          {/* Frame 3 - Wine Bottle with PDF Modal */}
+          {/* Frame 3 - Wine Bottle with PDF New Window */}
           <div 
             className="flex-1 bg-white shadow-xl border-t-4 border-gold overflow-hidden relative aspect-square transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
-            onClick={openPdfModal}
+            onClick={openPdfInNewWindow}
           >
             <img 
-              src="/images/image26.jpg" 
+              src="/images/wine.JPG" 
               alt="Wijnkaart - Wine List"
               className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
             />
@@ -72,35 +64,6 @@ export const Suggestions: React.FC<SuggestionsProps> = ({ t }) => {
           </div>
         </div>
       </div>
-
-      {/* PDF Modal */}
-      {isPdfModalOpen && (
-        <div 
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
-          onClick={closePdfModal}
-        >
-          <div 
-            className="relative bg-white w-full max-w-6xl h-[90vh] rounded-lg shadow-2xl overflow-hidden"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Close Button */}
-            <button
-              onClick={closePdfModal}
-              className="absolute top-4 right-4 z-10 bg-gold text-off-black p-2 rounded-full hover:bg-light-gold transition-colors duration-300 shadow-lg"
-              aria-label="Close PDF"
-            >
-              <X size={24} />
-            </button>
-
-            {/* PDF Viewer */}
-            <iframe
-              src={`/images/${encodeURIComponent('BistroBoudoir-wijnkaart-2024 2.pdf')}#toolbar=0`}
-              className="w-full h-full border-0"
-              title="Wijnkaart PDF"
-            />
-          </div>
-        </div>
-      )}
     </section>
   );
 };
