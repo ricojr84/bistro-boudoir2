@@ -23,10 +23,21 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t, currentPage, s
   }, []);
 
   const toggleLang = () => {
-    setLang(lang === 'nl' ? 'fr' : 'nl');
+    if (lang === 'nl') {
+      setLang('fr');
+    } else if (lang === 'fr') {
+      setLang('en');
+    } else {
+      setLang('nl');
+    }
   };
 
   const handleNavigation = (id: string) => {
+    if (id === 'egift') {
+      window.open('https://www.egift.be/handelaar/Bistro%20Boudoir/1632', '_blank');
+      setIsOpen(false);
+      return;
+    }
     if (id === 'suggesties') {
       setCurrentPage('suggesties');
       // Scroll to top and then to suggestions section
@@ -99,7 +110,7 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t, currentPage, s
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8">
-          {['home', 'menu', 'gallery', 'suggesties', 'contact', 'map'].map((item) => (
+          {['home', 'menu', 'gallery', 'suggesties', 'contact', 'egift', 'map'].map((item) => (
             <button
               key={item}
               onClick={() => handleNavigation(item)}
@@ -115,7 +126,7 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t, currentPage, s
             className="flex items-center space-x-2 px-4 py-2 border border-gold text-gold hover:bg-gold hover:text-off-black transition-all duration-300 text-sm tracking-widest uppercase"
           >
             <Globe size={16} />
-            <span>{lang === 'nl' ? 'NL' : 'FR'}</span>
+            <span>{lang.toUpperCase()}</span>
           </button>
         </div>
 
@@ -136,7 +147,7 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t, currentPage, s
         <div className={`fixed inset-0 bg-off-black bg-opacity-95 flex flex-col items-center justify-center space-y-8 transition-transform duration-500 ease-in-out md:hidden ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}>
-          {['home', 'menu', 'gallery', 'suggesties', 'contact', 'map'].map((item) => (
+          {['home', 'menu', 'gallery', 'suggesties', 'contact', 'egift', 'map'].map((item) => (
             <button
               key={item}
               onClick={() => handleNavigation(item)}

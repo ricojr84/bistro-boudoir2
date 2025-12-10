@@ -1,4 +1,4 @@
-export type Language = 'nl' | 'fr';
+export type Language = 'nl' | 'fr' | 'en';
 
 export interface MenuItem {
   name: string;
@@ -20,6 +20,7 @@ export interface Translations {
     gallery: string;
     suggesties: string;
     contact: string;
+    egift: string;
     map: string;
   };
   home: {

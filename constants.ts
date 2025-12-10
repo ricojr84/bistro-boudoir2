@@ -8,6 +8,7 @@ export const CONTENT: Record<string, Translations> = {
       gallery: 'Galerij',
       suggesties: 'Suggesties',
       contact: 'Contact',
+      egift: 'E-Gift',
       map: 'Kaart'
     },
     home: {
@@ -155,6 +156,7 @@ export const CONTENT: Record<string, Translations> = {
       gallery: 'Galerie',
       suggesties: 'Suggestions',
       contact: 'Contact',
+      egift: 'E-Gift',
       map: 'Carte'
     },
     home: {
@@ -292,6 +294,154 @@ export const CONTENT: Record<string, Translations> = {
       address: 'Lippenslaan 141, 8300 Knokke',
       phone: '+32 (0)50 66 03 23',
       reservationButton: 'RÉSERVER UNE TABLE',
+      experience: 'EXPERIENCE EXCELLENT DINING AT BOUDIOR'
+    }
+  },
+  en: {
+    nav: {
+      home: 'Home',
+      menu: 'Menu',
+      gallery: 'Gallery',
+      suggesties: 'Suggestions',
+      contact: 'Contact',
+      egift: 'E-Gift',
+      map: 'Map'
+    },
+    home: {
+      title: 'Welcome to Bistro Boudoir',
+      subtitle: 'Authentic French Cuisine in the Heart of Knokke',
+      description: 'Welcome to Bistro Boudoir, where French elegance and Belgian refinement embrace each other. Located on the stylish Lippenslaan – the beating heart of Knokke – this culinary gem offers a sensory experience full of charm and class. Hostess Daniela Nistreanu welcomes you with a warm smile and impeccable finesse. Chef Ivan Chuhunnikov creates refined Franco-Belgian dishes, inspired by the seasons. Bistro Boudoir is not a restaurant. It is an experience.',
+      button: 'View Our Menu'
+    },
+    menu: {
+      title: 'Our Menu',
+      subtitle: 'A culinary journey through France',
+      childrenNote: 'A FRESH SALAD CAN ALWAYS BE ORDERED AS A SUPPLEMENT +3€',
+      categories: {
+        starters: {
+          title: 'Starters',
+          items: [
+            { name: 'Trio of Homemade Paté', description: 'Beef, chicken & duck • Liège syrup • seasonal fruit • toast', price: '€ 22' },
+            { name: 'Foie Gras', description: 'Pan-fried • marinated pears • brioche • demi-glace sauce', price: '€ 31', extra: 'matching wine: Château Simon – Sauternes – Bordeaux – France € 9.50 per glass' },
+            { name: 'Shrimp Croquettes', description: 'Hand-peeled Zeebrugge shrimp • North Sea cream • lemon (1-2 pieces)', price: '€ 15-23' },
+            { name: 'Hand-peeled Zeebrugge Shrimp', description: 'Juicy tomato on tomato crumble • hand-peeled shrimp • homemade cocktail sauce', price: '€ 26' },
+            { name: 'Scallops', description: 'Pan-fried • champagne sauce • salmon caviar', price: '€ 29' }
+          ]
+        },
+        mains: {
+          title: 'Main Courses',
+          items: [
+            { name: 'Beef', description: 'Pure fillet • fries • choice of Roquefort, mushroom or pepper sauce', price: '€ 39' },
+            { name: 'Duck Breast', description: 'Cherry sauce • red beet jelly • crispy parmesan • pavé', price: '€ 36' },
+            { name: 'Turbot', description: 'Fillet • champagne sauce • seasonal vegetables • new potatoes', price: '€ 52', extra: '* extra hand-peeled Zeebrugge shrimp + € 5 *' },
+            { name: 'Dover Sole', description: 'Pan-fried • fries • tartar sauce', price: '€ 49' },
+            { name: 'Cod', description: 'Fillet • shrimp bisque • hand-peeled Zeebrugge shrimp • salmon caviar • purée', price: '€ 41' },
+            { name: 'North Sea Bouillabaisse', description: 'Toast • rouille • gruyère', price: '€ 38' },
+            { name: 'Classic Vol au Vent', description: 'Farm chicken • puff pastry • meatballs • mushrooms • fries', price: '€ 28' },
+            { name: 'Veal', description: 'Pan-fried veal sweetbreads • seasonal vegetables • honey-mustard sauce • new potatoes', price: '€ 48' }
+          ]
+        },
+        gourmand: {
+          title: 'Gourmand Menu',
+          note: 'THE MENUS ARE SERVED PER TABLE.',
+          items: [
+            { name: 'Starter', description: 'NORTH SEA BOUILLABAISSE\nToast • rouille • gruyère\nor\nBEEF TONGUE CARPACCIO\nRémoulade sauce • capers • olive oil', price: '' },
+            { name: 'Main Course', description: 'DOVER SOLE\nPan-fried • fries • tartar sauce (+ € 12)\nor\nPORK CHEEKS\nVegetables • new potatoes • dark castle beer sauce', price: '' },
+            { name: 'Dessert', description: 'Dame Blanche\nor\nIrish Coffee', price: '' },
+            { name: 'Price', description: 'per person', price: '€ 58' }
+          ]
+        },
+        specials: {
+          title: 'Specials',
+          items: [
+            { name: 'Jamon Iberico de Bellota', description: 'Tapas plate of 50 gr for 2 people', price: '€ 20' },
+            { name: 'Aperitif Assortment', description: '3 types of refined aperitif balls', price: '€ 15' }
+          ]
+        },
+        drinks: {
+          title: 'Aperitif & Drinks',
+          items: [
+            { name: 'Champagne Glass', price: '€ 14' },
+            { name: 'Glass of Cava "Pont de Ferro"', price: '€ 9' },
+            { name: 'Kir white wine', price: '€ 9' },
+            { name: 'Kir royal (Champagne)', price: '€ 14' },
+            { name: 'Porto \'10 years\' red', price: '€ 10' },
+            { name: 'Martini white/red', price: '€ 9' },
+            { name: 'Pineau des Charentes', price: '€ 8' },
+            { name: 'Picon white wine', price: '€ 11' },
+            { name: 'Ricard', price: '€ 9' },
+            { name: 'Campari with fresh fruit juice', price: '€ 14' },
+            { name: 'Gin + Tonic', description: 'Bombay • Fever Tree Mediterranean € 15\nHendrickx • Fever Tree Indian tonic € 16\nMonkey 47 • Fever Tree Indian tonic € 16\nGin Mare • Fever Tree Mediterranean € 16', price: '' },
+            { name: 'Cocktails', description: 'Espresso Martini (Vodka • coffee liqueur • espresso) € 15\nPornstar Martini (Vodka • passion fruit liqueur • Cava on the side) € 15\nMojito (white rum • lime • mint • soda water) € 15\nMoscow mule (Vodka • lime • gingerbeer) € 15\nNegroni (Campari • red Martini • Gin) € 14\nApérol Spritz (Apérol • Cava • sparkling water) € 13\nLimoncello spritz (Limoncello • Cava • sparkling water) € 13', price: '' },
+            { name: 'Mocktails 0%', description: 'Boudoir (gingerbeer • cranberry • orange) € 11\nMojito 0% (lime • mint • soda water) € 11\nGin boudoir 0% (Fever Tree raspberry & rhubarb) € 14', price: '' },
+            { name: 'Bottled Beer', description: 'Stella € 4\nLeffe blond € 5\nDuvel € 5\nRochefort € 5\nStella 0% € 4', price: '' }
+          ]
+        },
+        warmDrinks: {
+          title: 'Hot Drinks',
+          items: [
+            { name: 'by Nespresso', description: 'Lungo classic/ deca € 4.5\nEspresso € 4\nDouble espresso € 5\nCappuccino € 5.5\nLatte Macchiato € 6', price: '' },
+            { name: 'TEA by Tea Coach Ken', description: 'White tea\n• White peach (peach/apple/elderberry) € 6\n\nGreen tea\n• Green peppermint (served with fresh mint)\n• Fresh lemon (lemongrass/lemon aroma)\n• Berry rose (Chinese sencha/raspberry/rose petals)\n\nBlack infusions\n• Superior Earl Grey (black tea blend/natural bergamot)\n• Sexy goji (orange zest, goji berries, aroma, carrot flakes, yellow rose buds, safflower)\n\nHerbal tea\n• Ginger orange (ginger/chamomile/pepper/orange)\n• Ginger lemon (ginger/licorice/lemongrass/lemon peels/peppermint/peppercorns)\n• Relaxing Camomille (fennel/rosehip peel/chamomile flowers/nettle/lavender flower)', price: '' }
+          ]
+        },
+        desserts: {
+          title: 'Desserts',
+          items: [
+            { name: 'Warm apple pie', description: 'vanilla ice cream', price: '€ 12' },
+            { name: 'Dame blanche', price: '€ 10' },
+            { name: 'Crème brûlée', price: '€ 10' },
+            { name: 'Sabayon', description: 'with cherry beer or Champagne', price: '€ 12' },
+            { name: 'Chocolate moelleux', price: '€ 12' },
+            { name: 'Homemade cheesecake', description: 'fresh topping - melts in the mouth', price: '€ 14' },
+            { name: 'POUSSE CAFÉ', description: 'Irish Coffee (whisky) € 12\nFrench Coffee (cognac) € 12\nItalian Coffee (Amaretto) € 12\nLimoncello € 10\nAmaretto € 10\nBaileys € 10\nGrand Marnier € 10\nCointreau € 10\nHasselt Jenever € 8\nGrappa € 10\nSambuca € 10\nEau de vie Poire Williams € 12\nCalvados € 10\nCognac Hennessy € 10\nCuarenta Y Tres € 10\nJack Daniels € 16\nDon Papa rum € 16\nLagavulin € 16', price: '' }
+          ]
+        }
+      }
+    },
+    gallery: {
+      title: 'Gallery',
+      subtitle: 'Atmosphere'
+    },
+    suggestions: {
+      title: 'Our Suggestions',
+      comingSoon: 'Coming Soon'
+    },
+    contact: {
+      title: 'Contact Us',
+      subtitle: 'We\'d love to hear from you',
+      address: 'Address',
+      phone: 'Phone',
+      email: 'Email',
+      hours: 'Opening Hours',
+      reservationButton: 'Reserve a Table',
+      form: {
+        name: 'Your Name',
+        email: 'Your Email',
+        phone: 'Your Phone',
+        message: 'Your Message',
+        submit: 'Send Message',
+        success: 'Thank you! We have received your message and will contact you as soon as possible.',
+        error: 'Please fill in all required fields.'
+      }
+    },
+    footer: {
+      copyright: '© 2025 Bistro Boudoir. All rights reserved.',
+      tagline: 'Bon appétit!',
+      openingHours: {
+        title: 'OPENING HOURS',
+        days: [
+          { day: 'Monday', time: 'Closed' },
+          { day: 'Tuesday', time: '12:00 - 15:00 | 18:00 - 21:00' },
+          { day: 'Wednesday', time: '12:00 - 15:00 | 18:00 - 21:00' },
+          { day: 'Thursday', time: '12:00 - 15:00 | 18:00 - 21:00' },
+          { day: 'Friday', time: '12:00 - 15:00 | 18:00 - 21:00' },
+          { day: 'Saturday', time: '12:00 - 15:00 | 18:00 - 21:00' },
+          { day: 'Sunday', time: '12:00 - 15:00' }
+        ]
+      },
+      address: 'Lippenslaan 141, 8300 Knokke',
+      phone: '+32 (0)50 66 03 23',
+      reservationButton: 'RESERVE A TABLE',
       experience: 'EXPERIENCE EXCELLENT DINING AT BOUDIOR'
     }
   }

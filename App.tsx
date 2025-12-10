@@ -16,7 +16,7 @@ const App: React.FC = () => {
   // Initialize language from localStorage or default to 'nl'
   const [lang, setLangState] = useState<Language>(() => {
     const saved = localStorage.getItem('language');
-    return (saved === 'fr' || saved === 'nl') ? saved : 'nl';
+    return (saved === 'fr' || saved === 'nl' || saved === 'en') ? saved : 'nl';
   });
 
   // Current page state: 'home' or 'suggesties'
