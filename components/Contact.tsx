@@ -50,8 +50,8 @@ export const Contact: React.FC<ContactProps> = ({ t }) => {
               <Mail className="text-gold w-8 h-8 mt-1 flex-shrink-0" />
               <div>
                 <h3 className="font-serif text-xl text-off-black mb-2 uppercase">{t.contact.email}</h3>
-                <a href="mailto:bistro-boudoir@outlook.com" className="font-sans text-gray-600 hover:text-gold transition-colors">
-                  bistro-boudoir@outlook.com
+                <a href="mailto:info@bistroboudoir.be" className="font-sans text-gray-600 hover:text-gold transition-colors">
+                  info@bistroboudoir.be
                 </a>
               </div>
             </div>
