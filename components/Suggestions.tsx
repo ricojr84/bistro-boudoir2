@@ -21,28 +21,11 @@ export const Suggestions: React.FC<SuggestionsProps> = ({ t }) => {
           <span className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gold"></span>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-5">
-          {/* Frame 1 */}
-          <div className="flex-1 bg-white shadow-xl border-t-4 border-gold overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer">
-            <img 
-              src="/images/kerstmenuNL.PNG" 
-              alt="Kerstmenu Nederlands"
-              className="w-full h-full object-cover aspect-square transition-transform duration-300 hover:scale-110"
-            />
-          </div>
-
-          {/* Frame 2 */}
-          <div className="flex-1 bg-white shadow-xl border-t-4 border-gold overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer">
-            <img 
-              src="/images/kerstmenuFR.PNG" 
-              alt="Menu de Noël Français"
-              className="w-full h-full object-cover aspect-square transition-transform duration-300 hover:scale-110"
-            />
-          </div>
-
+        <div className="flex justify-center items-center">
           {/* Frame 3 - Wine Bottle with PDF New Window */}
           <div 
-            className="flex-1 bg-white shadow-xl border-t-4 border-gold overflow-hidden relative aspect-square transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
+            className="bg-white shadow-xl border-t-4 border-gold overflow-hidden relative transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
+            style={{ width: '200px', height: '200px' }}
             onClick={openPdfInNewWindow}
           >
             <img 
