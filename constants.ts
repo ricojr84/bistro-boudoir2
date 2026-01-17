@@ -104,7 +104,9 @@ export const CONTENT: Record<string, Translations> = {
     },
     gallery: {
       title: 'Galerij',
-      subtitle: 'Sfeerbeelden'
+      subtitle: 'Sfeerbeelden',
+      more: 'Meer',
+      moreItems: 'meer items'
     },
     suggestions: {
       title: 'Onze Suggesties',
@@ -252,7 +254,9 @@ export const CONTENT: Record<string, Translations> = {
     },
     gallery: {
       title: 'Galerie',
-      subtitle: 'Ambiance'
+      subtitle: 'Ambiance',
+      more: 'Plus',
+      moreItems: 'éléments de plus'
     },
     suggestions: {
       title: 'Nos Suggestions',
@@ -400,7 +404,9 @@ export const CONTENT: Record<string, Translations> = {
     },
     gallery: {
       title: 'Gallery',
-      subtitle: 'Atmosphere'
+      subtitle: 'Atmosphere',
+      more: 'More',
+      moreItems: 'more items'
     },
     suggestions: {
       title: 'Our Suggestions',

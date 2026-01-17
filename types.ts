@@ -46,6 +46,8 @@ export interface Translations {
   gallery: {
     title: string;
     subtitle: string;
+    more: string;
+    moreItems: string;
   };
   suggestions: {
     title: string;

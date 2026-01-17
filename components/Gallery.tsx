@@ -6,22 +6,44 @@ interface GalleryProps {
   t: Translations;
 }
 
-// Generate image paths for all JPG images in the images folder
-const generateImagePaths = () => {
-  const imagePaths = [];
-  // We have JPG images numbered from 1 to 33, skipping missing ones
+// Generate media paths for all images and videos in the images folder
+const generateMediaPaths = () => {
+  const mediaPaths = [];
+  // We have JPG images numbered from 1 to 38, skipping missing ones
   for (let i = 1; i <= 33; i++) {
     // Skip image4.jpg, image20.jpg, image25.jpg, and image26.jpg as they don't exist
     if (i !== 4 && i !== 20 && i !== 25 && i !== 26) {
-      imagePaths.push({
-        url: `/images/image${i}.jpg`
+      mediaPaths.push({
+        url: `/images/image${i}.jpg`,
+        type: 'image'
       });
     }
   }
-  return imagePaths;
+  // Add new JPG images (34-38)
+  for (let i = 34; i <= 38; i++) {
+    mediaPaths.push({
+      url: `/images/image${i}.JPG`,
+      type: 'image'
+    });
+  }
+  // Add video files
+  const videoFiles = [
+    'MVI_2796.MP4',
+    'MVI_2856.MP4',
+    'MVI_2859.mov'
+  ];
+  videoFiles.forEach(video => {
+    mediaPaths.push({
+      url: `/images/${video}`,
+      type: 'video'
+    });
+  });
+  return mediaPaths;
 };
 
-const images = generateImagePaths();
+const mediaItems = generateMediaPaths();
+const DISPLAYED_ITEMS_COUNT = 8; // Show only first 8 items
+const displayedItems = mediaItems.slice(0, DISPLAYED_ITEMS_COUNT);
 
 export const Gallery: React.FC<GalleryProps> = ({ t }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -33,11 +55,11 @@ export const Gallery: React.FC<GalleryProps> = ({ t }) => {
     if (!isModalOpen || !isAutoPlaying) return;
 
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % mediaItems.length);
     }, 4000); // Change slide every 4 seconds
 
     return () => clearInterval(interval);
-  }, [isModalOpen, isAutoPlaying, images.length]);
+  }, [isModalOpen, isAutoPlaying, mediaItems.length]);
 
   // Keyboard navigation
   useEffect(() => {
@@ -46,11 +68,11 @@ export const Gallery: React.FC<GalleryProps> = ({ t }) => {
     const handleKeyPress = (e: KeyboardEvent) => {
       if (e.key === 'ArrowLeft') {
         setIsAutoPlaying(false);
-        setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+        setCurrentIndex((prevIndex) => (prevIndex - 1 + mediaItems.length) % mediaItems.length);
       }
       if (e.key === 'ArrowRight') {
         setIsAutoPlaying(false);
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % mediaItems.length);
       }
       if (e.key === 'Escape') {
         setIsModalOpen(false);
@@ -76,12 +98,12 @@ export const Gallery: React.FC<GalleryProps> = ({ t }) => {
 
   const goToPrevious = () => {
     setIsAutoPlaying(false);
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + mediaItems.length) % mediaItems.length);
   };
 
   const goToNext = () => {
     setIsAutoPlaying(false);
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % mediaItems.length);
   };
 
   const goToSlide = (index: number) => {
@@ -104,20 +126,52 @@ export const Gallery: React.FC<GalleryProps> = ({ t }) => {
 
         {/* Gallery Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4">
-          {images.map((img, index) => (
+          {displayedItems.map((item, index) => (
             <div 
               key={index} 
               className="group relative aspect-square overflow-hidden cursor-pointer border-2 border-transparent hover:border-gold transition-all duration-300"
               onClick={() => openModal(index)}
             >
-              <img 
-                src={img.url} 
-                alt={`Bistro Boudoir ${index + 1}`}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                loading="lazy"
-              />
+              {item.type === 'image' ? (
+                <img 
+                  src={item.url} 
+                  alt={`Bistro Boudoir ${index + 1}`}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
+                />
+              ) : (
+                <div className="w-full h-full bg-off-black flex items-center justify-center relative">
+                  <video 
+                    src={item.url}
+                    className="w-full h-full object-cover"
+                    muted
+                    playsInline
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-16 h-16 bg-gold/80 rounded-full flex items-center justify-center">
+                      <svg className="w-8 h-8 text-off-black ml-1" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           ))}
+          {/* More Frame */}
+          <div 
+            className="group relative aspect-square overflow-hidden cursor-pointer border-2 border-gold bg-off-black flex items-center justify-center transition-all duration-300 hover:bg-gold hover:border-gold"
+            onClick={() => openModal(DISPLAYED_ITEMS_COUNT)}
+          >
+            <div className="text-center">
+              <div className="font-serif text-2xl md:text-3xl text-gold uppercase tracking-widest font-bold mb-2 group-hover:text-off-black transition-colors">
+                {t.gallery.more}
+              </div>
+              <div className="font-serif text-sm md:text-base text-gold/80 uppercase tracking-wider group-hover:text-off-black/80 transition-colors">
+                {mediaItems.length - DISPLAYED_ITEMS_COUNT} {t.gallery.moreItems}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -140,14 +194,24 @@ export const Gallery: React.FC<GalleryProps> = ({ t }) => {
               <X size={28} />
             </button>
 
-            {/* Main Image Display */}
+            {/* Main Media Display */}
             <div className="relative flex-1 overflow-hidden rounded-lg shadow-2xl bg-black">
-              <img 
-                src={images[currentIndex].url} 
-                alt={`Bistro Boudoir ${currentIndex + 1}`}
-                className="w-full h-full object-contain transition-opacity duration-500"
-                key={currentIndex}
-              />
+              {mediaItems[currentIndex].type === 'image' ? (
+                <img 
+                  src={mediaItems[currentIndex].url} 
+                  alt={`Bistro Boudoir ${currentIndex + 1}`}
+                  className="w-full h-full object-contain transition-opacity duration-500"
+                  key={currentIndex}
+                />
+              ) : (
+                <video 
+                  src={mediaItems[currentIndex].url}
+                  controls
+                  autoPlay
+                  className="w-full h-full object-contain"
+                  key={currentIndex}
+                />
+              )}
               
               {/* Navigation Arrows */}
               <button
@@ -165,15 +229,15 @@ export const Gallery: React.FC<GalleryProps> = ({ t }) => {
                 <ChevronRight size={32} />
               </button>
 
-              {/* Image Counter */}
+              {/* Media Counter */}
               <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/50 px-4 py-2 rounded-full text-gold text-sm font-sans backdrop-blur-sm">
-                {currentIndex + 1} / {images.length}
+                {currentIndex + 1} / {mediaItems.length}
               </div>
             </div>
 
             {/* Dot Indicators */}
             <div className="flex justify-center gap-2 mt-4 flex-wrap">
-              {images.map((_, index) => (
+              {mediaItems.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => goToSlide(index)}
@@ -190,7 +254,7 @@ export const Gallery: React.FC<GalleryProps> = ({ t }) => {
             {/* Thumbnail Navigation */}
             <div className="mt-4 overflow-x-auto pb-2">
               <div className="flex gap-3 justify-center">
-                {images.map((img, index) => (
+                {mediaItems.map((item, index) => (
                   <button
                     key={index}
                     onClick={() => goToSlide(index)}
@@ -200,11 +264,28 @@ export const Gallery: React.FC<GalleryProps> = ({ t }) => {
                         : 'border-transparent hover:border-gold/50 opacity-70 hover:opacity-100'
                     }`}
                   >
-                    <img 
-                      src={img.url} 
-                      alt={`Thumbnail ${index + 1}`}
-                      className="w-full h-full object-cover"
-                    />
+                    {item.type === 'image' ? (
+                      <img 
+                        src={item.url} 
+                        alt={`Thumbnail ${index + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-off-black flex items-center justify-center relative">
+                        <video 
+                          src={item.url}
+                          className="w-full h-full object-cover"
+                          muted
+                        />
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <div className="w-6 h-6 bg-gold/80 rounded-full flex items-center justify-center">
+                            <svg className="w-3 h-3 text-off-black ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M8 5v14l11-7z"/>
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    )}
                   </button>
                 ))}
               </div>
