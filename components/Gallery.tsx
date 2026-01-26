@@ -133,12 +133,12 @@ export const Gallery: React.FC<GalleryProps> = ({ t }) => {
               onClick={() => openModal(index)}
             >
               {item.type === 'image' ? (
-                <img 
+              <img 
                   src={item.url} 
-                  alt={`Bistro Boudoir ${index + 1}`}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  loading="lazy"
-                />
+                alt={`Bistro Boudoir ${index + 1}`}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                loading="lazy"
+              />
               ) : (
                 <div className="w-full h-full bg-off-black flex items-center justify-center relative">
                   <video 
@@ -197,12 +197,12 @@ export const Gallery: React.FC<GalleryProps> = ({ t }) => {
             {/* Main Media Display */}
             <div className="relative flex-1 overflow-hidden rounded-lg shadow-2xl bg-black">
               {mediaItems[currentIndex].type === 'image' ? (
-                <img 
+              <img 
                   src={mediaItems[currentIndex].url} 
-                  alt={`Bistro Boudoir ${currentIndex + 1}`}
-                  className="w-full h-full object-contain transition-opacity duration-500"
-                  key={currentIndex}
-                />
+                alt={`Bistro Boudoir ${currentIndex + 1}`}
+                className="w-full h-full object-contain transition-opacity duration-500"
+                key={currentIndex}
+              />
               ) : (
                 <video 
                   src={mediaItems[currentIndex].url}
@@ -265,11 +265,11 @@ export const Gallery: React.FC<GalleryProps> = ({ t }) => {
                     }`}
                   >
                     {item.type === 'image' ? (
-                      <img 
+                    <img 
                         src={item.url} 
-                        alt={`Thumbnail ${index + 1}`}
-                        className="w-full h-full object-cover"
-                      />
+                      alt={`Thumbnail ${index + 1}`}
+                      className="w-full h-full object-cover"
+                    />
                     ) : (
                       <div className="w-full h-full bg-off-black flex items-center justify-center relative">
                         <video 

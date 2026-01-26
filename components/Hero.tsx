@@ -35,7 +35,7 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
           {t.home.subtitle}
         </h2>
         
-        <p className="font-serif text-gray-200 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
+        <p className="font-serif text-gray-200 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10 border-0">
           {t.home.description}
         </p>
         

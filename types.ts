@@ -52,6 +52,7 @@ export interface Translations {
   suggestions: {
     title: string;
     comingSoon: string;
+    wijnkaart: string;
   };
   contact: {
     title: string;

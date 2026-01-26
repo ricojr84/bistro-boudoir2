@@ -6,14 +6,17 @@ interface SuggestionsProps {
   t: Translations;
 }
 
-const valentijnImages = [
-  { url: '/images/valentijnNL.JPG', alt: 'Valentijn Menu Nederlands' },
-  { url: '/images/valentijnFR.jpg', alt: 'Menu de Saint-Valentin Français' }
+const suggestionItems = [
+  { url: '/images/valentijnNL.JPG', alt: 'Valentijn Menu Nederlands', type: 'image' },
+  { url: '/images/valentijnFR.jpg', alt: 'Menu de Saint-Valentin Français', type: 'image' },
+  { url: '/images/suggestieNL.pdf', alt: 'Suggesties Nederlands', type: 'pdf' },
+  { url: '/images/suggestieFR.pdf', alt: 'Suggestions Français', type: 'pdf' }
 ];
 
 export const Suggestions: React.FC<SuggestionsProps> = ({ t }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [suggestionImageError, setSuggestionImageError] = useState(false);
 
   const openPdfInNewWindow = () => {
     const pdfUrl = `/images/${encodeURIComponent('BistroBoudoir-wijnkaart-2024 2.pdf')}`;
@@ -32,11 +35,11 @@ export const Suggestions: React.FC<SuggestionsProps> = ({ t }) => {
   };
 
   const goToPrevious = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + valentijnImages.length) % valentijnImages.length);
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + suggestionItems.length) % suggestionItems.length);
   };
 
   const goToNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % valentijnImages.length);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % suggestionItems.length);
   };
 
   // Keyboard navigation
@@ -45,10 +48,10 @@ export const Suggestions: React.FC<SuggestionsProps> = ({ t }) => {
 
     const handleKeyPress = (e: KeyboardEvent) => {
       if (e.key === 'ArrowLeft') {
-        setCurrentIndex((prevIndex) => (prevIndex - 1 + valentijnImages.length) % valentijnImages.length);
+        setCurrentIndex((prevIndex) => (prevIndex - 1 + suggestionItems.length) % suggestionItems.length);
       }
       if (e.key === 'ArrowRight') {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % valentijnImages.length);
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % suggestionItems.length);
       }
       if (e.key === 'Escape') {
         closeModal();
@@ -70,7 +73,7 @@ export const Suggestions: React.FC<SuggestionsProps> = ({ t }) => {
         </div>
 
         <div className="flex flex-col lg:flex-row gap-5 justify-center items-center">
-          {/* Valentine NL */}
+          {/* Valentine Card (merged) */}
           <div 
             className="bg-white shadow-xl border-t-4 border-gold overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
             style={{ width: '300px', height: '300px' }}
@@ -78,22 +81,36 @@ export const Suggestions: React.FC<SuggestionsProps> = ({ t }) => {
           >
             <img 
               src="/images/valentijnNL.JPG" 
-              alt="Valentijn Menu Nederlands"
+              alt="Valentijn Menu"
               className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
             />
           </div>
 
-          {/* Valentine FR */}
+          {/* Suggestion PDF Card */}
           <div 
             className="bg-white shadow-xl border-t-4 border-gold overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
             style={{ width: '300px', height: '300px' }}
-            onClick={() => openModal(1)}
+            onClick={() => openModal(2)}
           >
-            <img 
-              src="/images/valentijnFR.jpg" 
-              alt="Menu de Saint-Valentin Français"
-              className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
-            />
+            {suggestionImageError ? (
+              <div className="w-full h-full bg-gradient-to-br from-cream to-gold/30 flex items-center justify-center">
+                <div className="text-center p-6">
+                  <div className="font-serif text-3xl md:text-4xl text-off-black uppercase tracking-widest font-bold mb-2">
+                    {t.suggestions.title}
+                  </div>
+                  <div className="font-serif text-lg md:text-xl text-off-black/70 uppercase tracking-wider">
+                    PDF
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <img 
+                src="/images/suggesties.png" 
+                alt={t.suggestions.title}
+                className="w-full h-full object-contain transition-transform duration-300 hover:scale-110"
+                onError={() => setSuggestionImageError(true)}
+              />
+            )}
           </div>
 
           {/* Wine Bottle with PDF New Window */}
@@ -110,11 +127,8 @@ export const Suggestions: React.FC<SuggestionsProps> = ({ t }) => {
             {/* Overlay with wine bottle hint */}
             <div className="absolute inset-0 bg-black/20 flex items-center justify-center transition-all duration-300 hover:bg-black/30">
               <div className="text-center">
-                <div className="font-serif text-3xl md:text-4xl text-gold uppercase tracking-widest font-bold mb-2">
-                  Wijnkaart
-                </div>
-                <div className="font-serif text-lg md:text-xl text-gold/80 uppercase tracking-wider">
-                  Wine List
+                <div className="font-serif text-3xl md:text-4xl text-gold uppercase tracking-widest font-bold">
+                  {t.suggestions.wijnkaart}
                 </div>
               </div>
             </div>
@@ -122,7 +136,7 @@ export const Suggestions: React.FC<SuggestionsProps> = ({ t }) => {
         </div>
       </div>
 
-      {/* Modal for Valentine Images */}
+      {/* Modal for Suggestions */}
       {isModalOpen && (
         <div 
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-4"
@@ -141,45 +155,54 @@ export const Suggestions: React.FC<SuggestionsProps> = ({ t }) => {
               <X size={28} />
             </button>
 
-            {/* Main Image Display */}
+            {/* Main Display */}
             <div className="relative flex-1 overflow-hidden rounded-lg shadow-2xl bg-black">
-              <img 
-                src={valentijnImages[currentIndex].url} 
-                alt={valentijnImages[currentIndex].alt}
-                className="w-full h-full object-contain transition-opacity duration-500"
-                key={currentIndex}
-              />
+              {suggestionItems[currentIndex].type === 'image' ? (
+                <img 
+                  src={suggestionItems[currentIndex].url} 
+                  alt={suggestionItems[currentIndex].alt}
+                  className="w-full h-full object-contain transition-opacity duration-500"
+                  key={currentIndex}
+                />
+              ) : (
+                <iframe 
+                  src={`${suggestionItems[currentIndex].url}#toolbar=1`}
+                  className="w-full h-full"
+                  title={suggestionItems[currentIndex].alt}
+                  key={currentIndex}
+                />
+              )}
               
               {/* Navigation Arrows */}
-              {valentijnImages.length > 1 && (
+              {suggestionItems.length > 1 && (
                 <>
                   <button
                     onClick={goToPrevious}
                     className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-gold p-3 rounded-full transition-all duration-300 z-10 backdrop-blur-sm"
-                    aria-label="Previous image"
+                    aria-label="Previous"
                   >
                     <ChevronLeft size={32} />
                   </button>
                   <button
                     onClick={goToNext}
                     className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-gold p-3 rounded-full transition-all duration-300 z-10 backdrop-blur-sm"
-                    aria-label="Next image"
+                    aria-label="Next"
                   >
                     <ChevronRight size={32} />
                   </button>
                 </>
               )}
 
-              {/* Image Counter */}
+              {/* Counter */}
               <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/50 px-4 py-2 rounded-full text-gold text-sm font-sans backdrop-blur-sm">
-                {currentIndex + 1} / {valentijnImages.length}
+                {currentIndex + 1} / {suggestionItems.length}
               </div>
             </div>
 
             {/* Dot Indicators */}
-            {valentijnImages.length > 1 && (
+            {suggestionItems.length > 1 && (
               <div className="flex justify-center gap-2 mt-4 flex-wrap">
-                {valentijnImages.map((_, index) => (
+                {suggestionItems.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => setCurrentIndex(index)}

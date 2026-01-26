@@ -110,7 +110,8 @@ export const CONTENT: Record<string, Translations> = {
     },
     suggestions: {
       title: 'Onze Suggesties',
-      comingSoon: 'Binnenkort'
+      comingSoon: 'Binnenkort',
+      wijnkaart: 'Wijnkaart'
     },
     contact: {
       title: 'Contacteer Ons',
@@ -260,7 +261,8 @@ export const CONTENT: Record<string, Translations> = {
     },
     suggestions: {
       title: 'Nos Suggestions',
-      comingSoon: 'Bientôt'
+      comingSoon: 'Bientôt',
+      wijnkaart: 'Carte des Vins'
     },
     contact: {
       title: 'Contactez-Nous',
@@ -410,7 +412,8 @@ export const CONTENT: Record<string, Translations> = {
     },
     suggestions: {
       title: 'Our Suggestions',
-      comingSoon: 'Coming Soon'
+      comingSoon: 'Coming Soon',
+      wijnkaart: 'Wine List'
     },
     contact: {
       title: 'Contact Us',
