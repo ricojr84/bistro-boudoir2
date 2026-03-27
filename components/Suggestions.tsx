@@ -7,10 +7,7 @@ interface SuggestionsProps {
 }
 
 const suggestionItems = [
-  { url: '/images/valentijnNL.JPG', alt: 'Valentijn Menu Nederlands', type: 'image' },
-  { url: '/images/valentijnFR.jpg', alt: 'Menu de Saint-Valentin Français', type: 'image' },
-  { url: '/images/suggestieNL.pdf', alt: 'Suggesties Nederlands', type: 'pdf' },
-  { url: '/images/suggestieFR.pdf', alt: 'Suggestions Français', type: 'pdf' }
+  { url: '/images/asperges2026.pdf', alt: 'Asperges 2026', type: 'pdf' }
 ];
 
 export const Suggestions: React.FC<SuggestionsProps> = ({ t }) => {
@@ -73,24 +70,11 @@ export const Suggestions: React.FC<SuggestionsProps> = ({ t }) => {
         </div>
 
         <div className="flex flex-col lg:flex-row gap-5 justify-center items-center">
-          {/* Valentine Card (merged) */}
-          <div 
-            className="bg-white shadow-xl border-t-4 border-gold overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
-            style={{ width: '300px', height: '300px' }}
-            onClick={() => openModal(0)}
-          >
-            <img 
-              src="/images/valentijnNL.JPG" 
-              alt="Valentijn Menu"
-              className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
-            />
-          </div>
-
           {/* Suggestion PDF Card */}
           <div 
             className="bg-white shadow-xl border-t-4 border-gold overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
             style={{ width: '300px', height: '300px' }}
-            onClick={() => openModal(2)}
+            onClick={() => openModal(0)}
           >
             {suggestionImageError ? (
               <div className="w-full h-full bg-gradient-to-br from-cream to-gold/30 flex items-center justify-center">
