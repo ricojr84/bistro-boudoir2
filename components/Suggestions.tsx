@@ -111,7 +111,7 @@ export const Suggestions: React.FC<SuggestionsProps> = ({ t }) => {
             {/* Overlay with wine bottle hint */}
             <div className="absolute inset-0 bg-black/20 flex items-center justify-center transition-all duration-300 hover:bg-black/30">
               <div className="text-center">
-                <div className="font-serif text-3xl md:text-4xl text-gold uppercase tracking-widest font-bold">
+                <div className="font-serif text-[30px] text-gold uppercase tracking-widest px-[10px]">
                   {t.suggestions.wijnkaart}
                 </div>
               </div>
