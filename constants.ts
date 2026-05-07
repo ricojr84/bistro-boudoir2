@@ -25,7 +25,6 @@ export const CONTENT: Record<string, Translations> = {
         starters: {
           title: 'Voorgerechten',
           items: [
-            { name: 'Trio van Huisgemaakte Paté', description: 'Rund, kip & eend • Luikse siroop • seizoensfruit • toast', price: '€ 22' },
             { name: 'Foie Gras', description: 'Gebakken • gemarineerde peren • brioche • demi-glacesaus', price: '€ 31', extra: 'aangepaste wijn: Château Simon – Sauternes – Bordeaux – Frankrijk € 9,50 per glas' },
             { name: 'Garnalenkroketten', description: 'Handgepelde Zeebrugse garnalen • crème van de Noordzee • citroen (1-2 stuks)', price: '€ 15-23' },
             { name: 'Handgepelde Zeebrugse Garnalen', description: 'Sappige tomaat op tomatencrumble • handgepelde garnalen • huisgemaakte cocktailsaus', price: '€ 26' },
@@ -176,7 +175,6 @@ export const CONTENT: Record<string, Translations> = {
         starters: {
           title: 'Entrées',
           items: [
-            { name: 'Trio de Pâtés Maison', description: 'Bœuf, poulet & canard • sirop de Liège • fruits de saison • toast', price: '€ 22' },
             { name: 'Foie Gras', description: 'Poêlé • poires marinées • brioche • sauce demi-glace', price: '€ 31', extra: 'vin adapté: Château Simon – Sauternes – Bordeaux – France € 9,50 par verre' },
             { name: 'Croquettes de Crevettes', description: 'Crevettes de Zeebrugge épluchées à la main • crème de la Mer du Nord • citron (1-2 pièces)', price: '€ 15-23' },
             { name: 'Crevettes de Zeebrugge Épluchées à la Main', description: 'Tomate juteuse sur crumble de tomate • crevettes épluchées à la main • sauce cocktail maison', price: '€ 26' },
@@ -327,7 +325,6 @@ export const CONTENT: Record<string, Translations> = {
         starters: {
           title: 'Starters',
           items: [
-            { name: 'Trio of Homemade Paté', description: 'Beef, chicken & duck • Liège syrup • seasonal fruit • toast', price: '€ 22' },
             { name: 'Foie Gras', description: 'Pan-fried • marinated pears • brioche • demi-glace sauce', price: '€ 31', extra: 'matching wine: Château Simon – Sauternes – Bordeaux – France € 9.50 per glass' },
             { name: 'Shrimp Croquettes', description: 'Hand-peeled Zeebrugge shrimp • North Sea cream • lemon (1-2 pieces)', price: '€ 15-23' },
             { name: 'Hand-peeled Zeebrugge Shrimp', description: 'Juicy tomato on tomato crumble • hand-peeled shrimp • homemade cocktail sauce', price: '€ 26' },
