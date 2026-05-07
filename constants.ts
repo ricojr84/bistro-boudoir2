@@ -143,7 +143,7 @@ export const CONTENT: Record<string, Translations> = {
           { day: 'Donderdag', time: '12:00 - 15:00 | 18:00 - 21:00' },
           { day: 'Vrijdag', time: '12:00 - 15:00 | 18:00 - 21:00' },
           { day: 'Zaterdag', time: '12:00 - 15:00 | 18:00 - 21:00' },
-          { day: 'Zondag', time: '12:00 - 15:00' }
+          { day: 'Zondag', time: '12:00 -15:00  | 18:00 - 21:00' }
         ]
       },
       address: 'Lippenslaan 141, 8300 Knokke',
@@ -294,7 +294,7 @@ export const CONTENT: Record<string, Translations> = {
           { day: 'Jeudi', time: '12:00 - 15:00 | 18:00 - 21:00' },
           { day: 'Vendredi', time: '12:00 - 15:00 | 18:00 - 21:00' },
           { day: 'Samedi', time: '12:00 - 15:00 | 18:00 - 21:00' },
-          { day: 'Dimanche', time: '12:00 - 15:00' }
+          { day: 'Dimanche', time: '12:00 -15:00  | 18:00 - 21:00' }
         ]
       },
       address: 'Lippenslaan 141, 8300 Knokke',
@@ -445,7 +445,7 @@ export const CONTENT: Record<string, Translations> = {
           { day: 'Thursday', time: '12:00 - 15:00 | 18:00 - 21:00' },
           { day: 'Friday', time: '12:00 - 15:00 | 18:00 - 21:00' },
           { day: 'Saturday', time: '12:00 - 15:00 | 18:00 - 21:00' },
-          { day: 'Sunday', time: '12:00 - 15:00' }
+          { day: 'Sunday', time: '12:00 -15:00  | 18:00 - 21:00' }
         ]
       },
       address: 'Lippenslaan 141, 8300 Knokke',
