@@ -34,10 +34,10 @@ export interface Translations {
     subtitle: string;
     childrenNote: string;
     categories: {
+      bites: MenuCategory;
       starters: MenuCategory;
+      salads: MenuCategory;
       mains: MenuCategory;
-      gourmand: MenuCategory;
-      specials: MenuCategory;
       drinks: MenuCategory;
       warmDrinks: MenuCategory;
       desserts: MenuCategory;

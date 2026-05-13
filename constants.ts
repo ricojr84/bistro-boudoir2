@@ -22,62 +22,68 @@ export const CONTENT: Record<string, Translations> = {
       subtitle: 'Een culinaire reis door Frankrijk',
       childrenNote: 'EEN FRISSE SALADE KAN STEEDS BESTELD WORDEN ALS SUPPLEMENT +3€',
       categories: {
+        bites: {
+          title: 'Bites',
+          note: 'vanaf 15 u tot 21 u',
+          items: [
+            { name: 'Jamón Ibérico de Bellota', description: 'Fijn gesneden Ibérico-ham', price: '€ 24' },
+            { name: 'Steak Bites', description: 'Malse rundsbites in look-rozemarijnboter • geserveerd met toast', price: '€ 22' },
+            { name: 'Assortiment Apero-Balletjes', description: 'Selder-truffelcrème • gefrituurde peterselie • citroen', price: '€ 18' },
+            { name: 'Oesters Natuur', description: 'Peper & citroen (3-6 stuks)', price: '€ 14 - € 24' },
+            { name: 'Burrata', description: 'Romige burrata • geserveerd met truffeltoast', price: '€ 19' },
+            { name: 'Gambas', description: '4 easy peel gamba\'s • olijfolie • witte wijn • look • limoen', price: '€ 21' },
+            { name: '200 gr Noordzeegarnalen', description: 'Om zelf te pellen', price: '€ 14' }
+          ]
+        },
         starters: {
           title: 'Voorgerechten',
           items: [
-            { name: 'Foie Gras', description: 'Gebakken • gemarineerde peren • brioche • demi-glacesaus', price: '€ 31', extra: 'aangepaste wijn: Château Simon – Sauternes – Bordeaux – Frankrijk € 9,50 per glas' },
-            { name: 'Garnalenkroketten', description: 'Handgepelde Zeebrugse garnalen • crème van de Noordzee • citroen (1-2 stuks)', price: '€ 15-23' },
-            { name: 'Handgepelde Zeebrugse Garnalen', description: 'Sappige tomaat op tomatencrumble • handgepelde garnalen • huisgemaakte cocktailsaus', price: '€ 26' },
-            { name: 'Sint-Jakobsnoten', description: 'Gebakken • champagnesaus • zalmkaviaar', price: '€ 29' }
+            { name: 'Gravlax', description: 'Huisgemarineerde zalm • zachte crème van ansjovis-roomkaas • zalmkaviaar', price: '€ 24' },
+            { name: 'Handgepelde Grijze Garnalen van de Noordzee', description: 'Trio van tomaat • handgepelde garnalen • fijne mayonaise', price: '€ 26' },
+            { name: 'Burrata & Zomerse Garnituur', description: 'Variatie van kerstomaat • romige burrata • aardbei', price: '€ 21' },
+            { name: 'Rundscarpaccio', description: 'Dun gesneden rundvlees • truffelmayonaise • Parmezaan kaas • rucola', price: '€ 23' },
+            { name: 'Garnaalkroketten', description: 'Handgepelde Zeebrugse garnalen • licht-pikante crème van de Noordzee • citroen (1-2 stuks)', price: '€ 15 - € 23' }
+          ]
+        },
+        salads: {
+          title: 'Salades',
+          items: [
+            { name: 'Warme Thaise Rundsalade', description: 'Warme rundreepjes • koriander • rode ui • chili • sesamzaadjes', price: '€ 29' },
+            { name: 'Salade met Gravlax', description: 'Gravlax van zalm • mosterd-limoendressing • rode biet • courgette', price: '€ 27' }
           ]
         },
         mains: {
           title: 'Hoofdgerechten',
           items: [
-            { name: 'Rund', description: 'Filet pur • frietjes • keuze uit Roquefort-, champignon- of pepersaus', price: '€ 39' },
-            { name: 'Eendenborst', description: 'Kersensaus • rode bieten-gelée • krokante parmezaan • pavé', price: '€ 36' },
-            { name: 'Tarbot', description: 'Filet • champagnesaus • seizoensgroenten • krielaardappeltje', price: '€ 52', extra: '* extra handgepelde Zeebrugse garnalen + € 5 *' },
-            { name: 'Zeetong', description: 'Gebakken • frietjes • tartaarsaus', price: '€ 49' },
+            { name: 'Rund', description: 'Filet pur • frieten • keuze uit Roquefort-, champignon- of pepersaus', price: '€ 39' },
+            { name: 'Eendenborst', description: 'Kersensaus • gekarameliseerde perzik • frieten', price: '€ 36' },
+            { name: 'Entrecote ±500g', description: 'Gebroken zwarte peper • peperroomsaus • frieten', price: '€ 45' },
+            { name: 'Vol au Vent Klassiek', description: 'Hoevekip • bladerdeeg • gehaktballen • champignons • frieten', price: '€ 29' },
+            { name: 'Zeetong Meunière', description: 'Beurre noisette • kappertjes • citroen • frieten', price: '€ 49' },
             { name: 'Kabeljauw', description: 'Haasje • garnalenbisque • handgepelde Zeebrugse garnalen • zalmkaviaar • puree', price: '€ 41' },
             { name: 'Noordzee Bouillabaisse', description: 'Toast • rouille • gruyère', price: '€ 38' },
-            { name: 'Vol au Vent Klassiek', description: 'Hoevekip • bladerdeeg • gehaktballetjes • champignons • frietjes', price: '€ 28' },
-            { name: 'Kalf', description: 'Gebakken kalfszwezeriken • seizoensgroenten • honing-mosterdsaus • krielaardappelen', price: '€ 48' }
+            { name: 'Zeebaars', description: 'Filet • beurre blanc • limoen • seizoengroenten', price: '€ 34' }
           ]
         },
-        gourmand: {
-          title: 'Menu Gourmand',
-          note: 'DE MENU\'S WORDEN PER TAFEL GESERVEERD.',
-          items: [
-            { name: 'Voorgerecht', description: 'NOORDZEE BOUILLABAISE\nToast • rouille • gruyère\nof\nRUNDSTONG CARPACCIO\nRemouladesaus • kappertjes • olijfolie', price: '' },
-            { name: 'Hoofdgerecht', description: 'ZEETONG\nGebakken • frietjes • tartaarsaus (+ € 12)\nof\nVARKENSWANGETJES\nGroenten • krieltjes • saus van donker kasteelbier', price: '' },
-            { name: 'Dessert', description: 'Dame Blanche\nof\nIrish Coffee', price: '' },
-            { name: 'Prijs', description: 'per persoon', price: '€ 58' }
-          ]
-        },
-        specials: {
-          title: 'Specials',
-          items: [
-            { name: 'Jamon Iberico de Bellota', description: 'Tapas bord van 50 gr voor 2 personen', price: '€ 20' },
-            { name: 'Aperitief Assortiment', description: '3 soorten verfijnde apero-balletjes', price: '€ 15' }
-          ]
-        },
+
         drinks: {
           title: 'Aperitief',
           items: [
             { name: 'Coupe Champagne', price: '€ 14' },
             { name: 'Glaasje Cava "Pont de Ferro"', price: '€ 9' },
-            { name: 'Kirr witte wijn', price: '€ 9' },
-            { name: 'Kirr royal (Champagne)', price: '€ 14' },
-            { name: 'Porto \'10 years\' rood', price: '€ 10' },
+            { name: 'Kirr witte wijn', price: '€ 10' },
+            { name: 'Kirr royal (Champagne)', price: '€ 15' },
+            { name: 'Porto \'10 years\' rood', price: '€ 11' },
             { name: 'Martini wit/rood', price: '€ 9' },
-            { name: 'Pineau des Charentes', price: '€ 8' },
-            { name: 'Picon witte wijn', price: '€ 11' },
+            { name: 'Pineau des Charentes', price: '€ 9' },
+            { name: 'Picon witte wijn', price: '€ 12' },
             { name: 'Ricard', price: '€ 9' },
             { name: 'Campari met vers fruitsap', price: '€ 14' },
-            { name: 'Gin + Tonic', description: 'Bombay • Fever Tree Mediterranean € 15\nHendrickx • Fever Tree Indian tonic € 16\nMonkey 47 • Fever Tree Indian tonic € 16\nGin Mare • Fever Tree Mediterranean € 16', price: '' },
-            { name: 'Cocktails', description: 'Espresso Martini (Vodka • koffielikeur • espresso) € 15\nPornstar Martini (Vodka • passievruchtlikeur • Cava on the side) € 15\nMojito (witte rum • limoen • munt • soda water) € 15\nMoscow mule (Vodka • limoen • gingerbeer) € 15\nNegroni (Campari • rode Martini • Gin) € 14\nApérol Spritz (Apérol • Cava • bruiswater) € 13\nLimoncello spritz (Limoncello • Cava • bruiswater) € 13', price: '' },
-            { name: 'Mocktails 0%', description: 'Boudoir (gingerbeer • veenbes • sinaas) € 11\nMojito 0% (limoen • munt • soda water) € 11\nGin boudoir 0% (Fever Tree raspberry & rhubarb) € 14', price: '' },
-            { name: 'Bier op Fles', description: 'Stella € 4\nLeffe blond € 5\nDuvel € 5\nRochefort € 5\nStella 0% € 4', price: '' }
+            { name: 'Gin + Tonic', description: 'Hendrickx • Fever Tree Indian tonic € 16\nGin Mare • Fever Tree Mediterranean € 17', price: '' },
+            { name: 'Cocktails', description: 'Espresso Martini (Vodka • koffielikeur • espresso) € 16\nPornstar Martini (Vodka • passievruchtlikeur • cava on the side) € 16\nLazy Red Cheeks (Vodka • framboos • violetsiroop • cranberry • limoen) € 15\nMojito (witte rum • limoen • munt • bruiswater) € 15\nNegroni (Campari • rode Martini • Gin) € 15\nNegroni Royal (Campari • rode martini • champagne) € 16\nPiña Colada (Rum • kokos • ananas) € 16\nApérol Spritz (Apérol • cava • bruiswater) € 14\nLimoncello Spritz (Limoncello • cava • bruiswater) € 14\nWitte Sangria Maison (Witte wijn • vers fruit • citrus • munt) € 14\nRode Sangria Maison (Rode wijn • rood fruit • sinaasappel • kaneeltoets) € 14', price: '' },
+            { name: 'Mocktails 0%', description: 'Boudoir Mocktail (Gemberbeer • veenbes • sinaasappel) € 12\nMojito 0% (Limoen • munt • bruiswater) € 12\nBoudoir Sunset (Passievrucht • limoen • vanille • bruiswater) € 13\nGarden Tonic 0% (Grapefruit • rozemarijn • premium tonic) € 13', price: '' },
+            { name: 'Alcoholvrije Wijnen', description: 'Witte wijn 0% - Licht House Sauvignon Blanc € 8\nRosé wijn 0% - Nephalia Rosé € 8', price: '' },
+            { name: 'Bier op Fles', description: 'Stella Artois € 4,5\nLeffe blond € 5,5\nDuvel € 6\nRochefort € 6\nStella 0,0% € 4,5\nSportzot 0,4% € 5,5', price: '' }
           ]
         },
         warmDrinks: {
@@ -172,62 +178,68 @@ export const CONTENT: Record<string, Translations> = {
       subtitle: 'Un voyage culinaire à travers la France',
       childrenNote: 'UNE SALADE FRAÎCHE PEUT TOUJOURS ÊTRE COMMANDÉE EN SUPPLÉMENT +3€',
       categories: {
+        bites: {
+          title: 'Bites',
+          note: 'de 15 h à 21 h',
+          items: [
+            { name: 'Jamón Ibérico de Bellota', description: 'Jambon ibérique finement tranché', price: '€ 24' },
+            { name: 'Steak Bites', description: 'Bouchées de bœuf tendres au beurre à l\'ail et au romarin • servies avec du toast', price: '€ 22' },
+            { name: 'Assortiment de Bouchées Apéritives', description: 'Crème de céleri à la truffe • persil frit • citron', price: '€ 18' },
+            { name: 'Huîtres Nature', description: 'Poivre & citron (3-6 pièces)', price: '€ 14 - € 24' },
+            { name: 'Burrata', description: 'Burrata onctueuse • servie avec des toasts à la truffe', price: '€ 19' },
+            { name: 'Gambas', description: '4 gambas faciles à décortiquer • huile d\'olive • vin blanc • ail • citron vert', price: '€ 21' },
+            { name: '200 g de Crevettes de la Mer du Nord', description: 'À décortiquer soi-même', price: '€ 14' }
+          ]
+        },
         starters: {
           title: 'Entrées',
           items: [
-            { name: 'Foie Gras', description: 'Poêlé • poires marinées • brioche • sauce demi-glace', price: '€ 31', extra: 'vin adapté: Château Simon – Sauternes – Bordeaux – France € 9,50 par verre' },
-            { name: 'Croquettes de Crevettes', description: 'Crevettes de Zeebrugge épluchées à la main • crème de la Mer du Nord • citron (1-2 pièces)', price: '€ 15-23' },
-            { name: 'Crevettes de Zeebrugge Épluchées à la Main', description: 'Tomate juteuse sur crumble de tomate • crevettes épluchées à la main • sauce cocktail maison', price: '€ 26' },
-            { name: 'Coquilles Saint-Jacques', description: 'Poêlées • sauce champagne • caviar de saumon', price: '€ 29' }
+            { name: 'Gravlax', description: 'Saumon mariné maison • crème onctueuse au fromage frais et aux anchois • caviar de saumon', price: '€ 24' },
+            { name: 'Crevettes Grises de la Mer du Nord', description: 'Trio de tomates • crevettes décortiquées à la main • mayonnaise fine', price: '€ 26' },
+            { name: 'Burrata & Garniture Estivale', description: 'Assortiment de tomates cerises • burrata crémeuse • fraise', price: '€ 21' },
+            { name: 'Carpaccio de Bœuf', description: 'Fines tranches de bœuf • mayonnaise à la truffe • parmesan • roquette', price: '€ 23' },
+            { name: 'Croquettes de Crevettes', description: 'Crevettes de Zeebrugge décortiquées à la main • crème légèrement épicée de la Mer du Nord • citron (1-2 pièces)', price: '€ 15 - € 23' }
+          ]
+        },
+        salads: {
+          title: 'Salades',
+          items: [
+            { name: 'Salade Thaïlandaise Tiède au Bœuf', description: 'Lanières de bœuf tièdes • coriandre • oignon rouge • piment • graines de sésame', price: '€ 29' },
+            { name: 'Salade au Gravlax', description: 'Gravlax de saumon • vinaigrette à la moutarde et au citron vert • betterave rouge • courgette', price: '€ 27' }
           ]
         },
         mains: {
           title: 'Plats Principaux',
           items: [
-            { name: 'Bœuf', description: 'Filet pur • frites • choix de sauce Roquefort, champignon ou poivre', price: '€ 39' },
-            { name: 'Magret de Canard', description: 'Sauce aux cerises • gelée de betteraves rouges • parmesan croustillant • pavé', price: '€ 36' },
-            { name: 'Turbot', description: 'Filet • sauce champagne • légumes de saison • pommes de terre nouvelles', price: '€ 52', extra: '* crevettes de Zeebrugge épluchées à la main supplémentaires + € 5 *' },
-            { name: 'Sole', description: 'Poêlée • frites • sauce tartare', price: '€ 49' },
-            { name: 'Cabillaud', description: 'Filet • bisque de crevettes • crevettes de Zeebrugge épluchées à la main • caviar de saumon • purée', price: '€ 41' },
+            { name: 'Bœuf', description: 'Filet pur • frites • au choix : sauce au roquefort, aux champignons ou au poivre', price: '€ 39' },
+            { name: 'Magret de Canard', description: 'Sauce aux cerises • pêches caramélisées • frites', price: '€ 36' },
+            { name: 'Entrecôte ±500g', description: 'Poivre noir concassé • sauce à la crème au poivre • frites', price: '€ 45' },
+            { name: 'Vol au Vent Classique', description: 'Poulet fermier • pâte feuilletée • boulettes de viande • champignons • frites', price: '€ 29' },
+            { name: 'Sole Meunière', description: 'Beurre noisette • câpres • citron • frites', price: '€ 49' },
+            { name: 'Cabillaud', description: 'Filet • bisque de crevettes • crevettes de Zeebrugge décortiquées à la main • caviar de saumon • purée', price: '€ 41' },
             { name: 'Bouillabaisse de la Mer du Nord', description: 'Toast • rouille • gruyère', price: '€ 38' },
-            { name: 'Vol au Vent Classique', description: 'Poulet de ferme • pâte feuilletée • boulettes de viande • champignons • frites', price: '€ 28' },
-            { name: 'Veau', description: 'Ris de veau poêlés • légumes de saison • sauce miel-moutarde • pommes de terre nouvelles', price: '€ 48' }
+            { name: 'Bar', description: 'Filet • beurre blanc • citron vert • légumes de saison', price: '€ 34' }
           ]
         },
-        gourmand: {
-          title: 'Menu Gourmand',
-          note: 'LES MENUS SONT SERVIS PAR TABLE.',
-          items: [
-            { name: 'Entrée', description: 'BOUILLABAISSE DE LA MER DU NORD\nToast • rouille • gruyère\nou\nCARPACCIO DE LANGUE DE BŒUF\nSauce rémoulade • câpres • huile d\'olive', price: '' },
-            { name: 'Plat Principal', description: 'SOLE\nPoêlée • frites • sauce tartare (+ € 12)\nou\nJOUES DE PORC\nLégumes • pommes de terre nouvelles • sauce à la bière brune de château', price: '' },
-            { name: 'Dessert', description: 'Dame Blanche\nou\nIrish Coffee', price: '' },
-            { name: 'Prix', description: 'par personne', price: '€ 58' }
-          ]
-        },
-        specials: {
-          title: 'Spécialités',
-          items: [
-            { name: 'Jamon Iberico de Bellota', description: 'Assiette de tapas de 50 gr pour 2 personnes', price: '€ 20' },
-            { name: 'Assortiment Apéritif', description: '3 sortes de boulettes apéritives raffinées', price: '€ 15' }
-          ]
-        },
+
         drinks: {
-          title: 'Apéritif & Boissons',
+          title: 'Apéritif',
           items: [
-            { name: 'Coupe Champagne', price: '€ 14' },
-            { name: 'Glaasje Cava "Pont de Ferro"', price: '€ 9' },
-            { name: 'Kirr witte wijn', price: '€ 9' },
-            { name: 'Kirr royal (Champagne)', price: '€ 14' },
-            { name: 'Porto \'10 ans\' rouge', price: '€ 10' },
+            { name: 'Coupe de Champagne', price: '€ 14' },
+            { name: 'Cava "Pont de Ferro"', price: '€ 9' },
+            { name: 'Kirr vin blanc', price: '€ 10' },
+            { name: 'Kirr royal (Champagne)', price: '€ 15' },
+            { name: 'Porto \'10 years\' rouge', price: '€ 11' },
             { name: 'Martini blanc/rouge', price: '€ 9' },
-            { name: 'Pineau des Charentes', price: '€ 8' },
-            { name: 'Picon vin blanc', price: '€ 11' },
+            { name: 'Pineau des Charentes', price: '€ 9' },
+            { name: 'Picon vin blanc', price: '€ 12' },
             { name: 'Ricard', price: '€ 9' },
-            { name: 'Campari avec jus de fruits frais', price: '€ 14' },
-            { name: 'Gin + Tonic', description: 'Bombay • Fever Tree Mediterranean € 15\nHendrickx • Fever Tree Indian tonic € 16\nMonkey 47 • Fever Tree Indian tonic € 16\nGin Mare • Fever Tree Mediterranean € 16', price: '' },
-            { name: 'Cocktails', description: 'Espresso Martini (Vodka • liqueur de café • espresso) € 15\nPornstar Martini (Vodka • liqueur de fruit de la passion • Cava à côté) € 15\nMojito (rhum blanc • citron vert • menthe • eau gazeuse) € 15\nMoscow mule (Vodka • citron vert • gingerbeer) € 15\nNegroni (Campari • Martini rouge • Gin) € 14\nApérol Spritz (Apérol • Cava • eau pétillante) € 13\nLimoncello spritz (Limoncello • Cava • eau pétillante) € 13', price: '' },
-            { name: 'Mocktails 0%', description: 'Boudoir (gingerbeer • canneberge • orange) € 11\nMojito 0% (citron vert • menthe • eau gazeuse) € 11\nGin boudoir 0% (Fever Tree framboise & rhubarbe) € 14', price: '' },
-            { name: 'Bière en Bouteille', description: 'Stella € 4\nLeffe blond € 5\nDuvel € 5\nRochefort € 5\nStella 0% € 4', price: '' }
+            { name: 'Campari avec jus d\'orange pressé', price: '€ 14' },
+            { name: 'Gin + Tonic', description: 'Hendrickx • Fever Tree Indian tonic € 16\nGin Mare • Fever Tree Mediterranean € 17', price: '' },
+            { name: 'Cocktails', description: 'Espresso Martini (Vodka • liqueur de café • espresso) € 16\nPornstar Martini (Vodka • liqueur de fruit de la passion • cava on the side) € 16\nLazy Red Cheeks (Vodka • framboise • sirop de violette • canneberge • citron vert) € 15\nMojito (Rhum blanc • citron vert • menthe • eau gazeuse) € 15\nNegroni (Campari • Martini rouge • Gin) € 15\nNegroni Royal (Campari • Martini rouge • champagne) € 16\nPiña Colada (Rum • kokos • ananas) € 16\nApérol Spritz (Apérol • cava • eau gazeuse) € 14\nLimoncello spritz (Limoncello • cava • eau gazeuse) € 14\nWitte Sangria Maison (Vin blanc • fruits frais • citrus • menthe) € 14\nRode Sangria Maison (Vin rouge • fruits rouges • orange • note de cannelle) € 14', price: '' },
+            { name: 'Mocktails 0%', description: 'Boudoir Mocktail (Bière au gingembre • canneberge • orange) € 12\nMojito 0% (Citron vert • menthe • eau gazeuse) € 12\nBoudoir Sunset (Fruit de la passion • citron vert • vanille • eau gazeuse) € 13\nGarden Tonic 0% (Pamplemousse • romarin • tonic premium) € 13', price: '' },
+            { name: 'Vins Sans Alcool', description: 'Vin blanc 0% - Licht House Sauvignon Blanc € 8\nVin rosé 0% - Nephalia Rosé € 8', price: '' },
+            { name: 'Bière en Bouteille', description: 'Stella Artois € 4,5\nLeffe blond € 5,5\nDuvel € 6\nRochefort € 6\nStella 0,0% € 4,5\nSportzot 0,4% € 5,5', price: '' }
           ]
         },
         warmDrinks: {
@@ -322,62 +334,68 @@ export const CONTENT: Record<string, Translations> = {
       subtitle: 'A culinary journey through France',
       childrenNote: 'A FRESH SALAD CAN ALWAYS BE ORDERED AS A SUPPLEMENT +3€',
       categories: {
+        bites: {
+          title: 'Bites',
+          note: 'from 3 PM to 9 PM',
+          items: [
+            { name: 'Jamón Ibérico de Bellota', description: 'Thinly sliced Ibérico ham', price: '€ 24' },
+            { name: 'Steak Bites', description: 'Tender beef bites in garlic-rosemary butter • served with toast', price: '€ 22' },
+            { name: 'Aperitif Ball Assortment', description: 'Celery-truffle cream • fried parsley • lemon', price: '€ 18' },
+            { name: 'Oysters Natural', description: 'Pepper & lemon (3-6 pieces)', price: '€ 14 - € 24' },
+            { name: 'Burrata', description: 'Creamy burrata • served with truffle toast', price: '€ 19' },
+            { name: 'Gambas', description: '4 easy peel gambas • olive oil • white wine • garlic • lime', price: '€ 21' },
+            { name: '200 g North Sea Shrimp', description: 'To peel yourself', price: '€ 14' }
+          ]
+        },
         starters: {
           title: 'Starters',
           items: [
-            { name: 'Foie Gras', description: 'Pan-fried • marinated pears • brioche • demi-glace sauce', price: '€ 31', extra: 'matching wine: Château Simon – Sauternes – Bordeaux – France € 9.50 per glass' },
-            { name: 'Shrimp Croquettes', description: 'Hand-peeled Zeebrugge shrimp • North Sea cream • lemon (1-2 pieces)', price: '€ 15-23' },
-            { name: 'Hand-peeled Zeebrugge Shrimp', description: 'Juicy tomato on tomato crumble • hand-peeled shrimp • homemade cocktail sauce', price: '€ 26' },
-            { name: 'Scallops', description: 'Pan-fried • champagne sauce • salmon caviar', price: '€ 29' }
+            { name: 'Gravlax', description: 'House-marinated salmon • soft anchovy cream cheese cream • salmon caviar', price: '€ 24' },
+            { name: 'Hand-peeled Grey North Sea Shrimp', description: 'Trio of tomatoes • hand-peeled shrimp • fine mayonnaise', price: '€ 26' },
+            { name: 'Burrata & Summer Garnish', description: 'Cherry tomato variation • creamy burrata • strawberry', price: '€ 21' },
+            { name: 'Beef Carpaccio', description: 'Thinly sliced beef • truffle mayonnaise • Parmesan cheese • arugula', price: '€ 23' },
+            { name: 'Shrimp Croquettes', description: 'Hand-peeled Zeebrugge shrimp • lightly spiced North Sea cream • lemon (1-2 pieces)', price: '€ 15 - € 23' }
+          ]
+        },
+        salads: {
+          title: 'Salads',
+          items: [
+            { name: 'Warm Thai Beef Salad', description: 'Warm beef strips • coriander • red onion • chili • sesame seeds', price: '€ 29' },
+            { name: 'Gravlax Salad', description: 'Salmon gravlax • mustard-lime dressing • red beet • zucchini', price: '€ 27' }
           ]
         },
         mains: {
           title: 'Main Courses',
           items: [
             { name: 'Beef', description: 'Pure fillet • fries • choice of Roquefort, mushroom or pepper sauce', price: '€ 39' },
-            { name: 'Duck Breast', description: 'Cherry sauce • red beet jelly • crispy parmesan • pavé', price: '€ 36' },
-            { name: 'Turbot', description: 'Fillet • champagne sauce • seasonal vegetables • new potatoes', price: '€ 52', extra: '* extra hand-peeled Zeebrugge shrimp + € 5 *' },
-            { name: 'Dover Sole', description: 'Pan-fried • fries • tartar sauce', price: '€ 49' },
+            { name: 'Duck Breast', description: 'Cherry sauce • caramelized peaches • fries', price: '€ 36' },
+            { name: 'Entrecote ±500g', description: 'Crushed black pepper • pepper cream sauce • fries', price: '€ 45' },
+            { name: 'Classic Vol au Vent', description: 'Farm chicken • puff pastry • meatballs • mushrooms • fries', price: '€ 29' },
+            { name: 'Sole Meunière', description: 'Beurre noisette • capers • lemon • fries', price: '€ 49' },
             { name: 'Cod', description: 'Fillet • shrimp bisque • hand-peeled Zeebrugge shrimp • salmon caviar • purée', price: '€ 41' },
             { name: 'North Sea Bouillabaisse', description: 'Toast • rouille • gruyère', price: '€ 38' },
-            { name: 'Classic Vol au Vent', description: 'Farm chicken • puff pastry • meatballs • mushrooms • fries', price: '€ 28' },
-            { name: 'Veal', description: 'Pan-fried veal sweetbreads • seasonal vegetables • honey-mustard sauce • new potatoes', price: '€ 48' }
+            { name: 'Sea Bass', description: 'Fillet • beurre blanc • lime • seasonal vegetables', price: '€ 34' }
           ]
         },
-        gourmand: {
-          title: 'Gourmand Menu',
-          note: 'THE MENUS ARE SERVED PER TABLE.',
-          items: [
-            { name: 'Starter', description: 'NORTH SEA BOUILLABAISSE\nToast • rouille • gruyère\nor\nBEEF TONGUE CARPACCIO\nRémoulade sauce • capers • olive oil', price: '' },
-            { name: 'Main Course', description: 'DOVER SOLE\nPan-fried • fries • tartar sauce (+ € 12)\nor\nPORK CHEEKS\nVegetables • new potatoes • dark castle beer sauce', price: '' },
-            { name: 'Dessert', description: 'Dame Blanche\nor\nIrish Coffee', price: '' },
-            { name: 'Price', description: 'per person', price: '€ 58' }
-          ]
-        },
-        specials: {
-          title: 'Specials',
-          items: [
-            { name: 'Jamon Iberico de Bellota', description: 'Tapas plate of 50 gr for 2 people', price: '€ 20' },
-            { name: 'Aperitif Assortment', description: '3 types of refined aperitif balls', price: '€ 15' }
-          ]
-        },
+
         drinks: {
-          title: 'Aperitif & Drinks',
+          title: 'Aperitif',
           items: [
             { name: 'Champagne Glass', price: '€ 14' },
-            { name: 'Glass of Cava "Pont de Ferro"', price: '€ 9' },
-            { name: 'Kir white wine', price: '€ 9' },
-            { name: 'Kir royal (Champagne)', price: '€ 14' },
-            { name: 'Porto \'10 years\' red', price: '€ 10' },
+            { name: 'Cava "Pont de Ferro"', price: '€ 9' },
+            { name: 'Kir white wine', price: '€ 10' },
+            { name: 'Kir royal (Champagne)', price: '€ 15' },
+            { name: 'Porto \'10 years\' red', price: '€ 11' },
             { name: 'Martini white/red', price: '€ 9' },
-            { name: 'Pineau des Charentes', price: '€ 8' },
-            { name: 'Picon white wine', price: '€ 11' },
+            { name: 'Pineau des Charentes', price: '€ 9' },
+            { name: 'Picon white wine', price: '€ 12' },
             { name: 'Ricard', price: '€ 9' },
-            { name: 'Campari with fresh fruit juice', price: '€ 14' },
-            { name: 'Gin + Tonic', description: 'Bombay • Fever Tree Mediterranean € 15\nHendrickx • Fever Tree Indian tonic € 16\nMonkey 47 • Fever Tree Indian tonic € 16\nGin Mare • Fever Tree Mediterranean € 16', price: '' },
-            { name: 'Cocktails', description: 'Espresso Martini (Vodka • coffee liqueur • espresso) € 15\nPornstar Martini (Vodka • passion fruit liqueur • Cava on the side) € 15\nMojito (white rum • lime • mint • soda water) € 15\nMoscow mule (Vodka • lime • gingerbeer) € 15\nNegroni (Campari • red Martini • Gin) € 14\nApérol Spritz (Apérol • Cava • sparkling water) € 13\nLimoncello spritz (Limoncello • Cava • sparkling water) € 13', price: '' },
-            { name: 'Mocktails 0%', description: 'Boudoir (gingerbeer • cranberry • orange) € 11\nMojito 0% (lime • mint • soda water) € 11\nGin boudoir 0% (Fever Tree raspberry & rhubarb) € 14', price: '' },
-            { name: 'Bottled Beer', description: 'Stella € 4\nLeffe blond € 5\nDuvel € 5\nRochefort € 5\nStella 0% € 4', price: '' }
+            { name: 'Campari with fresh orange juice', price: '€ 14' },
+            { name: 'Gin + Tonic', description: 'Hendrickx • Fever Tree Indian tonic € 16\nGin Mare • Fever Tree Mediterranean € 17', price: '' },
+            { name: 'Cocktails', description: 'Espresso Martini (Vodka • coffee liqueur • espresso) € 16\nPornstar Martini (Vodka • passion fruit liqueur • cava on the side) € 16\nLazy Red Cheeks (Vodka • raspberry • violet syrup • cranberry • lime) € 15\nMojito (White rum • lime • mint • sparkling water) € 15\nNegroni (Campari • red Martini • Gin) € 15\nNegroni Royal (Campari • red martini • champagne) € 16\nPiña Colada (Rum • coconut • pineapple) € 16\nApérol Spritz (Apérol • cava • sparkling water) € 14\nLimoncello Spritz (Limoncello • cava • sparkling water) € 14\nWhite Sangria Maison (White wine • fresh fruits • citrus • mint) € 14\nRed Sangria Maison (Red wine • red fruits • orange • cinnamon notes) € 14', price: '' },
+            { name: 'Mocktails 0%', description: 'Boudoir Mocktail (Ginger beer • cranberry • orange) € 12\nMojito 0% (Lime • mint • sparkling water) € 12\nBoudoir Sunset (Passion fruit • lime • vanilla • sparkling water) € 13\nGarden Tonic 0% (Grapefruit • rosemary • premium tonic) € 13', price: '' },
+            { name: 'Non-Alcoholic Wines', description: 'White wine 0% - Licht House Sauvignon Blanc € 8\nRosé wine 0% - Nephalia Rosé € 8', price: '' },
+            { name: 'Bottled Beer', description: 'Stella Artois € 4.5\nLeffe blond € 5.5\nDuvel € 6\nRochefort € 6\nStella 0.0% € 4.5\nSportzot 0.4% € 5.5', price: '' }
           ]
         },
         warmDrinks: {
