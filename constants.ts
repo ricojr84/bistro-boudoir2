@@ -101,7 +101,6 @@ export const CONTENT: Record<string, Translations> = {
             { name: 'Crème brulée', price: '€ 10' },
             { name: 'Sabayon', description: 'van kriekenbier of Champagne', price: '€ 12' },
             { name: 'Chocolade moelleux', price: '€ 12' },
-            { name: 'Cheesecake huisgemaakt', description: 'frisse topping - smelt in de mond', price: '€ 14' },
             { name: 'POUSSE CAFÉ', description: 'Irish Coffee (whisky) € 12\nFrench Coffee (cognac) € 12\nItalian Coffee (Amaretto) € 12\nLimoncello € 10\nAmaretto € 10\nBaileys € 10\nGrand Marnier € 10\nCointreau € 10\nHasseltse Jenever € 8\nGrappa € 10\nSambuca € 10\nEau de vie Poire Williams € 12\nCalvados € 10\nCognac Hennessy € 10\nCuarenta Y Tres € 10\nJack Daniels € 16\nDon Papa rhum € 16\nLagavulin € 16', price: '' }
           ]
         }
@@ -234,7 +233,7 @@ export const CONTENT: Record<string, Translations> = {
             { name: 'Pineau des Charentes', price: '€ 9' },
             { name: 'Picon vin blanc', price: '€ 12' },
             { name: 'Ricard', price: '€ 9' },
-            { name: 'Campari avec jus d\'orange pressé', price: '€ 14' },
+            { name: 'Campari avec jus d\'orange press��', price: '€ 14' },
             { name: 'Gin + Tonic', description: 'Hendrickx • Fever Tree Indian tonic € 16\nGin Mare • Fever Tree Mediterranean € 17', price: '' },
             { name: 'Cocktails', description: 'Espresso Martini (Vodka • liqueur de café • espresso) € 16\nPornstar Martini (Vodka • liqueur de fruit de la passion • cava on the side) € 16\nLazy Red Cheeks (Vodka • framboise • sirop de violette • canneberge • citron vert) € 15\nMojito (Rhum blanc • citron vert • menthe • eau gazeuse) € 15\nNegroni (Campari • Martini rouge • Gin) € 15\nNegroni Royal (Campari • Martini rouge • champagne) € 16\nPiña Colada (Rum • kokos • ananas) € 16\nApérol Spritz (Apérol • cava • eau gazeuse) € 14\nLimoncello spritz (Limoncello • cava • eau gazeuse) € 14\nWitte Sangria Maison (Vin blanc • fruits frais • citrus • menthe) € 14\nRode Sangria Maison (Vin rouge • fruits rouges • orange • note de cannelle) € 14', price: '' },
             { name: 'Mocktails 0%', description: 'Boudoir Mocktail (Bière au gingembre • canneberge • orange) € 12\nMojito 0% (Citron vert • menthe • eau gazeuse) € 12\nBoudoir Sunset (Fruit de la passion • citron vert • vanille • eau gazeuse) € 13\nGarden Tonic 0% (Pamplemousse • romarin • tonic premium) € 13', price: '' },
@@ -257,7 +256,6 @@ export const CONTENT: Record<string, Translations> = {
             { name: 'Crème brûlée', price: '€ 10' },
             { name: 'Sabayon', description: 'à la bière de cerises ou Champagne', price: '€ 12' },
             { name: 'Moelleux au chocolat', price: '€ 12' },
-            { name: 'Cheesecake maison', description: 'topping frais - fond dans la bouche', price: '€ 14' },
             { name: 'POUSSE CAFÉ', description: 'Irish Coffee (whisky) € 12\nFrench Coffee (cognac) € 12\nItalian Coffee (Amaretto) € 12\nLimoncello € 10\nAmaretto € 10\nBaileys € 10\nGrand Marnier € 10\nCointreau € 10\nGenièvre de Hasselt € 8\nGrappa € 10\nSambuca € 10\nEau de vie Poire Williams € 12\nCalvados € 10\nCognac Hennessy € 10\nCuarenta Y Tres € 10\nJack Daniels € 16\nDon Papa rhum € 16\nLagavulin € 16', price: '' }
           ]
         }
@@ -413,7 +411,6 @@ export const CONTENT: Record<string, Translations> = {
             { name: 'Crème brûlée', price: '€ 10' },
             { name: 'Sabayon', description: 'with cherry beer or Champagne', price: '€ 12' },
             { name: 'Chocolate moelleux', price: '€ 12' },
-            { name: 'Homemade cheesecake', description: 'fresh topping - melts in the mouth', price: '€ 14' },
             { name: 'POUSSE CAFÉ', description: 'Irish Coffee (whisky) € 12\nFrench Coffee (cognac) € 12\nItalian Coffee (Amaretto) € 12\nLimoncello € 10\nAmaretto € 10\nBaileys € 10\nGrand Marnier € 10\nCointreau € 10\nHasselt Jenever € 8\nGrappa € 10\nSambuca € 10\nEau de vie Poire Williams € 12\nCalvados € 10\nCognac Hennessy € 10\nCuarenta Y Tres € 10\nJack Daniels € 16\nDon Papa rum € 16\nLagavulin € 16', price: '' }
           ]
         }
