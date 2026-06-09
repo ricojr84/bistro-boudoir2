@@ -7,7 +7,7 @@ interface SuggestionsProps {
 }
 
 const suggestionItems = [
-  { url: '/images/asperges2026.pdf', alt: 'Asperges 2026', type: 'pdf' }
+  { url: `/images/${encodeURIComponent('mosselen 2026.pdf')}`, alt: 'Mosselen 2026', type: 'pdf' }
 ];
 
 export const Suggestions: React.FC<SuggestionsProps> = ({ t }) => {
