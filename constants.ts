@@ -96,13 +96,11 @@ export const CONTENT: Record<string, Translations> = {
         desserts: {
           title: 'Desserts',
           items: [
-            { name: 'Warme appeltaart', description: 'vanille-ijs', price: '€ 12' },
-            { name: 'Dame blanche', price: '€ 10' },
-            { name: 'Crème brulée', price: '€ 10' },
-            { name: 'Sabayon', description: 'van kriekenbier of Champagne', price: '€ 12' },
-            { name: 'Chocolade moelleux', price: '€ 12' },
-            { name: 'Cheesecake huisgemaakt', description: 'frisse topping - smelt in de mond', price: '€ 14' },
-            { name: 'POUSSE CAFÉ', description: 'Irish Coffee (whisky) € 12\nFrench Coffee (cognac) € 12\nItalian Coffee (Amaretto) € 12\nLimoncello € 10\nAmaretto € 10\nBaileys € 10\nGrand Marnier € 10\nCointreau € 10\nHasseltse Jenever € 8\nGrappa € 10\nSambuca € 10\nEau de vie Poire Williams € 12\nCalvados € 10\nCognac Hennessy € 10\nCuarenta Y Tres € 10\nJack Daniels € 16\nDon Papa rhum € 16\nLagavulin € 16', price: '' }
+            { name: 'Dame blanche', description: 'vanille-ijs met warme chocoladesaus en verse slagroom', price: '€ 11' },
+            { name: 'Tiramisu', description: 'Huisgemaakte Italiaanse klassieker met marcarpone, amaretto, joffie en cacao', price: '€ 15' },
+            { name: 'Crèpe Suzette', description: 'Fijne flensjes in een warme sinaasappelsaus, geflambeerd met Grand Marnier', price: '€ 17' },
+            { name: 'Sabayon', description: 'Luchtige sabayon op basis van kriekenbier of champagne, geserveerd met een bolletje vanille-ijs', price: '€ 14' },
+            { name: 'POUSSE CAFÉ', description: 'Irish Coffee (whisky) € 14\nFrench Coffee (cognac) € 14\nItalian Coffee (Amaretto) € 14\nLimoncello € 11\nAmaretto € 11\nBaileys € 11\nGrand Marnier € 12\nCointreau € 11\nHasseltse Jenever € 9\nGrappa € 11\nSambuca € 11\nEau de vie Poire Williams € 13\nCalvados € 11\nCognac Hennessy € 11\nCuarenta Y Tres € 11\nJack Daniels € 16\nDon Papa rhum € 17\nLagavulin € 18', price: '' }
           ]
         }
       }
@@ -252,13 +250,11 @@ export const CONTENT: Record<string, Translations> = {
         desserts: {
           title: 'Desserts',
           items: [
-            { name: 'Tarte aux pommes chaude', description: 'glace vanille', price: '€ 12' },
-            { name: 'Dame blanche', price: '€ 10' },
-            { name: 'Crème brûlée', price: '€ 10' },
-            { name: 'Sabayon', description: 'à la bière de cerises ou Champagne', price: '€ 12' },
-            { name: 'Moelleux au chocolat', price: '€ 12' },
-            { name: 'Cheesecake maison', description: 'topping frais - fond dans la bouche', price: '€ 14' },
-            { name: 'POUSSE CAFÉ', description: 'Irish Coffee (whisky) € 12\nFrench Coffee (cognac) € 12\nItalian Coffee (Amaretto) € 12\nLimoncello € 10\nAmaretto € 10\nBaileys € 10\nGrand Marnier € 10\nCointreau € 10\nGenièvre de Hasselt € 8\nGrappa € 10\nSambuca € 10\nEau de vie Poire Williams € 12\nCalvados € 10\nCognac Hennessy € 10\nCuarenta Y Tres € 10\nJack Daniels € 16\nDon Papa rhum € 16\nLagavulin € 16', price: '' }
+            { name: 'Dame blanche', description: 'glace vanille avec sauce au chocolat chaud et crème fraîche fouettée', price: '€ 11' },
+            { name: 'Tiramisu', description: 'Classique italien maison au marcarpone, amaretto, joffie et cacao', price: '€ 15' },
+            { name: 'Crèpe Suzette', description: 'Fines crêpes dans une sauce chaude à l’orange, flambées au Grand Marnier', price: '€ 17' },
+            { name: 'Sabayon', description: 'Sabayon aérien à la bière de cerises ou au champagne, servi avec une boule de glace vanille', price: '€ 14' },
+            { name: 'POUSSE CAFÉ', description: 'Irish Coffee (whisky) € 14\nFrench Coffee (cognac) € 14\nItalian Coffee (Amaretto) € 14\nLimoncello € 11\nAmaretto € 11\nBaileys € 11\nGrand Marnier € 12\nCointreau € 11\nGenièvre de Hasselt € 9\nGrappa € 11\nSambuca € 11\nEau de vie Poire Williams € 13\nCalvados € 11\nCognac Hennessy € 11\nCuarenta Y Tres € 11\nJack Daniels € 16\nDon Papa rhum € 17\nLagavulin € 18', price: '' }
           ]
         }
       }
@@ -408,13 +404,11 @@ export const CONTENT: Record<string, Translations> = {
         desserts: {
           title: 'Desserts',
           items: [
-            { name: 'Warm apple pie', description: 'vanilla ice cream', price: '€ 12' },
-            { name: 'Dame blanche', price: '€ 10' },
-            { name: 'Crème brûlée', price: '€ 10' },
-            { name: 'Sabayon', description: 'with cherry beer or Champagne', price: '€ 12' },
-            { name: 'Chocolate moelleux', price: '€ 12' },
-            { name: 'Homemade cheesecake', description: 'fresh topping - melts in the mouth', price: '€ 14' },
-            { name: 'POUSSE CAFÉ', description: 'Irish Coffee (whisky) € 12\nFrench Coffee (cognac) € 12\nItalian Coffee (Amaretto) € 12\nLimoncello € 10\nAmaretto € 10\nBaileys € 10\nGrand Marnier € 10\nCointreau € 10\nHasselt Jenever € 8\nGrappa € 10\nSambuca € 10\nEau de vie Poire Williams € 12\nCalvados € 10\nCognac Hennessy € 10\nCuarenta Y Tres € 10\nJack Daniels € 16\nDon Papa rum € 16\nLagavulin € 16', price: '' }
+            { name: 'Dame blanche', description: 'vanilla ice cream with warm chocolate sauce and fresh whipped cream', price: '€ 11' },
+            { name: 'Tiramisu', description: 'Homemade Italian classic with marcarpone, amaretto, joffie and cocoa', price: '€ 15' },
+            { name: 'Crèpe Suzette', description: 'Fine pancakes in a warm orange sauce, flambéed with Grand Marnier', price: '€ 17' },
+            { name: 'Sabayon', description: 'Light sabayon based on cherry beer or champagne, served with a scoop of vanilla ice cream', price: '€ 14' },
+            { name: 'POUSSE CAFÉ', description: 'Irish Coffee (whisky) € 14\nFrench Coffee (cognac) € 14\nItalian Coffee (Amaretto) € 14\nLimoncello € 11\nAmaretto € 11\nBaileys € 11\nGrand Marnier € 12\nCointreau € 11\nHasselt Jenever € 9\nGrappa € 11\nSambuca € 11\nEau de vie Poire Williams € 13\nCalvados € 11\nCognac Hennessy € 11\nCuarenta Y Tres € 11\nJack Daniels € 16\nDon Papa rum € 17\nLagavulin € 18', price: '' }
           ]
         }
       }
