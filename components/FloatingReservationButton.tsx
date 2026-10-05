@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Translations } from '../types';
+import { openReservation } from '../utils';
 
 interface FloatingReservationButtonProps {
   t: Translations;
@@ -9,51 +10,43 @@ export const FloatingReservationButton: React.FC<FloatingReservationButtonProps>
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const contactSection = document.getElementById('contact');
-      let contactInViewport = false;
-      
-      if (contactSection) {
-        const rect = contactSection.getBoundingClientRect();
-        // Check if contact section is in viewport (top of section is above bottom of screen)
-        contactInViewport = rect.top < window.innerHeight && rect.bottom > 0;
-      }
+    let ticking = false;
 
-      // Show button after scrolling down a bit, but hide if in contact section
-      if (window.scrollY > 300 && !contactInViewport) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
+    const handleScroll = () => {
+      if (ticking) return;
+      ticking = true;
+
+      requestAnimationFrame(() => {
+        const contactSection = document.getElementById('contact');
+        let contactInViewport = false;
+
+        if (contactSection) {
+          const rect = contactSection.getBoundingClientRect();
+          contactInViewport = rect.top < window.innerHeight && rect.bottom > 0;
+        }
+
+        setIsVisible(window.scrollY > 300 && !contactInViewport);
+        ticking = false;
+      });
     };
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Check initial state
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleReservationClick = () => {
-    window.open(
-      'https://bookings.zenchef.com/results?rid=366006&pid=1001',
-      'Reservation',
-      'width=800,height=700,scrollbars=yes,resizable=yes,left=' + 
-      (window.screen.width / 2 - 400) + ',top=' + (window.screen.height / 2 - 350)
-    );
-  };
-
-  if (!isVisible) return null;
-
   return (
     <button
-      onClick={handleReservationClick}
-      className="fixed bottom-8 right-8 z-40 px-6 py-4 bg-gold border-2 border-gold text-off-black font-serif text-sm tracking-widest uppercase hover:bg-light-gold hover:border-light-gold transition-all duration-300 shadow-2xl cursor-pointer rounded-sm animate-fade-in"
-      style={{
-        animation: 'fadeIn 0.6s ease-in-out'
-      }}
+      type="button"
+      onClick={openReservation}
+      aria-hidden={!isVisible}
+      tabIndex={isVisible ? 0 : -1}
+      className={`fixed bottom-8 right-8 z-40 px-6 py-4 bg-gold border-2 border-gold text-off-black font-serif text-sm tracking-widest uppercase hover:bg-light-gold hover:border-light-gold transition-[opacity,transform] duration-300 shadow-2xl cursor-pointer rounded-sm ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
+      }`}
     >
       {t.contact.reservationButton}
     </button>
   );
 };
-

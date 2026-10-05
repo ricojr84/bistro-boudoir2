@@ -33,6 +33,29 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    overflow-x: hidden;
+}
+
+section[id] {
+    scroll-margin-top: 5.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
 .parallax-bg {
     background-image: url('/images/backgroundBoudoir.jpg');
     background-attachment: fixed;
@@ -150,7 +173,11 @@ html {
 }
 
 .animate-fade-in {
-    animation: fadeIn 0.3s ease-in-out;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.animate-fade-in-up {
+    animation: fadeIn 0.7s ease-out;
 }
 
 /* Instagram New Post Animation */
