@@ -13,6 +13,10 @@ export const Suggestions: React.FC<SuggestionsProps> = ({ t }) => {
     window.open(pdfUrl, '_blank', 'noopener,noreferrer');
   };
 
+  const openSuggestionsMenu = () => {
+    window.open('/images/menu2027.pdf', '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <section id="suggesties" className="py-20 bg-cream text-off-black">
       <div className="container mx-auto px-4">
@@ -24,7 +28,12 @@ export const Suggestions: React.FC<SuggestionsProps> = ({ t }) => {
         </div>
 
         <div className="flex flex-col lg:flex-row gap-5 justify-center items-center">
-          <div className="bg-white shadow-xl border-t-4 border-gold overflow-hidden w-[300px] h-[300px]">
+          <button
+            type="button"
+            className="bg-white shadow-xl border-t-4 border-gold overflow-hidden w-[300px] aspect-[210/297] cursor-pointer transition-transform duration-300 ease-out transform-gpu hover:scale-[1.03] hover:shadow-2xl"
+            onClick={openSuggestionsMenu}
+            aria-label={t.suggestions.title}
+          >
             {suggestionImageError ? (
               <div className="w-full h-full bg-gradient-to-br from-cream to-gold/30 flex items-center justify-center">
                 <div className="font-serif text-3xl md:text-4xl text-off-black uppercase tracking-widest font-bold text-center p-6">
@@ -33,7 +42,7 @@ export const Suggestions: React.FC<SuggestionsProps> = ({ t }) => {
               </div>
             ) : (
               <img
-                src="/images/suggesties.png"
+                src="/images/boudoir2027.png"
                 alt={t.suggestions.title}
                 className="w-full h-full object-contain"
                 loading="lazy"
@@ -41,11 +50,11 @@ export const Suggestions: React.FC<SuggestionsProps> = ({ t }) => {
                 onError={() => setSuggestionImageError(true)}
               />
             )}
-          </div>
+          </button>
 
           <button
             type="button"
-            className="bg-white shadow-xl border-t-4 border-gold overflow-hidden relative w-[300px] h-[300px] cursor-pointer transition-transform duration-300 ease-out transform-gpu hover:scale-[1.03] hover:shadow-2xl"
+            className="bg-white shadow-xl border-t-4 border-gold overflow-hidden relative w-[300px] aspect-[210/297] cursor-pointer transition-transform duration-300 ease-out transform-gpu hover:scale-[1.03] hover:shadow-2xl"
             onClick={openWineList}
             aria-label={t.suggestions.wijnkaart}
           >
