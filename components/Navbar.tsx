@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ChevronDown, Globe, Menu, X } from 'lucide-react';
+import { ChevronDown, ChevronLeft, Globe, Menu, X } from 'lucide-react';
 import { Language, Translations } from '../types';
 import { EGIFT_URL, openReservation, scrollToId } from '../utils';
 
@@ -95,31 +95,53 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
           <button type="button" onClick={toggleLang} className="flex items-center gap-1.5 rounded-full border border-white/20 px-2.5 py-1.5 text-xs text-gold" aria-label={`Change language. Current language: ${lang.toUpperCase()}`}>
             <Globe size={14} />{lang.toUpperCase()}
           </button>
-          <button type="button" onClick={() => setIsOpen((open) => !open)} className="text-gold p-1" aria-label={isOpen ? 'Close menu' : 'Open menu'} aria-expanded={isOpen}>
+          <button type="button" onClick={() => { setMoreOpen(false); setIsOpen((open) => !open); }} className="text-gold p-1" aria-label={isOpen ? 'Close menu' : 'Open menu'} aria-expanded={isOpen}>
             {isOpen ? <X size={25} /> : <Menu size={25} />}
           </button>
         </div>
       </div>
 
-      <div className={`fixed inset-0 bg-off-black/98 flex flex-col items-center justify-center gap-7 transition-transform duration-300 ease-out md:hidden ${isOpen ? 'translate-x-0' : 'translate-x-full pointer-events-none'}`} aria-hidden={!isOpen}>
+      <div className={`fixed inset-0 overflow-y-auto bg-off-black/98 flex flex-col items-center justify-center gap-7 px-6 py-24 transition-transform duration-300 ease-out md:hidden ${isOpen && !moreOpen ? 'translate-x-0' : 'translate-x-full pointer-events-none'}`} aria-hidden={!isOpen || moreOpen}>
         {primaryLinks.map((item) => (
-          <button type="button" key={item} onClick={() => handleNavigation(item)} className={mobileLinkClass} tabIndex={isOpen ? 0 : -1}>
+          <button type="button" key={item} onClick={() => handleNavigation(item)} className={mobileLinkClass} tabIndex={isOpen && !moreOpen ? 0 : -1}>
             {t.nav[item]}
           </button>
         ))}
-        <button type="button" onClick={() => setMoreOpen((open) => !open)} className={`${mobileLinkClass} inline-flex items-center gap-2 text-base`} aria-expanded={moreOpen} tabIndex={isOpen ? 0 : -1}>
+        <button type="button" onClick={() => setMoreOpen(true)} className="inline-flex items-center gap-2 border-y border-white/15 px-8 py-4 font-sans text-sm font-bold uppercase tracking-[0.2em] text-gold transition-colors hover:border-gold/50" tabIndex={isOpen && !moreOpen ? 0 : -1}>
           {lang === 'nl' ? 'Meer' : lang === 'fr' ? 'Plus' : 'More'}
-          <ChevronDown size={17} className={`transition-transform ${moreOpen ? 'rotate-180' : ''}`} />
+          <ChevronDown size={16} />
         </button>
-        {moreOpen && moreLinks.map((item) => (
-          <button type="button" key={item} onClick={() => handleNavigation(item)} className="-mt-4 text-sm uppercase tracking-widest text-gray-300 hover:text-gold transition-colors" tabIndex={isOpen ? 0 : -1}>
-            {t.nav[item]}
-          </button>
-        ))}
-        <button type="button" onClick={() => { openReservation(); setIsOpen(false); }} className="mt-2 rounded-sm bg-gold px-6 py-3 text-sm font-bold uppercase tracking-widest text-off-black hover:bg-light-gold transition-colors" tabIndex={isOpen ? 0 : -1}>
+        <button type="button" onClick={() => { openReservation(); setIsOpen(false); }} className="mt-1 rounded-sm bg-gold px-6 py-3 text-sm font-bold uppercase tracking-widest text-off-black hover:bg-light-gold transition-colors" tabIndex={isOpen && !moreOpen ? 0 : -1}>
           {t.contact.reservationButton}
         </button>
       </div>
+
+      {isOpen && moreOpen && (
+        <div className="fixed inset-0 z-[60] flex flex-col overflow-y-auto bg-off-black px-6 pb-10 pt-8 md:hidden" role="dialog" aria-modal="true" aria-label={lang === 'nl' ? 'Meer navigatieopties' : lang === 'fr' ? 'Plus d’options de navigation' : 'More navigation options'}>
+          <div className="flex items-center justify-between">
+            <button type="button" onClick={() => setMoreOpen(false)} className="inline-flex items-center gap-1 py-2 pr-3 text-sm uppercase tracking-widest text-gray-300 hover:text-gold transition-colors">
+              <ChevronLeft size={20} />
+              {lang === 'nl' ? 'Terug' : lang === 'fr' ? 'Retour' : 'Back'}
+            </button>
+            <button type="button" onClick={() => { setMoreOpen(false); setIsOpen(false); }} className="rounded-full p-2 text-gold hover:bg-white/10 transition-colors" aria-label={lang === 'nl' ? 'Menu sluiten' : lang === 'fr' ? 'Fermer le menu' : 'Close menu'}>
+              <X size={24} />
+            </button>
+          </div>
+
+          <div className="mx-auto flex w-full max-w-sm flex-1 flex-col justify-center py-10">
+            <h2 className="mb-8 text-center font-serif text-3xl uppercase tracking-[0.18em] text-gold">
+              {lang === 'nl' ? 'Meer' : lang === 'fr' ? 'Plus' : 'More'}
+            </h2>
+            <div className="flex flex-col divide-y divide-white/10 border-y border-white/10">
+              {moreLinks.map((item) => (
+                <button key={item} type="button" onClick={() => handleNavigation(item)} className="py-5 text-center font-serif text-xl uppercase tracking-widest text-white transition-colors hover:text-gold">
+                  {t.nav[item]}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
