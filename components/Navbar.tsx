@@ -120,7 +120,10 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
             type="button"
             key={item}
             onClick={() => handleNavigation(item)}
-            className="text-2xl font-serif text-white hover:text-gold transition-colors uppercase tracking-widest"
+            className={`text-2xl font-serif text-white hover:text-gold transition-[color,opacity,transform] duration-300 ease-out uppercase tracking-widest ${
+              isOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+            }`}
+            style={{ transitionDelay: isOpen ? `${NAV_IDS.indexOf(item) * 60 + 120}ms` : '0ms' }}
           >
             {t.nav[item]}
           </button>
@@ -131,7 +134,10 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
             openReservation();
             setIsOpen(false);
           }}
-          className="mt-4 px-4 py-2 bg-gold border-2 border-gold text-off-black font-serif text-xs tracking-widest uppercase hover:bg-light-gold hover:border-light-gold transition-colors duration-300"
+          className={`mt-4 px-4 py-2 bg-gold border-2 border-gold text-off-black font-serif text-xs tracking-widest uppercase hover:bg-light-gold hover:border-light-gold transition-[color,background-color,border-color,opacity,transform] duration-300 ease-out ${
+            isOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+          }`}
+          style={{ transitionDelay: isOpen ? `${NAV_IDS.length * 60 + 120}ms` : '0ms' }}
         >
           {t.contact.reservationButton}
         </button>
