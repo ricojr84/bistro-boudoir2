@@ -17,5 +17,20 @@
 <body class="bg-white text-neutral-800 antialiased">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
+    <div id="zenchef-widget-config" class="zc-widget-config" data-restaurant="366006" data-partner-id="1001" data-primary-color="D4AF37" data-lang="nl"></div>
+    <script>
+        const savedLanguage = localStorage.getItem('language');
+        const widgetLanguage = ['nl', 'fr', 'en'].includes(savedLanguage) ? savedLanguage : 'nl';
+        const widgetConfig = document.getElementById('zenchef-widget-config');
+        widgetConfig.setAttribute('data-lang', widgetLanguage);
+        ;(function (d, s, id) {
+            const firstScript = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id) || !firstScript?.parentNode) return;
+            const sdk = d.createElement(s);
+            sdk.id = id;
+            sdk.src = 'https://sdk.zenchef.com/v1/sdk.min.js';
+            firstScript.parentNode.insertBefore(sdk, firstScript);
+        })(document, 'script', 'zenchef-sdk');
+    </script>
 </body>
 </html>

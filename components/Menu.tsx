@@ -63,7 +63,7 @@ export const Menu: React.FC<MenuProps> = ({ t }) => {
           </p>
         </div>
 
-        <div className="flex flex-col gap-4 md:gap-5 lg:grid lg:grid-cols-2">
+        <div className="flex flex-col gap-4 md:gap-5 lg:grid lg:grid-cols-2 lg:items-start">
           <CategoryCard category={categories.bites} muted />
           <CategoryCard category={categories.starters} />
           <CategoryCard category={categories.salads} />

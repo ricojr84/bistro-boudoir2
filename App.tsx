@@ -8,7 +8,6 @@ import { Suggestions } from './components/Suggestions';
 import { Contact } from './components/Contact';
 import { Map } from './components/Map';
 import { Footer } from './components/Footer';
-import { FloatingReservationButton } from './components/FloatingReservationButton';
 import { CONTENT } from './constants';
 import { Language } from './types';
 import { scrollToId } from './utils';
@@ -28,6 +27,20 @@ const App: React.FC = () => {
 
   useEffect(() => {
     document.documentElement.lang = lang;
+    const widgetConfig = document.getElementById('zenchef-widget-config');
+    widgetConfig?.setAttribute('data-lang', lang);
+
+    // Zenchef renders its floating control inside an iframe. Refresh its lang
+    // query when the visitor changes language so the control and booking form
+    // follow the same selection as the page.
+    const widgetFrame = document.querySelector<HTMLIFrameElement>('iframe[class*="zc-iframe"]');
+    if (widgetFrame?.src) {
+      const frameUrl = new URL(widgetFrame.src);
+      if (frameUrl.searchParams.get('lang') !== lang) {
+        frameUrl.searchParams.set('lang', lang);
+        widgetFrame.src = frameUrl.toString();
+      }
+    }
   }, [lang]);
 
   useEffect(() => {
@@ -47,7 +60,6 @@ const App: React.FC = () => {
       <Contact t={t} />
       <Map t={t} />
       <Footer t={t} />
-      <FloatingReservationButton t={t} />
       <Analytics />
     </div>
   );

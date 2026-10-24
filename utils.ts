@@ -4,6 +4,14 @@ export type NavId = (typeof NAV_IDS)[number];
 export const RESERVATION_URL = 'https://bookings.zenchef.com/results?rid=366006&pid=1001';
 export const EGIFT_URL = 'https://www.egift.be/handelaar/Bistro%20Boudoir/1632';
 
+declare global {
+  interface Window {
+    ZenchefWidget?: {
+      open: () => void;
+    };
+  }
+}
+
 const prefersReducedMotion = () =>
   typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -24,6 +32,11 @@ export const scrollToId = (id: string) => {
 };
 
 export const openReservation = () => {
+  if (window.ZenchefWidget) {
+    window.ZenchefWidget.open();
+    return;
+  }
+
   const width = 800;
   const height = 700;
   const left = Math.max(0, window.screen.width / 2 - width / 2);
