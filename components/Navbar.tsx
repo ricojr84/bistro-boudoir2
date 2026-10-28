@@ -87,6 +87,14 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
             <Globe size={16} />
             <span>{lang.toUpperCase()}</span>
           </button>
+
+          <button
+            type="button"
+            onClick={openReservation}
+            className="px-4 py-2 bg-gold border-2 border-gold text-off-black font-serif text-sm tracking-widest uppercase hover:bg-light-gold hover:border-light-gold transition-colors duration-300"
+          >
+            {t.contact.reservationButton}
+          </button>
         </div>
 
         <div className="md:hidden flex items-center z-50">
