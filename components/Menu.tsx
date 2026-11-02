@@ -34,31 +34,9 @@ export const Menu: React.FC<MenuProps> = ({ t, lang }) => {
   ] as const;
   const [activeId, setActiveId] = useState<(typeof tabs)[number][0]>('mains');
   const activeCategory = tabs.find(([id]) => id === activeId)?.[1] ?? categories.mains;
-
-  const openFullMenu = () => {
-    const selectedMenu = lang === 'fr'
-      ? { label: 'Français', url: '/images/boudoir_26-menuwinter-FR.pdf' }
-      : { label: 'Nederlands', url: '/images/boudoir_26-menuwinter-NL.pdf' };
-    const title = lang === 'fr' ? 'Voir le menu complet' : lang === 'en' ? 'See full menu' : 'Bekijk de volledige menukaart';
-    const popup = window.open('', '_blank', 'popup,width=1100,height=900');
-    if (!popup) return;
-
-    popup.document.title = title;
-    popup.document.body.innerHTML = `
-      <style>
-        *{box-sizing:border-box}body{margin:0;padding:24px;background:#faf6f0;color:#211c1a;font-family:Arial,sans-serif}
-        h1{margin:0 0 16px;text-align:center;font:italic 32px Georgia,serif}
-        main{max-width:1000px;margin:auto}p{text-align:center;margin:0 0 14px}a{color:#681522}
-        iframe{display:block;width:100%;height:calc(100vh - 125px);border:1px solid #d9cec3;background:white}
-        @media(max-width:800px){body{padding:16px}h1{font-size:27px}iframe{height:82vh}}
-      </style>
-      <h1>${title}</h1>
-      <main>
-        <p>${selectedMenu.label} · <a href="${selectedMenu.url}" target="_blank" rel="noopener">Open PDF</a></p>
-        <iframe title="${selectedMenu.label}" src="${selectedMenu.url}"></iframe>
-      </main>`;
-    popup.document.close();
-  };
+  const fullMenuPdf = lang === 'fr'
+    ? '/images/boudoir_26-menuwinter-FR.pdf'
+    : '/images/boudoir_26-menuwinter-NL.pdf';
 
   const handleTabKeyDown = (event: KeyboardEvent<HTMLButtonElement>) => {
     if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') return;
@@ -126,13 +104,14 @@ export const Menu: React.FC<MenuProps> = ({ t, lang }) => {
           )}
         </div>
         <div className="mt-5 text-center">
-          <button
-            type="button"
-            onClick={openFullMenu}
+          <a
+            href={fullMenuPdf}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex min-h-11 items-center justify-center border border-[#D4AF37] px-6 py-2 text-sm text-[#D4AF37] transition-colors hover:bg-[#D4AF37] hover:text-[#211c1a]"
           >
             {lang === 'fr' ? 'Voir le menu complet' : lang === 'en' ? 'See full menu' : 'Bekijk de volledige menukaart'} →
-          </button>
+          </a>
         </div>
       </div>
     </section>
