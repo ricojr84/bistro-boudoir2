@@ -6,7 +6,7 @@ interface MapProps {
 }
 
 const MAP_SRC =
-  'https://www.google.com/maps/embed?pb=!4v1764275419468!6m8!1m7!1svqc3IKj7aoNSD-V1tsR6Jg!2m2!1d51.34588307525023!2d3.288148095280725!3f275.71082!4f0!5f0.7820865974627469';
+  'https://maps.google.com/maps?q=Lippenslaan%20141%2C%208300%20Knokke-Heist%2C%20Belgium&z=15&output=embed';
 
 export const Map: React.FC<MapProps> = ({ t }) => {
   const containerRef = useRef<HTMLDivElement>(null);
