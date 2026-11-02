@@ -1,6 +1,5 @@
 import React from 'react';
 import { Translations } from '../types';
-import { scrollToId } from '../utils';
 
 interface HeroProps {
   t: Translations;
@@ -29,14 +28,6 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
         <p className="font-serif text-gray-200 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
           {t.home.description}
         </p>
-
-        <button
-          type="button"
-          onClick={() => scrollToId('menu')}
-          className="inline-block px-8 py-4 border-2 border-gold text-gold font-sans text-sm tracking-[0.2em] uppercase hover:bg-gold hover:text-off-black transition-colors duration-300"
-        >
-          {t.home.button}
-        </button>
 
         <div className="mt-[30px] flex justify-center">
           <div className="mouse-scroll">

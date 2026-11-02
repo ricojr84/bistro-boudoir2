@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Menu, X, Globe } from 'lucide-react';
 import { Language, Translations } from '../types';
-import { EGIFT_URL, NAV_IDS, openReservation, scrollToId } from '../utils';
+import { EGIFT_URL, NAV_IDS, scrollToId } from '../utils';
 
 interface NavbarProps {
   lang: Language;
@@ -88,13 +88,6 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
             <span>{lang.toUpperCase()}</span>
           </button>
 
-          <button
-            type="button"
-            onClick={openReservation}
-            className="px-4 py-2 bg-gold border-2 border-gold text-off-black font-serif text-sm tracking-widest uppercase hover:bg-light-gold hover:border-light-gold transition-colors duration-300"
-          >
-            {t.contact.reservationButton}
-          </button>
         </div>
 
         <div className="md:hidden flex items-center z-50">
@@ -136,19 +129,6 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
             {t.nav[item]}
           </button>
         ))}
-        <button
-          type="button"
-          onClick={() => {
-            openReservation();
-            setIsOpen(false);
-          }}
-          className={`mt-4 px-4 py-2 bg-gold border-2 border-gold text-off-black font-serif text-xs tracking-widest uppercase hover:bg-light-gold hover:border-light-gold transition-[color,background-color,border-color,opacity,transform] duration-300 ease-out ${
-            isOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
-          }`}
-          style={{ transitionDelay: isOpen ? `${NAV_IDS.length * 60 + 120}ms` : '0ms' }}
-        >
-          {t.contact.reservationButton}
-        </button>
       </div>
     </nav>
   );

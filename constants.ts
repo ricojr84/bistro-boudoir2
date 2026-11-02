@@ -20,87 +20,85 @@ export const CONTENT: Record<string, Translations> = {
     menu: {
       title: 'Ons Menu',
       subtitle: 'Een culinaire reis door Frankrijk',
-      childrenNote: 'EEN FRISSE SALADE KAN STEEDS BESTELD WORDEN ALS SUPPLEMENT +3€',
+      childrenNote: 'EEN FRISSE SALADE, PUREE OF FRIETEN KAN STEEDS BESTELD WORDEN ALS SUPPLEMENT +4€',
       categories: {
         bites: {
           title: 'Bites',
           note: 'vanaf 15 u tot 21 u',
           items: [
             { name: 'Jamón Ibérico de Bellota', description: 'Fijn gesneden Ibérico-ham', price: '€ 24' },
-            { name: 'Steak Bites', description: 'Malse rundsbites in look-rozemarijnboter • geserveerd met toast', price: '€ 22' },
-            { name: 'Assortiment Apero-Balletjes', description: 'Selder-truffelcrème • gefrituurde peterselie • citroen', price: '€ 18' },
-            { name: 'Oesters Natuur', description: 'Peper & citroen (3-6 stuks)', price: '€ 14 - € 24' },
-            { name: 'Burrata', description: 'Romige burrata • geserveerd met truffeltoast', price: '€ 19' },
-            { name: 'Gambas', description: '4 easy peel gamba\'s • olijfolie • witte wijn • look • limoen', price: '€ 21' },
-            { name: '200 gr Noordzeegarnalen', description: 'Om zelf te pellen', price: '€ 14' }
+            { name: 'Assortiment Apero-Balletjes', description: 'Truffelcrème • gefrituurde peterselie • citroen', price: '€ 18' },
+            { name: 'Oesters Natuur', description: 'Peper & citroen (3-6 stuks)', price: '€ 14 - € 26' },
+            { name: 'Gambas', description: 'Easy peel gamba\'s • olijfolie • witte wijn • look • limoen', price: '€ 22' },
+            { name: 'Brioche met Gerookte Paling', description: 'Geroosterde brioche • gekruide roomkaas • gerookte paling', price: '€ 17' }
           ]
         },
         starters: {
           title: 'Voorgerechten',
           items: [
-            { name: 'Gravlax', description: 'Huisgemarineerde zalm • zachte crème van ansjovis-roomkaas • zalmkaviaar', price: '€ 24' },
-            { name: 'Handgepelde Grijze Garnalen van de Noordzee', description: 'Trio van tomaat • handgepelde garnalen • fijne mayonaise', price: '€ 26' },
-            { name: 'Burrata & Zomerse Garnituur', description: 'Variatie van kerstomaat • romige burrata • aardbei', price: '€ 21' },
-            { name: 'Rundscarpaccio', description: 'Dun gesneden rundvlees • truffelmayonaise • Parmezaan kaas • rucola', price: '€ 23' },
-            { name: 'Garnaalkroketten', description: 'Handgepelde Zeebrugse garnalen • licht-pikante crème van de Noordzee • citroen (1-2 stuks)', price: '€ 15 - € 23' }
+            { name: 'Gegratineerde Oesters met Blauwe Kaas', description: '6 oesters • saus van blauwe kaas • honing', price: '€ 34' },
+            { name: 'Handgepelde Grijze Noordzeegarnalen', description: 'Tartaar van tomaten • hardgekookt ei • cocktailsaus', price: '€ 29' },
+            { name: 'Gebakken Sint-Jakobsvruchten', description: 'Champagnesaus • gekarameliseerd witloof • zalmeitjes', price: '€ 29' },
+            { name: 'Foie Gras', description: 'Gebakken foie gras • geroosterde brioche • peer • krachtige jus', price: '€ 39', extra: 'Château Simon • Sauternes • Bordeaux • Frankrijk • € 9,50 per glas' },
+            { name: 'Garnaalkroketten', description: 'Handgepelde Zeebrugse garnalen • licht-pikante crème van de Noordzee • citroen (1-2 stuks)', price: '€ 15 - € 24' }
           ]
         },
         salads: {
           title: 'Salades',
           items: [
-            { name: 'Warme Thaise Rundsalade', description: 'Warme rundreepjes • koriander • rode ui • chili • sesamzaadjes', price: '€ 29' },
-            { name: 'Salade met Gravlax', description: 'Gravlax van zalm • mosterd-limoendressing • rode biet • courgette', price: '€ 27' }
+            { name: 'Thaise Rundsalade', description: 'Reepjes filet pur • verse koriander • rode ui • chili • sesam', price: '€ 29' }
           ]
         },
         mains: {
           title: 'Hoofdgerechten',
           items: [
-            { name: 'Rund', description: 'Filet pur • frieten • keuze uit Roquefort-, champignon- of pepersaus', price: '€ 39' },
-            { name: 'Eendenborst', description: 'Kersensaus • gekarameliseerde perzik • frieten', price: '€ 36' },
-            { name: 'Entrecote ±500g', description: 'Gebroken zwarte peper • peperroomsaus • frieten', price: '€ 45' },
-            { name: 'Vol au Vent Klassiek', description: 'Hoevekip • bladerdeeg • gehaktballen • champignons • frieten', price: '€ 29' },
-            { name: 'Zeetong Meunière', description: 'Beurre noisette • kappertjes • citroen • frieten', price: '€ 49' },
-            { name: 'Kabeljauw', description: 'Haasje • garnalenbisque • handgepelde Zeebrugse garnalen • zalmkaviaar • puree', price: '€ 41' },
-            { name: 'Noordzee Bouillabaisse', description: 'Toast • rouille • gruyère', price: '€ 38' },
-            { name: 'Zeebaars', description: 'Filet • beurre blanc • limoen • seizoengroenten', price: '€ 34' }
+            { name: 'Filet Pur', description: 'Frieten • keuze uit Roquefortsaus • truffel-champignonsaus • pepersaus', price: '€ 42' },
+            { name: 'Kalfszwezeriken', description: 'Gebakken kalfszwezeriken • portojus • gekarameliseerd witloof • pastinaakcrème • krielaardappelen', price: '€ 41' },
+            { name: 'Vol au Vent Klassiek', description: 'Hoevekip • bladerdeeg • gehaktballen • champignons • frieten', price: '€ 30' },
+            { name: 'Zeetong Meunière', description: 'Gebakken zeetong • tartaarsaus • citroen • frietjes', price: '€ 51' },
+            { name: 'Kabeljauwhaasje', description: 'Champagnesaus • handgepelde grijze garnalen • aardappelpuree • zalmeitjes', price: '€ 42' },
+            { name: 'Zeebaars', description: 'Zeebaarsfilet • witte wijnsaus • seizoensgroenten', price: '€ 36' },
+            { name: 'Noordzee Bouillabaisse', description: 'Toast • rouille • gruyère', price: '€ 40' },
+            { name: 'Pasta Ravioli met Rundvlees', description: 'Runderjus • romige champignonsaus', price: '€ 28' },
+            { name: 'Ravioli met Ricotta', description: 'Romige bisquesaus • handgepelde grijze garnalen', price: '€ 32' }
           ]
         },
 
         drinks: {
           title: 'Aperitief',
           items: [
-            { name: 'Coupe Champagne', price: '€ 14' },
-            { name: 'Glaasje Cava "Pont de Ferro"', price: '€ 9' },
-            { name: 'Kirr witte wijn', price: '€ 10' },
-            { name: 'Kirr royal (Champagne)', price: '€ 15' },
-            { name: 'Porto \'10 years\' rood', price: '€ 11' },
-            { name: 'Martini wit/rood', price: '€ 9' },
-            { name: 'Pineau des Charentes', price: '€ 9' },
+            { name: 'Champagne per glas', price: '€ 14' },
+            { name: 'Cava per glas', price: '€ 9' },
+            { name: 'Witte wijn Kir', price: '€ 10' },
+            { name: 'Kir Royal met champagne', price: '€ 15' },
+            { name: 'Porto 10 Years rood', price: '€ 11' },
             { name: 'Picon witte wijn', price: '€ 12' },
             { name: 'Ricard', price: '€ 9' },
             { name: 'Campari met vers fruitsap', price: '€ 14' },
-            { name: 'Gin + Tonic', description: 'Hendrickx • Fever Tree Indian tonic € 16\nGin Mare • Fever Tree Mediterranean € 17', price: '' },
-            { name: 'Cocktails', description: 'Espresso Martini (Vodka • koffielikeur • espresso) € 16\nPornstar Martini (Vodka • passievruchtlikeur • cava on the side) € 16\nLazy Red Cheeks (Vodka • framboos • violetsiroop • cranberry • limoen) € 15\nMojito (witte rum • limoen • munt • bruiswater) € 15\nNegroni (Campari • rode Martini • Gin) € 15\nNegroni Royal (Campari • rode martini • champagne) € 16\nPiña Colada (Rum • kokos • ananas) € 16\nApérol Spritz (Apérol • cava • bruiswater) € 14\nLimoncello Spritz (Limoncello • cava • bruiswater) € 14\nWitte Sangria Maison (Witte wijn • vers fruit • citrus • munt) € 14\nRode Sangria Maison (Rode wijn • rood fruit • sinaasappel • kaneeltoets) € 14', price: '' },
-            { name: 'Mocktails 0%', description: 'Boudoir Mocktail (Gemberbeer • veenbes • sinaasappel) € 12\nMojito 0% (Limoen • munt • bruiswater) € 12\nBoudoir Sunset (Passievrucht • limoen • vanille • bruiswater) € 13\nGarden Tonic 0% (Grapefruit • rozemarijn • premium tonic) € 13', price: '' },
+            { name: 'Gin + Tonic', description: 'Hendrick’s Gin • Fever-Tree Indian Tonic € 16\nGin Mare • Fever-Tree Mediterranean Tonic € 17', price: '' },
+            { name: 'Cocktails', description: 'Boudoir Rouge (Gin • cranberry • granaatappel • citroen • siroop) € 16\nRouge d’Hiver (Bourbon • appel • citroen • kaneel) € 16\nEspresso Martini (Vodka • koffielikeur • espresso) € 16\nPornstar Martini (Vodka • passievruchtlikeur • passievrucht • cava apart geserveerd) € 16\nNegroni (Campari • rode vermout • gin) € 15\nNegroni Royal (Campari • rode vermout • champagne) € 16\nAperol Spritz (Aperol • cava • bruiswater) € 14', price: '' },
+            { name: 'Mocktails 0%', description: 'Boudoir Rouge (Cranberry • granaatappel • citroen • ginger beer) € 13\nBoudoir Mocktail (Gemberbier • veenbes • sinaasappel) € 12\nBoudoir Sunset (Passievrucht • limoen • vanille • bruiswater) € 13', price: '' },
             { name: 'Alcoholvrije Wijnen', description: 'Witte wijn 0% - Licht House Sauvignon Blanc € 8\nRosé wijn 0% - Nephalia Rosé € 8', price: '' },
-            { name: 'Bier op Fles', description: 'Stella Artois € 4,5\nLeffe blond € 5,5\nDuvel € 6\nRochefort € 6\nStella 0,0% € 4,5\nSportzot 0,4% € 5,5', price: '' }
+            { name: 'Bier op Fles', description: 'Stella Artois € 4,5\nLeffe blond € 5,5\nDuvel € 6\nRochefort € 6\nStella 0,0% € 4,5\nSportzot 0,4% € 5,5', price: '' },
+            { name: 'Frisdranken', description: 'Chaudfontaine plat of bruisend 25 cl € 4,50 • 50 cl € 8,50\nCola / Cola Zero € 4,50\nIce Tea € 4,50\nFanta Orange € 4,50\nSchweppes Tonic € 4,50', price: '' }
           ]
         },
         warmDrinks: {
           title: 'Warme Dranken',
           items: [
             { name: 'by Nespresso', description: 'Lungo classic/ deca € 4,5\nEspresso € 4\nDouble espresso € 5\nCappuccino € 5,5\nLatte Macchiato € 6', price: '' },
-            { name: 'THEE by Tea Coach Ken', description: 'Witte thee\n• White peach (perzik/appel/vlierbes) € 6\n\nGroene thee\n• Green peppermint (geserveerd met verse munt)\n• Fresh lemon (citroengras/citroen aroma)\n• Berry rose (Chinese sencha/framboos/rozenblaadjes)\n\nZwarte infusies\n• Superior Earl Grey (zwarte thee blend/natuurlijke bergamot)\n• Sexy goji (zeste van sinaasappel, gojibessen, aroma, wortelvlokken, gele rozenknopjes, saffloer)\n\nKruidenthee\n• Ginger orange (gember/kamille/peper/appelsien)\n• Ginger lemon (gember/zoethout/citroengras/citroenschillen/pepermunt/peperkorrels)\n• Relaxing Camomille (venkel/rozenbottelschil/kamillebloempjes/brandnetel/lavendelbloem)', price: '' }
+            { name: 'THEE by Tea Coach Ken • € 6', description: 'Witte thee\n• White Peach (perzik • appel • vlierbes)\n\nGroene thee\n• Green Peppermint (verse munt)\n• Fresh Lemon (citroengras • citroenaroma)\n\nZwarte thee\n• Superior Earl Grey (zwarte thee • natuurlijke bergamot)\n• Sexy Goji (sinaasappelzeste • gojibessen • wortelvlokken • rozenknopjes • saffloer)\n\nKruidenthee\n• Ginger Orange (gember • kamille • peper • appelsien)\n• Ginger Lemon (gember • zoethout • citroengras • citroenschillen • pepermunt • peperkorrels)\n• Relaxing Camomile (venkel • rozenbottelschil • kamillebloempjes • brandnetel • lavendelbloem)', price: '' }
           ]
         },
         desserts: {
           title: 'Desserts',
           items: [
-            { name: 'Dame blanche', description: 'vanille-ijs met warme chocoladesaus en verse slagroom', price: '€ 11' },
-            { name: 'Tiramisu', description: 'Huisgemaakte Italiaanse klassieker met mascarpone, amaretto, joffie en cacao', price: '€ 15' },
-            { name: 'Crèpe Suzette', description: 'Fijne flensjes in een warme sinaasappelsaus, geflambeerd met Grand Marnier', price: '€ 17' },
-            { name: 'Sabayon', description: 'Luchtige sabayon op basis van kriekenbier of champagne, geserveerd met een bolletje vanille-ijs', price: '€ 14' },
-            { name: 'POUSSE CAFÉ', description: 'Irish Coffee (whisky) € 14\nFrench Coffee (cognac) € 14\nItalian Coffee (Amaretto) € 14\nLimoncello € 11\nAmaretto € 11\nBaileys € 11\nGrand Marnier € 12\nCointreau € 11\nHasseltse Jenever € 9\nGrappa € 11\nSambuca € 11\nEau de vie Poire Williams € 13\nCalvados € 11\nCognac Hennessy € 11\nCuarenta Y Tres € 11\nJack Daniels € 16\nDon Papa rhum € 17\nLagavulin € 18', price: '' }
+            { name: 'Dame Blanche', description: 'Vanille-ijs • warme chocoladesaus • verse slagroom', price: '€ 11' },
+            { name: 'Crêpe Suzette', description: 'Fijne flensjes • warme sinaasappelsaus • geflambeerd met Grand Marnier', price: '€ 17' },
+            { name: 'Sabayon met Champagne', description: 'Luchtige champagne sabayon • vanille-ijs', price: '€ 14' },
+            { name: 'Huisgemaakte Chocolademoelleux', description: 'Warme chocoladecake • smeuïge chocolade kern • vanille-ijs', price: '€ 15' },
+            { name: 'Kaasbordje', description: 'Selectie van kazen • garnituur • brood', price: '€ 18' },
+            { name: 'POUSSE CAFÉ', description: 'Irish / French / Italian Coffee € 14\nLimoncello € 11\nAmaretto € 11\nBaileys € 11\nGrand Marnier € 12\nCointreau € 11\nHasseltse jenever € 9\nGrappa € 11\nSambuca € 11\nEau de Vie Poire Williams € 13\nCalvados € 12\nCognac Hennessy € 13\nCuarenta y Tres € 11\nJack Daniel’s € 16\nDon Papa Rum € 17\nLagavulin € 18', price: '' }
           ]
         }
       }

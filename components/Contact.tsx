@@ -1,7 +1,6 @@
 import React from 'react';
 import { MapPin, Phone, Mail, Clock, Facebook, Instagram } from 'lucide-react';
 import { Translations } from '../types';
-import { openReservation } from '../utils';
 
 interface ContactProps {
   t: Translations;
@@ -76,14 +75,6 @@ export const Contact: React.FC<ContactProps> = ({ t }) => {
                 decoding="async"
               />
             </div>
-
-            <button
-              type="button"
-              onClick={openReservation}
-              className="px-10 py-4 bg-gold border-2 border-gold text-off-black font-serif text-sm tracking-widest uppercase hover:bg-light-gold hover:border-light-gold transition-colors duration-300 shadow-lg cursor-pointer"
-            >
-              {t.contact.reservationButton}
-            </button>
 
             <div className="flex items-center space-x-8 mt-auto">
               <a
