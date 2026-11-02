@@ -35,6 +35,7 @@ html {
 
 body {
     overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
 }
 
 section[id] {
@@ -71,6 +72,17 @@ section[id] {
         background-position: center center;
         background-size: cover;
         min-height: 100vh;
+    }
+}
+
+@media (max-width: 767px) {
+    section[id] {
+        scroll-margin-top: 4.75rem;
+    }
+
+    .mouse-scroll {
+        transform: scale(0.8);
+        transform-origin: top center;
     }
 }
 

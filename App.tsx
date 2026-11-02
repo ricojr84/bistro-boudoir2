@@ -54,7 +54,7 @@ const App: React.FC = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar lang={lang} setLang={setLang} t={t} />
       <Hero t={t} />
-      <Menu t={t} />
+      <Menu t={t} lang={lang} />
       <Gallery t={t} />
       <Suggestions t={t} />
       <Contact t={t} />

@@ -144,14 +144,14 @@ export const Gallery: React.FC<GalleryProps> = ({ t }) => {
   };
 
   return (
-    <section id="gallery" className="py-20 bg-off-black text-white">
+    <section id="gallery" className="py-12 md:py-20 bg-off-black text-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="font-serif text-4xl md:text-5xl text-gold uppercase tracking-widest mb-4 relative inline-block">
+        <div className="text-center mb-10 md:mb-16">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-gold uppercase tracking-[0.12em] md:tracking-widest mb-4 relative inline-block">
             {t.gallery.title}
             <span className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-24 h-1 bg-white/20"></span>
           </h2>
-          <p className="font-sans text-light-gold text-lg uppercase tracking-[0.2em] mt-8">
+          <p className="font-sans text-sm sm:text-lg text-light-gold uppercase tracking-[0.12em] sm:tracking-[0.2em] mt-7 md:mt-8">
             {t.gallery.subtitle}
           </p>
         </div>

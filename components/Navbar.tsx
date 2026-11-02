@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Menu, X, Globe } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Language, Translations } from '../types';
 import { EGIFT_URL, NAV_IDS, scrollToId } from '../utils';
 
@@ -36,11 +36,26 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
     };
   }, [isOpen]);
 
-  const toggleLang = () => {
-    if (lang === 'nl') setLang('fr');
-    else if (lang === 'fr') setLang('en');
-    else setLang('nl');
-  };
+  const languages: Language[] = ['nl', 'fr', 'en'];
+
+  const LanguageSelector = ({ mobile = false }: { mobile?: boolean }) => (
+    <div className={`flex items-center uppercase tracking-[0.18em] ${mobile ? 'text-xs text-gold' : 'text-[13px] text-gray-300'}`} aria-label="Language">
+      {languages.map((language, index) => (
+        <React.Fragment key={language}>
+          {index > 0 && <span className="px-1.5 opacity-60" aria-hidden="true">|</span>}
+          <button
+            type="button"
+            onClick={() => setLang(language)}
+            aria-current={lang === language ? 'true' : undefined}
+            aria-label={`Switch language to ${language.toUpperCase()}`}
+            className={`min-h-11 px-1 transition-colors hover:text-gold ${lang === language ? 'font-bold text-gold' : ''}`}
+          >
+            {language.toUpperCase()}
+          </button>
+        </React.Fragment>
+      ))}
+    </div>
+  );
 
   const handleNavigation = (id: string) => {
     if (id === 'egift') {
@@ -55,8 +70,8 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-[background-color,padding,box-shadow] duration-300 ${
-        scrolled || isOpen ? 'bg-off-black shadow-lg py-3' : 'bg-transparent py-5'
+      className={`fixed top-0 left-0 w-full z-50 pt-[calc(env(safe-area-inset-top)+0.75rem)] transition-[background-color,padding,box-shadow] duration-300 ${
+        scrolled || isOpen ? 'bg-off-black shadow-lg pb-3' : 'bg-transparent pb-5'
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
@@ -79,29 +94,16 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
             </button>
           ))}
 
-          <button
-            type="button"
-            onClick={toggleLang}
-            className="flex items-center space-x-2 px-4 py-2 border border-gold text-gold hover:bg-gold hover:text-off-black transition-colors duration-300 text-sm tracking-widest uppercase"
-          >
-            <Globe size={16} />
-            <span>{lang.toUpperCase()}</span>
-          </button>
+          <LanguageSelector />
 
         </div>
 
         <div className="md:hidden flex items-center z-50">
-          <button
-            type="button"
-            onClick={toggleLang}
-            className="mr-4 text-gold font-bold border border-gold px-2 py-1 text-xs"
-          >
-            {lang.toUpperCase()}
-          </button>
+          <div className="mr-2"><LanguageSelector mobile /></div>
           <button
             type="button"
             onClick={() => setIsOpen((open) => !open)}
-            className="text-gold focus:outline-none"
+            className="min-h-11 min-w-11 flex items-center justify-center text-gold focus:outline-none"
             aria-label={isOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={isOpen}
           >

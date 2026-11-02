@@ -1,4 +1,4 @@
-export const NAV_IDS = ['home', 'menu', 'gallery', 'suggesties', 'contact', 'egift', 'map'] as const;
+export const NAV_IDS = ['home', 'menu', 'gallery', 'suggesties', 'contact', 'egift'] as const;
 export type NavId = (typeof NAV_IDS)[number];
 
 export const RESERVATION_URL = 'https://bookings.zenchef.com/results?rid=366006&pid=1001';

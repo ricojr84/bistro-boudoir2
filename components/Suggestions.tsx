@@ -18,10 +18,10 @@ export const Suggestions: React.FC<SuggestionsProps> = ({ t }) => {
   };
 
   return (
-    <section id="suggesties" className="py-20 bg-cream text-off-black">
+    <section id="suggesties" className="py-12 md:py-20 bg-cream text-off-black">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="font-serif text-4xl md:text-5xl text-off-black uppercase tracking-widest mb-4 relative inline-block">
+        <div className="text-center mb-10 md:mb-16">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-off-black uppercase tracking-[0.12em] md:tracking-widest mb-4 relative inline-block">
             {t.suggestions.title}
             <span className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-24 h-1 bg-gold"></span>
           </h2>
@@ -30,7 +30,7 @@ export const Suggestions: React.FC<SuggestionsProps> = ({ t }) => {
         <div className="flex flex-col lg:flex-row gap-5 justify-center items-center">
           <button
             type="button"
-            className="bg-white shadow-xl border-t-4 border-gold overflow-hidden w-[300px] aspect-[210/297] cursor-pointer transition-transform duration-300 ease-out transform-gpu hover:scale-[1.03] hover:shadow-2xl"
+            className="bg-white shadow-xl border-t-4 border-gold overflow-hidden w-full max-w-[300px] aspect-[210/297] cursor-pointer transition-transform duration-300 ease-out transform-gpu hover:scale-[1.03] hover:shadow-2xl"
             onClick={openSuggestionsMenu}
             aria-label={t.suggestions.title}
           >
@@ -54,7 +54,7 @@ export const Suggestions: React.FC<SuggestionsProps> = ({ t }) => {
 
           <button
             type="button"
-            className="bg-white shadow-xl border-t-4 border-gold overflow-hidden relative w-[300px] aspect-[210/297] cursor-pointer transition-transform duration-300 ease-out transform-gpu hover:scale-[1.03] hover:shadow-2xl"
+            className="bg-white shadow-xl border-t-4 border-gold overflow-hidden relative w-full max-w-[300px] aspect-[210/297] cursor-pointer transition-transform duration-300 ease-out transform-gpu hover:scale-[1.03] hover:shadow-2xl"
             onClick={openWineList}
             aria-label={t.suggestions.wijnkaart}
           >

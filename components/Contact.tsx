@@ -10,35 +10,35 @@ const closedLabels = new Set(['Gesloten', 'Fermé', 'Closed']);
 
 export const Contact: React.FC<ContactProps> = ({ t }) => {
   return (
-    <section id="contact" className="py-20 bg-cream">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="font-serif text-4xl md:text-5xl text-off-black uppercase tracking-widest mb-4 relative inline-block">
+    <section id="contact" className="py-12 md:py-20 bg-cream">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-10 md:mb-16">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-off-black uppercase tracking-[0.12em] md:tracking-widest mb-4 relative inline-block">
             {t.contact.title}
             <span className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-24 h-1 bg-gold"></span>
           </h2>
-          <p className="font-sans text-gray-600 text-lg uppercase tracking-[0.2em] mt-8">
+          <p className="font-sans text-sm sm:text-lg text-gray-600 uppercase tracking-[0.12em] sm:tracking-[0.2em] mt-7 md:mt-8">
             {t.contact.subtitle}
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
-          <div className="space-y-8">
-            <div className="flex items-start space-x-6 p-[5px] bg-white shadow-lg border-l-4 border-gold">
+        <div className="grid lg:grid-cols-2 gap-6 md:gap-12 items-start">
+          <div className="space-y-4 md:space-y-8">
+            <div className="flex items-start space-x-4 md:space-x-6 p-4 md:p-[5px] bg-white shadow-lg border-l-4 border-gold">
               <MapPin className="text-gold w-8 h-8 mt-1 flex-shrink-0" />
               <div>
                 <h3 className="font-serif text-xl text-off-black mb-2 uppercase">{t.contact.address}</h3>
                 <p className="font-sans text-gray-600">Lippenslaan 141, 8300 Knokke</p>
               </div>
             </div>
-            <div className="flex items-start space-x-6 p-[5px] bg-white shadow-lg border-l-4 border-gold">
+            <div className="flex items-start space-x-4 md:space-x-6 p-4 md:p-[5px] bg-white shadow-lg border-l-4 border-gold">
               <Phone className="text-gold w-8 h-8 mt-1 flex-shrink-0" />
               <div>
                 <h3 className="font-serif text-xl text-off-black mb-2 uppercase">{t.contact.phone}</h3>
                 <p className="font-sans text-gray-600">+32 (0)50 66 03 23</p>
               </div>
             </div>
-            <div className="flex items-start space-x-6 p-[5px] bg-white shadow-lg border-l-4 border-gold">
+            <div className="flex items-start space-x-4 md:space-x-6 p-4 md:p-[5px] bg-white shadow-lg border-l-4 border-gold">
               <Mail className="text-gold w-8 h-8 mt-1 flex-shrink-0" />
               <div>
                 <h3 className="font-serif text-xl text-off-black mb-2 uppercase">{t.contact.email}</h3>
@@ -47,7 +47,7 @@ export const Contact: React.FC<ContactProps> = ({ t }) => {
                 </a>
               </div>
             </div>
-            <div className="flex items-start space-x-6 p-[5px] bg-white shadow-lg border-l-4 border-gold">
+            <div className="flex items-start space-x-4 md:space-x-6 p-4 md:p-[5px] bg-white shadow-lg border-l-4 border-gold">
               <Clock className="text-gold w-8 h-8 mt-1 flex-shrink-0" />
               <div className="w-full">
                 <h3 className="font-serif text-xl text-off-black mb-4 uppercase">{t.contact.hours}</h3>
@@ -65,7 +65,7 @@ export const Contact: React.FC<ContactProps> = ({ t }) => {
             </div>
           </div>
 
-          <div className="p-8 lg:p-12 shadow-2xl flex flex-col items-center justify-center space-y-12 min-h-[600px]">
+          <div className="p-6 md:p-8 lg:p-12 shadow-2xl flex flex-col items-center justify-center space-y-8 md:space-y-12 min-h-[280px] md:min-h-[600px]">
             <div className="flex-shrink-0">
               <img
                 src="/images/visitekaartlogo.png"

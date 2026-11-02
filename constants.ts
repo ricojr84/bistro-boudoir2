@@ -45,9 +45,7 @@ export const CONTENT: Record<string, Translations> = {
         },
         salads: {
           title: 'Salades',
-          items: [
-            { name: 'Thaise Rundsalade', description: 'Reepjes filet pur • verse koriander • rode ui • chili • sesam', price: '€ 29' }
-          ]
+          items: []
         },
         mains: {
           title: 'Hoofdgerechten',
@@ -60,7 +58,8 @@ export const CONTENT: Record<string, Translations> = {
             { name: 'Zeebaars', description: 'Zeebaarsfilet • witte wijnsaus • seizoensgroenten', price: '€ 36' },
             { name: 'Noordzee Bouillabaisse', description: 'Toast • rouille • gruyère', price: '€ 40' },
             { name: 'Pasta Ravioli met Rundvlees', description: 'Runderjus • romige champignonsaus', price: '€ 28' },
-            { name: 'Ravioli met Ricotta', description: 'Romige bisquesaus • handgepelde grijze garnalen', price: '€ 32' }
+            { name: 'Ravioli met Ricotta', description: 'Romige bisquesaus • handgepelde grijze garnalen', price: '€ 32' },
+            { name: 'Thaise Rundsalade', description: 'Reepjes filet pur • verse koriander • rode ui • chili • sesam', price: '€ 29' }
           ]
         },
 
@@ -197,9 +196,7 @@ export const CONTENT: Record<string, Translations> = {
         },
         salads: {
           title: 'Salades',
-          items: [
-            { name: 'Salade Thaï au Bœuf', description: 'Lamelles de filet pur • coriandre fraîche • oignon rouge • piment • sésame', price: '€ 29' }
-          ]
+          items: []
         },
         mains: {
           title: 'Plats Principaux',
@@ -212,7 +209,8 @@ export const CONTENT: Record<string, Translations> = {
             { name: 'Bar', description: 'Filet de bar • sauce au vin blanc • légumes de saison', price: '€ 36' },
             { name: 'Bouillabaisse de la Mer du Nord', description: 'Toast • rouille • gruyère', price: '€ 40' },
             { name: 'Raviolis au Bœuf', description: 'Jus de bœuf • sauce crémeuse aux champignons', price: '€ 28' },
-            { name: 'Raviolis à la Ricotta', description: 'Sauce bisque crémeuse • crevettes grises décortiquées à la main', price: '€ 32' }
+            { name: 'Raviolis à la Ricotta', description: 'Sauce bisque crémeuse • crevettes grises décortiquées à la main', price: '€ 32' },
+            { name: 'Salade Thaï au Bœuf', description: 'Lamelles de filet pur • coriandre fraîche • oignon rouge • piment • sésame', price: '€ 29' }
           ]
         },
 
@@ -349,9 +347,7 @@ export const CONTENT: Record<string, Translations> = {
         },
         salads: {
           title: 'Salads',
-          items: [
-            { name: 'Thai Beef Salad', description: 'Beef tenderloin strips • fresh coriander • red onion • chili • sesame', price: '€ 29' }
-          ]
+          items: []
         },
         mains: {
           title: 'Main Courses',
@@ -364,7 +360,8 @@ export const CONTENT: Record<string, Translations> = {
             { name: 'Sea Bass', description: 'Sea bass fillet • white wine sauce • seasonal vegetables', price: '€ 36' },
             { name: 'North Sea Bouillabaisse', description: 'Toast • rouille • gruyère', price: '€ 40' },
             { name: 'Beef Ravioli Pasta', description: 'Beef jus • creamy mushroom sauce', price: '€ 28' },
-            { name: 'Ricotta Ravioli', description: 'Creamy bisque sauce • hand-peeled grey shrimp', price: '€ 32' }
+            { name: 'Ricotta Ravioli', description: 'Creamy bisque sauce • hand-peeled grey shrimp', price: '€ 32' },
+            { name: 'Thai Beef Salad', description: 'Beef tenderloin strips • fresh coriander • red onion • chili • sesame', price: '€ 29' }
           ]
         },
 
