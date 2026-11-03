@@ -36,7 +36,9 @@ export const Menu: React.FC<MenuProps> = ({ t, lang }) => {
   const activeCategory = tabs.find(([id]) => id === activeId)?.[1] ?? categories.mains;
   const fullMenuPdf = lang === 'fr'
     ? '/images/boudoir_26-menuwinter-FR.pdf'
-    : '/images/boudoir_26-menuwinter-NL.pdf';
+    : lang === 'en'
+      ? '/images/Bistro_Boudoir_English_Menu.pdf'
+      : '/images/boudoir_26-menuwinter-NL.pdf';
 
   const handleTabKeyDown = (event: KeyboardEvent<HTMLButtonElement>) => {
     if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') return;
