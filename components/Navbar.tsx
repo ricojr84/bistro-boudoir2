@@ -107,14 +107,29 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
             aria-label={isOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={isOpen}
           >
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
+            <span className="relative h-7 w-7" aria-hidden="true">
+              <Menu
+                size={28}
+                strokeWidth={1.7}
+                className={`absolute inset-0 transition-[opacity,transform] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                  isOpen ? 'rotate-90 scale-75 opacity-0' : 'rotate-0 scale-100 opacity-100'
+                }`}
+              />
+              <X
+                size={28}
+                strokeWidth={1.7}
+                className={`absolute inset-0 transition-[opacity,transform] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                  isOpen ? 'rotate-0 scale-100 opacity-100' : '-rotate-90 scale-75 opacity-0'
+                }`}
+              />
+            </span>
           </button>
         </div>
       </div>
 
       <div
-        className={`fixed inset-0 bg-off-black/95 flex flex-col items-center justify-center space-y-8 transition-transform duration-500 ease-out md:hidden ${
-          isOpen ? 'translate-x-0' : 'translate-x-full pointer-events-none'
+        className={`fixed inset-0 flex flex-col items-center justify-center space-y-8 bg-off-black/95 transition-[transform,opacity] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] md:hidden ${
+          isOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0 pointer-events-none'
         }`}
         aria-hidden={!isOpen}
       >
@@ -123,7 +138,7 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
             type="button"
             key={item}
             onClick={() => handleNavigation(item)}
-            className={`text-2xl font-serif text-white hover:text-gold transition-[color,opacity,transform] duration-300 ease-out uppercase tracking-widest ${
+            className={`text-2xl font-serif text-white hover:text-gold transition-[color,opacity,transform] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] uppercase tracking-widest ${
               isOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
             }`}
             style={{ transitionDelay: isOpen ? `${NAV_IDS.indexOf(item) * 60 + 120}ms` : '0ms' }}
