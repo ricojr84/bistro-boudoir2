@@ -111,18 +111,24 @@ export const Menu: React.FC<MenuProps> = ({ t, lang }) => {
           aria-live="polite"
         >
           {activeId === 'wineList' ? (
-            <div className="mx-auto w-full max-w-[760px] border border-[#e9e3d7] bg-white">
-              <iframe
-                src="/images/Bistro_Boudoir_Wine_List_3_Sheets_Final_NL_FR.pdf#page=1&view=FitH"
-                title={lang === 'fr' ? 'Carte des vins' : lang === 'en' ? 'Wine list' : 'Wijn list'}
-                className="block h-[80vh] min-h-[480px] max-h-[1000px] w-full bg-white"
-                loading="eager"
-                scrolling="yes"
+            <div className="py-8 text-center">
+              <a
+                href="/images/Bistro_Boudoir_Wine_List_3_Sheets_Final_NL_FR.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(event) => {
+                  const popup = window.open(
+                    event.currentTarget.href,
+                    'bistro-boudoir-wine-list',
+                    'popup=yes,width=1100,height=850,scrollbars=yes,resizable=yes'
+                  );
+                  if (popup) event.preventDefault();
+                }}
+                className="inline-flex min-h-12 items-center justify-center gap-2 border border-[#cdbb91] bg-[#fbf8f0] px-6 py-3 font-serif text-lg text-[#7b6334] transition-colors hover:bg-[#b49452] hover:text-[#201d17]"
               >
-                <a href="/images/Bistro_Boudoir_Wine_List_3_Sheets_Final_NL_FR.pdf" target="_blank" rel="noopener noreferrer">
-                  {lang === 'fr' ? 'Ouvrir la carte des vins' : lang === 'en' ? 'Open the wine list' : 'Open de wijnlijst'}
-                </a>
-              </iframe>
+                {lang === 'fr' ? 'Ouvrir la carte des vins' : lang === 'en' ? 'Open the wine list' : 'Open de wijnlijst'}
+                <span aria-hidden="true">↗</span>
+              </a>
             </div>
           ) : activeId === 'menuAndSuggestions' ? (
             <div className="mx-auto grid max-w-[1180px] grid-cols-1 items-start gap-5 md:grid-cols-3">
@@ -142,9 +148,9 @@ export const Menu: React.FC<MenuProps> = ({ t, lang }) => {
               />
               <div className="min-w-0 border border-[#e9e3d7] bg-white">
                 <iframe
-                  src="/images/menu2027.pdf#page=1&view=FitH"
+                  src="/images/menu2027.pdf#page=1&view=Fit"
                   title={lang === 'fr' ? 'Menu 2027' : lang === 'en' ? '2027 menu' : 'Menu 2027'}
-                  className="block h-[80vh] min-h-[480px] max-h-[1000px] w-full bg-white"
+                  className="block h-[75vh] min-h-[280px] max-h-[900px] w-full bg-white"
                   loading="eager"
                   scrolling="yes"
                 >
