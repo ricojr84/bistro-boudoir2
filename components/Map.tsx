@@ -31,16 +31,16 @@ export const Map: React.FC<MapProps> = ({ t }) => {
   }, []);
 
   return (
-    <section id="map" className="relative py-12 md:py-20 bg-off-black">
-      <div className="container mx-auto px-4 z-10 relative">
-        <div className="text-center mb-8 md:mb-12">
-          <h2 className="font-serif text-3xl sm:text-4xl text-white uppercase tracking-[0.12em] md:tracking-widest mb-4">
+    <section id="map" className="relative bg-[#f7f4ed] px-5 py-16 text-[#24231f] sm:px-8 md:py-20">
+      <div className="relative z-10 mx-auto max-w-[1050px]">
+        <div className="mb-8 text-center md:mb-10">
+          <h2 className="mb-3 font-serif text-3xl font-medium sm:text-4xl">
             {t.nav.map}
           </h2>
-          <div className="w-24 h-1 bg-gold mx-auto"></div>
+          <div className="mx-auto h-px w-12 bg-[#b49452]"></div>
         </div>
 
-        <div ref={containerRef} className="w-full h-[320px] sm:h-[400px] md:h-[500px] border-2 md:border-4 border-gold shadow-2xl bg-off-black">
+        <div ref={containerRef} className="h-[320px] w-full bg-[#25231f] shadow-[0_18px_50px_rgba(36,35,31,.18)] sm:h-[400px] md:h-[440px]">
           {shouldLoad ? (
             <iframe
               title={t.nav.map}

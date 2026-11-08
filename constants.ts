@@ -4,6 +4,7 @@ export const CONTENT: Record<string, Translations> = {
   nl: {
     nav: {
       home: 'Home',
+      story: 'Ons verhaal',
       menu: 'Menu',
       gallery: 'Galerij',
       suggesties: 'Suggesties',
@@ -13,11 +14,24 @@ export const CONTENT: Record<string, Translations> = {
     },
     home: {
       title: 'Welkom in Bistro Boudoir',
+      eyebrow: 'Lippenslaan · Knokke',
+      headline: 'Een tafel vol verfijning.',
+      heroDescription: 'Franse elegantie en Belgische verfijning, met warmte geserveerd in het hart van Knokke.',
       subtitle: 'Authentieke Franse Keuken in het Hart van Knokke',
       description: 'Welkom bij Bistro Boudoir, waar Franse elegantie en Belgische verfijning elkaar omarmen. Gelegen aan de stijlvolle Lippenslaan – het kloppende hart van Knokke – biedt deze culinaire parel een zintuiglijke belevenis vol charme en klasse. Gastvrouw Daniela Nistreanu verwelkomt je met een warme glimlach en feilloze finesse. Chef Ivan Chuhunnikov creëert verfijnde Frans-Belgische gerechten, geïnspireerd door de seizoenen. Bistro Boudoir is geen restaurant. Het is een ervaring.',
-      button: 'Bekijk Ons Menu'
+      button: 'Bekijk Ons Menu',
+      scrollNote: 'Welkom bij Bistro Boudoir'
+    },
+    story: {
+      eyebrow: 'Een warm welkom',
+      title: 'Een bistro met een eigen verhaal.',
+      quote: '“Bistro Boudoir is geen restaurant. Het is een ervaring.”',
+      description: 'Gastvrouw Daniela Nistreanu verwelkomt je met een warme glimlach en feilloze finesse. Chef Ivan Chuhunnikov creëert verfijnde Frans-Belgische gerechten, geïnspireerd door de seizoenen.',
+      link: 'Ontdek Bistro Boudoir',
+      photoAlt: 'Sfeervol interieur bij Bistro Boudoir'
     },
     menu: {
+      eyebrow: 'Van onze keuken',
       title: 'Ons Menu',
       subtitle: 'Een culinaire reis door Frankrijk',
       childrenNote: 'EEN FRISSE SALADE, PUREE OF FRIETEN KAN STEEDS BESTELD WORDEN ALS SUPPLEMENT +4€',
@@ -103,10 +117,17 @@ export const CONTENT: Record<string, Translations> = {
       }
     },
     gallery: {
-      title: 'Galerij',
-      subtitle: 'Sfeerbeelden',
-      more: 'Meer',
-      moreItems: 'meer items'
+      title: 'Sfeer & smaak',
+      subtitle: 'Een blik binnen',
+      more: 'Meer foto\'s & video\'s',
+      moreItems: 'meer items',
+      photos: 'foto\'s',
+      videos: 'video\'s',
+      close: 'Sluit galerij',
+      previous: 'Vorige foto',
+      next: 'Volgende foto',
+      photoAlt: 'Foto van Bistro Boudoir',
+      videoAlt: 'Video van Bistro Boudoir'
     },
     suggestions: {
       title: 'Onze Suggesties',
@@ -114,6 +135,7 @@ export const CONTENT: Record<string, Translations> = {
       wijnkaart: 'Wijnkaart'
     },
     contact: {
+      headline: 'Tot aan tafel.',
       title: 'Contacteer Ons',
       subtitle: 'We horen graag van u',
       address: 'Adres',
@@ -155,6 +177,7 @@ export const CONTENT: Record<string, Translations> = {
   fr: {
     nav: {
       home: 'Accueil',
+      story: 'Notre histoire',
       menu: 'Menu',
       gallery: 'Galerie',
       suggesties: 'Suggestions',
@@ -164,11 +187,24 @@ export const CONTENT: Record<string, Translations> = {
     },
     home: {
       title: 'Bienvenue au Bistro Boudoir',
+      eyebrow: 'Lippenslaan · Knokke',
+      headline: 'Une table pleine de raffinement.',
+      heroDescription: 'L’élégance française et le raffinement belge servis avec chaleur au cœur de Knokke.',
       subtitle: 'Cuisine Française Authentique au Cœur de Knokke',
       description: 'Bienvenue au Bistro Boudoir, où l\'élégance française et le raffinement belge se rencontrent. Situé sur la prestigieuse Lippenslaan – le cœur battant de Knokke – cette perle culinaire offre une expérience sensorielle pleine de charme et de classe. L\'hôtesse Daniela Nistreanu vous accueille avec un sourire chaleureux et une finesse irréprochable. Le chef Ivan Chuhunnikov crée des plats raffinés franco-belges, inspirés par les saisons. Bistro Boudoir n\'est pas un restaurant. C\'est une expérience.',
-      button: 'Voir Notre Menu'
+      button: 'Voir Notre Menu',
+      scrollNote: 'Bienvenue au Bistro Boudoir'
+    },
+    story: {
+      eyebrow: 'Un accueil chaleureux',
+      title: 'Un bistro avec sa propre histoire.',
+      quote: '« Bistro Boudoir n’est pas un restaurant. C’est une expérience. »',
+      description: 'L’hôtesse Daniela Nistreanu vous accueille avec un sourire chaleureux et une finesse irréprochable. Le chef Ivan Chuhunnikov crée des plats franco-belges raffinés, inspirés par les saisons.',
+      link: 'Découvrez Bistro Boudoir',
+      photoAlt: 'Intérieur chaleureux du Bistro Boudoir'
     },
     menu: {
+      eyebrow: 'De notre cuisine',
       title: 'Notre Menu',
       subtitle: 'Un voyage culinaire à travers la France',
       childrenNote: 'SALADE FRAÎCHE, PURÉE OU FRITES DISPONIBLES EN SUPPLÉMENT +4€',
@@ -254,10 +290,17 @@ export const CONTENT: Record<string, Translations> = {
       }
     },
     gallery: {
-      title: 'Galerie',
-      subtitle: 'Ambiance',
-      more: 'Plus',
-      moreItems: 'éléments de plus'
+      title: 'Ambiance & saveurs',
+      subtitle: 'Un aperçu de la maison',
+      more: 'Plus de photos et vidéos',
+      moreItems: 'éléments de plus',
+      photos: 'photos',
+      videos: 'vidéos',
+      close: 'Fermer la galerie',
+      previous: 'Photo précédente',
+      next: 'Photo suivante',
+      photoAlt: 'Photo du Bistro Boudoir',
+      videoAlt: 'Vidéo du Bistro Boudoir'
     },
     suggestions: {
       title: 'Nos Suggestions',
@@ -265,6 +308,7 @@ export const CONTENT: Record<string, Translations> = {
       wijnkaart: 'Carte des Vins'
     },
     contact: {
+      headline: 'À bientôt à table.',
       title: 'Contactez-Nous',
       subtitle: 'Nous serions ravis d\'avoir de vos nouvelles',
       address: 'Adresse',
@@ -306,6 +350,7 @@ export const CONTENT: Record<string, Translations> = {
   en: {
     nav: {
       home: 'Home',
+      story: 'Our Story',
       menu: 'Menu',
       gallery: 'Gallery',
       suggesties: 'Suggestions',
@@ -315,11 +360,24 @@ export const CONTENT: Record<string, Translations> = {
     },
     home: {
       title: 'Welcome to Bistro Boudoir',
+      eyebrow: 'Lippenslaan · Knokke',
+      headline: 'A table set for refinement.',
+      heroDescription: 'French elegance and Belgian refinement, served with warmth in the heart of Knokke.',
       subtitle: 'Authentic French Cuisine in the Heart of Knokke',
       description: 'Welcome to Bistro Boudoir, where French elegance and Belgian refinement embrace each other. Located on the stylish Lippenslaan – the beating heart of Knokke – this culinary gem offers a sensory experience full of charm and class. Hostess Daniela Nistreanu welcomes you with a warm smile and impeccable finesse. Chef Ivan Chuhunnikov creates refined Franco-Belgian dishes, inspired by the seasons. Bistro Boudoir is not a restaurant. It is an experience.',
-      button: 'View Our Menu'
+      button: 'View Our Menu',
+      scrollNote: 'Welcome to Bistro Boudoir'
+    },
+    story: {
+      eyebrow: 'A warm welcome',
+      title: 'A bistro with a story of its own.',
+      quote: '“Bistro Boudoir is not a restaurant. It is an experience.”',
+      description: 'Hostess Daniela Nistreanu welcomes you with a warm smile and impeccable finesse. Chef Ivan Chuhunnikov creates refined Franco-Belgian dishes, inspired by the seasons.',
+      link: 'Discover Bistro Boudoir',
+      photoAlt: 'Warm interior at Bistro Boudoir'
     },
     menu: {
+      eyebrow: 'From our kitchen',
       title: 'Our Menu',
       subtitle: 'A culinary journey through France',
       childrenNote: 'FRESH SALAD, MASH OR FRIES AVAILABLE AS A SIDE FOR +€4',
@@ -405,10 +463,17 @@ export const CONTENT: Record<string, Translations> = {
       }
     },
     gallery: {
-      title: 'Gallery',
-      subtitle: 'Atmosphere',
-      more: 'More',
-      moreItems: 'more items'
+      title: 'Atmosphere & flavour',
+      subtitle: 'A glimpse inside',
+      more: 'More photos & videos',
+      moreItems: 'more items',
+      photos: 'photos',
+      videos: 'videos',
+      close: 'Close gallery',
+      previous: 'Previous photo',
+      next: 'Next photo',
+      photoAlt: 'Photo of Bistro Boudoir',
+      videoAlt: 'Video of Bistro Boudoir'
     },
     suggestions: {
       title: 'Our Suggestions',
@@ -416,6 +481,7 @@ export const CONTENT: Record<string, Translations> = {
       wijnkaart: 'Wine List'
     },
     contact: {
+      headline: 'See you at the table.',
       title: 'Contact Us',
       subtitle: 'We\'d love to hear from you',
       address: 'Address',

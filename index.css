@@ -2,13 +2,13 @@
 
 @theme {
   --font-serif: "Playfair Display", serif;
-  --font-sans: "Lato", sans-serif;
+  --font-sans: "DM Sans", sans-serif;
   
-  --color-gold: #D4AF37;
-  --color-light-gold: #F4E4BC;
-  --color-deep-black: #0A0A0A;
-  --color-off-black: #1A1A1A;
-  --color-cream: #F5F5DC;
+  --color-gold: #b49452;
+  --color-light-gold: #e2c982;
+  --color-deep-black: #1b1a17;
+  --color-off-black: #24231f;
+  --color-cream: #f7f4ed;
 }
 
 /* Custom Scrollbar */
@@ -17,16 +17,16 @@
 }
 
 ::-webkit-scrollbar-track {
-    background: #1A1A1A;
+    background: #fffdf8;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #D4AF37;
+    background: #b49452;
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #F4E4BC;
+    background: #e2c982;
 }
 
 html {
@@ -36,10 +36,13 @@ html {
 body {
     overflow-x: hidden;
     -webkit-tap-highlight-color: transparent;
+    background: #f7f4ed;
+    color: #24231f;
+    font-family: "DM Sans", Arial, sans-serif;
 }
 
 section[id] {
-    scroll-margin-top: 5.5rem;
+    scroll-margin-top: calc(5.5rem + env(safe-area-inset-top));
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -77,7 +80,7 @@ section[id] {
 
 @media (max-width: 767px) {
     section[id] {
-        scroll-margin-top: 4.75rem;
+        scroll-margin-top: calc(4.75rem + env(safe-area-inset-top));
     }
 
     .mouse-scroll {
@@ -104,7 +107,7 @@ section[id] {
 .mouse {
     width: 30px;
     height: 50px;
-    border: 2px solid #D4AF37;
+    border: 2px solid #b49452;
     border-radius: 15px;
     position: relative;
     opacity: 0.8;
@@ -113,7 +116,7 @@ section[id] {
 .wheel {
     width: 4px;
     height: 10px;
-    background: #D4AF37;
+    background: #b49452;
     border-radius: 2px;
     position: absolute;
     top: 8px;
@@ -143,8 +146,8 @@ section[id] {
 .mouse-arrow span {
     width: 6px;
     height: 6px;
-    border-right: 2px solid #D4AF37;
-    border-bottom: 2px solid #D4AF37;
+    border-right: 2px solid #b49452;
+    border-bottom: 2px solid #b49452;
     transform: rotate(45deg);
     opacity: 0.8;
     animation: arrow-bounce 1.5s infinite;
@@ -191,6 +194,31 @@ section[id] {
 .animate-fade-in-up {
     animation: fadeIn 0.7s ease-out;
 }
+
+@keyframes gallery-backdrop-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes gallery-backdrop-out {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes gallery-panel-in {
+    from { opacity: 0; transform: translateY(16px) scale(0.985); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes gallery-panel-out {
+    from { opacity: 1; transform: translateY(0) scale(1); }
+    to { opacity: 0; transform: translateY(10px) scale(0.99); }
+}
+
+.animate-gallery-backdrop-in { animation: gallery-backdrop-in 420ms ease both; }
+.animate-gallery-backdrop-out { animation: gallery-backdrop-out 320ms ease both; }
+.animate-gallery-panel-in { animation: gallery-panel-in 460ms cubic-bezier(0.2, 0.75, 0.25, 1) both; }
+.animate-gallery-panel-out { animation: gallery-panel-out 320ms ease both; }
 
 /* Instagram New Post Animation */
 @keyframes pulse-new-post {

@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
+import { Story } from './components/Story';
 import { Menu } from './components/Menu';
 import { Gallery } from './components/Gallery';
-import { Suggestions } from './components/Suggestions';
 import { Contact } from './components/Contact';
 import { Map } from './components/Map';
 import { Footer } from './components/Footer';
@@ -54,9 +54,9 @@ const App: React.FC = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar lang={lang} setLang={setLang} t={t} />
       <Hero t={t} />
+      <Story t={t} />
       <Menu t={t} lang={lang} />
       <Gallery t={t} />
-      <Suggestions t={t} />
       <Contact t={t} />
       <Map t={t} />
       <Footer t={t} />

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu as MenuIcon, X as CloseIcon } from 'lucide-react';
 import { Language, Translations } from '../types';
-import { EGIFT_URL, NAV_IDS, scrollToId } from '../utils';
+import { EGIFT_URL, NAV_IDS, openReservation, scrollToId } from '../utils';
 
 interface NavbarProps {
   lang: Language;
@@ -9,25 +9,23 @@ interface NavbarProps {
   t: Translations;
 }
 
+const brandFontStyle: React.CSSProperties = { fontFamily: 'var(--font-serif)' };
+const egiftLogoStyle: React.CSSProperties = {
+  backgroundColor: '#555149',
+  maskImage: "url('/images/egiftlogo.png')",
+  WebkitMaskImage: "url('/images/egiftlogo.png')",
+  maskRepeat: 'no-repeat',
+  WebkitMaskRepeat: 'no-repeat',
+  maskPosition: 'center',
+  WebkitMaskPosition: 'center',
+  maskSize: 'contain',
+  WebkitMaskSize: 'contain',
+};
+
 export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    let ticking = false;
-    const handleScroll = () => {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(() => {
-        setScrolled(window.scrollY > 50);
-        ticking = false;
-      });
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const languages: Language[] = ['nl', 'fr', 'en'];
+  const desktopNavIds = NAV_IDS.filter((item) => item !== 'suggesties' && item !== 'egift');
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : '';
@@ -36,19 +34,38 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
     };
   }, [isOpen]);
 
-  const languages: Language[] = ['nl', 'fr', 'en'];
+  useEffect(() => {
+    if (!isOpen) return;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setIsOpen(false);
+    };
+    window.addEventListener('keydown', closeOnEscape);
+    return () => window.removeEventListener('keydown', closeOnEscape);
+  }, [isOpen]);
+
+  const handleNavigation = (id: string) => {
+    if (id === 'egift') {
+      window.open(EGIFT_URL, '_blank', 'noopener,noreferrer');
+    } else if (id === 'suggesties') {
+      document.getElementById('menu-tab-menuAndSuggestions')?.click();
+      scrollToId('menu');
+    } else {
+      scrollToId(id);
+    }
+    setIsOpen(false);
+  };
 
   const LanguageSelector = ({ mobile = false }: { mobile?: boolean }) => (
-    <div className={`flex items-center uppercase tracking-[0.18em] ${mobile ? 'text-xs text-gold' : 'text-[13px] text-gray-300'}`} aria-label="Language">
+    <div className={`flex items-center uppercase tracking-[.16em] ${mobile ? 'text-sm text-[#77746c]' : 'text-[13px] text-[#77746c]'}`} aria-label="Language">
       {languages.map((language, index) => (
         <React.Fragment key={language}>
-          {index > 0 && <span className="px-1.5 opacity-60" aria-hidden="true">|</span>}
+          {index > 0 && <span className="px-1 opacity-60" aria-hidden="true">/</span>}
           <button
             type="button"
             onClick={() => setLang(language)}
             aria-current={lang === language ? 'true' : undefined}
             aria-label={`Switch language to ${language.toUpperCase()}`}
-            className={`min-h-11 px-1 transition-colors hover:text-gold ${lang === language ? 'font-bold text-gold' : ''}`}
+            className={`min-h-10 px-1 transition-colors hover:text-[#9d7c3f] ${lang === language ? 'font-bold text-[#7b6334]' : ''}`}
           >
             {language.toUpperCase()}
           </button>
@@ -57,96 +74,94 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
     </div>
   );
 
-  const handleNavigation = (id: string) => {
-    if (id === 'egift') {
-      window.open(EGIFT_URL, '_blank', 'noopener,noreferrer');
-      setIsOpen(false);
-      return;
-    }
-
-    scrollToId(id);
-    setIsOpen(false);
-  };
-
   return (
-    <nav
-      className={`fixed top-0 left-0 w-full z-50 pt-[calc(env(safe-area-inset-top)+0.75rem)] transition-[background-color,padding,box-shadow] duration-300 ${
-        scrolled || isOpen ? 'bg-off-black shadow-lg pb-3' : 'bg-transparent pb-5'
-      }`}
-    >
-      <div className="container mx-auto px-6 flex justify-between items-center">
-        <button type="button" className="z-50" onClick={() => handleNavigation('home')}>
-          <h1 className="font-serif text-lg md:text-xl text-gold tracking-widest uppercase border-b-2 border-transparent hover:border-gold transition-colors duration-300">
-            Bistro Boudoir
-          </h1>
-        </button>
+    <>
+      <nav className="fixed inset-x-0 top-0 z-50 border-b border-[#24231f]/[.06] bg-[#fffdf8]/95 pt-[env(safe-area-inset-top)] text-[#24231f] shadow-[0_1px_10px_rgba(36,35,31,.03)] backdrop-blur-sm">
+        <div className="mx-auto flex min-h-[72px] max-w-[1440px] items-center justify-between gap-2 px-3 sm:gap-3 sm:px-5 xl:px-[clamp(32px,6vw,96px)]">
+          <button type="button" onClick={() => handleNavigation('home')} className="shrink-0 text-left">
+            <span style={brandFontStyle} className="whitespace-nowrap font-serif text-[15px] font-semibold tracking-[.14em] text-[#555149] sm:text-[17px] xl:text-[20px]">BISTRO BOUDOIR</span>
+          </button>
 
-        <div className="hidden md:flex items-center space-x-8">
-          {NAV_IDS.map((item) => (
+          <div className="hidden min-w-0 items-center gap-5 md:flex">
+            <div className="flex items-center gap-2 xl:gap-4 2xl:gap-7">
+              {desktopNavIds.map((item) => (
+                <button
+                  type="button"
+                  key={item}
+                  onClick={() => handleNavigation(item)}
+                  style={brandFontStyle}
+                  className="group relative whitespace-nowrap py-2 font-serif text-[13px] font-medium uppercase tracking-[.08em] text-[#555149] transition-colors hover:text-[#9d7c3f] lg:text-sm 2xl:text-[15px]"
+                >
+                  {t.nav[item]}
+                  <span aria-hidden="true" className="absolute inset-x-0 -bottom-0.5 h-px origin-left scale-x-0 bg-[#b49452] transition-transform group-hover:scale-x-100" />
+                </button>
+              ))}
+              <a
+                href={EGIFT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="E-Gift"
+                title="E-Gift"
+                className="flex h-10 w-10 shrink-0 items-center justify-center text-[#555149] transition-opacity hover:opacity-70"
+              >
+                <span aria-hidden="true" className="block h-9 w-9" style={egiftLogoStyle} />
+              </a>
+            </div>
+            <LanguageSelector />
+          </div>
+
+          <div className="flex items-center gap-2 md:hidden">
+            <a
+              href={EGIFT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="E-Gift"
+              title="E-Gift"
+              className="flex h-8 w-8 shrink-0 items-center justify-center text-[#555149] transition-opacity hover:opacity-70"
+            >
+              <span aria-hidden="true" className="block h-7 w-7" style={egiftLogoStyle} />
+            </a>
+            <LanguageSelector mobile />
             <button
               type="button"
-              key={item}
-              onClick={() => handleNavigation(item)}
-              className="text-sm uppercase tracking-widest text-gray-300 hover:text-gold transition-colors relative group"
+              onClick={() => setIsOpen((open) => !open)}
+              className="relative z-[60] flex min-h-11 min-w-11 items-center justify-center text-[#24231f]"
+              aria-label={isOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={isOpen}
+              aria-controls="mobile-navigation"
             >
-              {t.nav[item]}
-              <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
+              {isOpen ? <CloseIcon size={25} strokeWidth={1.5} /> : <MenuIcon size={25} strokeWidth={1.5} />}
             </button>
-          ))}
-
-          <LanguageSelector />
-
+          </div>
         </div>
-
-        <div className="md:hidden flex items-center z-50">
-          <div className="mr-2"><LanguageSelector mobile /></div>
-          <button
-            type="button"
-            onClick={() => setIsOpen((open) => !open)}
-            className="min-h-11 min-w-11 flex items-center justify-center text-gold focus:outline-none"
-            aria-label={isOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={isOpen}
-          >
-            <span className="relative h-7 w-7" aria-hidden="true">
-              <Menu
-                size={28}
-                strokeWidth={1.7}
-                className={`absolute inset-0 transition-[opacity,transform] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
-                  isOpen ? 'rotate-90 scale-75 opacity-0' : 'rotate-0 scale-100 opacity-100'
-                }`}
-              />
-              <X
-                size={28}
-                strokeWidth={1.7}
-                className={`absolute inset-0 transition-[opacity,transform] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
-                  isOpen ? 'rotate-0 scale-100 opacity-100' : '-rotate-90 scale-75 opacity-0'
-                }`}
-              />
-            </span>
-          </button>
-        </div>
-      </div>
+      </nav>
 
       <div
-        className={`fixed inset-0 flex flex-col items-center justify-center space-y-8 bg-off-black/95 transition-[transform,opacity] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] md:hidden ${
-          isOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0 pointer-events-none'
-        }`}
+        id="mobile-navigation"
+        style={{ top: 'calc(72px + env(safe-area-inset-top))' }}
+        className={`fixed inset-x-0 bottom-0 z-40 flex flex-col items-center justify-center gap-5 bg-[#fffdf8] px-8 transition-[opacity,visibility] duration-300 md:hidden ${isOpen ? 'visible opacity-100' : 'invisible opacity-0 pointer-events-none'}`}
         aria-hidden={!isOpen}
       >
         {NAV_IDS.map((item) => (
           <button
             type="button"
             key={item}
+            tabIndex={isOpen ? 0 : -1}
             onClick={() => handleNavigation(item)}
-            className={`text-2xl font-serif text-white hover:text-gold transition-[color,opacity,transform] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] uppercase tracking-widest ${
-              isOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
-            }`}
-            style={{ transitionDelay: isOpen ? `${NAV_IDS.indexOf(item) * 60 + 120}ms` : '0ms' }}
+            className="font-serif text-[26px] text-[#24231f] transition-colors hover:text-[#9d7c3f]"
           >
             {t.nav[item]}
           </button>
         ))}
+        <button
+          type="button"
+          onClick={() => { openReservation(); setIsOpen(false); }}
+          tabIndex={isOpen ? 0 : -1}
+          className="mt-3 inline-flex min-h-12 items-center justify-center bg-[#b49452] px-6 text-[14px] font-semibold uppercase tracking-[.1em] text-[#201d17]"
+        >
+          {t.contact.reservationButton}
+        </button>
       </div>
-    </nav>
+    </>
   );
 };

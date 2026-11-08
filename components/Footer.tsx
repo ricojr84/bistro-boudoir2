@@ -7,15 +7,13 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ t }) => {
   return (
-    <footer className="bg-black text-gray-400 py-12 border-t border-gold/30">
-      <div className="container mx-auto text-center px-4">
-        <h2 className="font-serif text-2xl text-gold mb-6 tracking-widest">Bistro Boudoir</h2>
-        <p className="font-serif italic text-lg mb-4">{t.footer.tagline}</p>
-        <p className="text-sm font-sans tracking-wider opacity-60">{t.footer.copyright}</p>
-        <p className="text-xs font-sans tracking-wider opacity-60 mt-6">
-          Made by RICO
-        </p>
+    <footer className="border-t border-[#e9e3d7] bg-[#f7f4ed] px-6 py-6 text-[#827e73] sm:px-8">
+      <div className="mx-auto flex max-w-[1380px] flex-col items-center justify-between gap-3 text-center text-[11px] md:flex-row md:text-left">
+        <a href="#home" className="font-serif text-sm font-semibold tracking-[.17em] text-[#24231f]">BISTRO BOUDOIR</a>
+        <span>{t.footer.tagline} <span className="px-1 opacity-50">·</span> {t.footer.copyright}</span>
+        <span>{t.footer.address}</span>
       </div>
+      <p className="mt-4 text-center text-[10px] tracking-wide text-[#827e73]/70">Made by RICO</p>
     </footer>
   );
 };

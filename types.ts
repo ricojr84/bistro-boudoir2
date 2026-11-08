@@ -16,6 +16,7 @@ export interface MenuCategory {
 export interface Translations {
   nav: {
     home: string;
+    story: string;
     menu: string;
     gallery: string;
     suggesties: string;
@@ -25,11 +26,24 @@ export interface Translations {
   };
   home: {
     title: string;
+    eyebrow: string;
+    headline: string;
+    heroDescription: string;
     subtitle: string;
     description: string;
     button: string;
+    scrollNote: string;
+  };
+  story: {
+    eyebrow: string;
+    title: string;
+    quote: string;
+    description: string;
+    link: string;
+    photoAlt: string;
   };
   menu: {
+    eyebrow: string;
     title: string;
     subtitle: string;
     childrenNote: string;
@@ -48,6 +62,13 @@ export interface Translations {
     subtitle: string;
     more: string;
     moreItems: string;
+    photos: string;
+    videos: string;
+    close: string;
+    previous: string;
+    next: string;
+    photoAlt: string;
+    videoAlt: string;
   };
   suggestions: {
     title: string;
@@ -55,6 +76,7 @@ export interface Translations {
     wijnkaart: string;
   };
   contact: {
+    headline: string;
     title: string;
     subtitle: string;
     address: string;
