@@ -7,9 +7,15 @@ interface StoryProps {
 }
 
 const photos = [
+  '/images/IMG_5808.JPG',
   '/images/IMG_5809.JPG',
+  '/images/IMG_5810.JPG',
+  '/images/IMG_5811.JPG',
   '/images/IMG_5812.JPG',
+  '/images/IMG_5813.JPG',
   '/images/IMG_5814.JPG',
+  '/images/IMG_5815.JPG',
+  '/images/IMG_5816.JPG',
   '/images/IMG_5817.JPG',
   '/images/IMG_5818.JPG',
   '/images/IMG_5819.JPG',
@@ -17,29 +23,68 @@ const photos = [
 
 export const Story: React.FC<StoryProps> = ({ t }) => {
   const [photoIndex, setPhotoIndex] = useState(0);
-  const [isChanging, setIsChanging] = useState(false);
+  const [nextPhotoIndex, setNextPhotoIndex] = useState<number | null>(null);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   useEffect(() => {
-    photos.forEach((src) => {
-      const image = new Image();
-      image.src = src;
-    });
-
+    const fadeDuration = 1500;
+    let currentIndex = 0;
+    let isPreparingTransition = false;
+    let isUnmounted = false;
     let transitionTimeout = 0;
+    let firstFrame = 0;
+    let secondFrame = 0;
+    let pendingImage: HTMLImageElement | null = null;
     const interval = window.setInterval(() => {
-      setIsChanging(true);
-      transitionTimeout = window.setTimeout(() => {
-        setPhotoIndex((current) => {
-          const offset = 1 + Math.floor(Math.random() * (photos.length - 1));
-          return (current + offset) % photos.length;
-        });
-        setIsChanging(false);
-      }, 350);
+      if (isPreparingTransition) return;
+      isPreparingTransition = true;
+
+      const offset = 1 + Math.floor(Math.random() * (photos.length - 1));
+      const nextIndex = (currentIndex + offset) % photos.length;
+      pendingImage = new Image();
+      pendingImage.onload = () => {
+        if (!pendingImage || isUnmounted) return;
+        const beginFade = () => {
+          if (isUnmounted) return;
+          setNextPhotoIndex(nextIndex);
+          firstFrame = window.requestAnimationFrame(() => {
+            secondFrame = window.requestAnimationFrame(() => {
+              setIsTransitioning(true);
+              transitionTimeout = window.setTimeout(() => {
+                currentIndex = nextIndex;
+                setPhotoIndex(nextIndex);
+                setIsTransitioning(false);
+                setNextPhotoIndex(null);
+                isPreparingTransition = false;
+                pendingImage = null;
+              }, fadeDuration);
+            });
+          });
+        };
+
+        if (typeof pendingImage.decode === 'function') {
+          void pendingImage.decode().then(beginFade, beginFade);
+        } else {
+          beginFade();
+        }
+      };
+      pendingImage.onerror = () => {
+        pendingImage = null;
+        isPreparingTransition = false;
+      };
+      pendingImage.src = photos[nextIndex];
     }, 10000);
 
     return () => {
+      isUnmounted = true;
       window.clearInterval(interval);
       window.clearTimeout(transitionTimeout);
+      if (pendingImage) {
+        pendingImage.onload = null;
+        pendingImage.onerror = null;
+      }
+      window.cancelAnimationFrame(firstFrame);
+      window.cancelAnimationFrame(secondFrame);
     };
   }, []);
 
@@ -59,13 +104,24 @@ export const Story: React.FC<StoryProps> = ({ t }) => {
             {t.story.link} <span aria-hidden="true">↗</span>
           </button>
         </div>
-        <img
-          src={photos[photoIndex]}
-          alt={t.story.photoAlt}
-          className={`order-1 h-[290px] w-full object-cover transition-opacity duration-700 md:order-none md:h-[370px] ${isChanging ? 'opacity-30' : 'opacity-100'}`}
-          loading="eager"
-          decoding="async"
-        />
+        <div className="order-1 relative h-[290px] w-full overflow-hidden md:order-none md:h-[370px]">
+          <img
+            src={photos[photoIndex]}
+            alt={t.story.photoAlt}
+            className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-[1500ms] ease-in-out ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}
+            loading="eager"
+            decoding="async"
+          />
+          {nextPhotoIndex !== null && (
+            <img
+              src={photos[nextPhotoIndex]}
+              alt=""
+              aria-hidden="true"
+              className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-[1500ms] ease-in-out ${isTransitioning ? 'opacity-100' : 'opacity-0'}`}
+              decoding="async"
+            />
+          )}
+        </div>
       </div>
     </section>
   );
