@@ -111,12 +111,13 @@ export const Menu: React.FC<MenuProps> = ({ t, lang }) => {
           aria-live="polite"
         >
           {activeId === 'wineList' ? (
-            <div className="mx-auto w-full max-w-[560px] overflow-hidden border border-[#e9e3d7] bg-white">
+            <div className="mx-auto w-full max-w-[760px] border border-[#e9e3d7] bg-white">
               <iframe
-                src="/images/Bistro_Boudoir_Wine_List_3_Sheets_Final_NL_FR.pdf#page=1&view=Fit"
+                src="/images/Bistro_Boudoir_Wine_List_3_Sheets_Final_NL_FR.pdf#page=1&view=FitH"
                 title={lang === 'fr' ? 'Carte des vins' : lang === 'en' ? 'Wine list' : 'Wijn list'}
-                className="block aspect-[210/297] w-full bg-white"
-                loading="lazy"
+                className="block h-[80vh] min-h-[480px] max-h-[1000px] w-full bg-white"
+                loading="eager"
+                scrolling="yes"
               >
                 <a href="/images/Bistro_Boudoir_Wine_List_3_Sheets_Final_NL_FR.pdf" target="_blank" rel="noopener noreferrer">
                   {lang === 'fr' ? 'Ouvrir la carte des vins' : lang === 'en' ? 'Open the wine list' : 'Open de wijnlijst'}

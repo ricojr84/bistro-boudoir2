@@ -7,13 +7,9 @@ interface StoryProps {
 }
 
 const photos = [
-  '/images/IMG_5808.JPG',
   '/images/IMG_5809.JPG',
-  '/images/IMG_5810.JPG',
   '/images/IMG_5811.JPG',
-  '/images/IMG_5812.JPG',
   '/images/IMG_5813.JPG',
-  '/images/IMG_5814.JPG',
   '/images/IMG_5815.JPG',
   '/images/IMG_5816.JPG',
   '/images/IMG_5817.JPG',
@@ -40,8 +36,7 @@ export const Story: React.FC<StoryProps> = ({ t }) => {
       if (isPreparingTransition) return;
       isPreparingTransition = true;
 
-      const offset = 1 + Math.floor(Math.random() * (photos.length - 1));
-      const nextIndex = (currentIndex + offset) % photos.length;
+      const nextIndex = (currentIndex + 1) % photos.length;
       const nextSlot = currentSlot === 'first' ? 'second' : 'first';
       pendingImage = new Image();
       pendingImage.onload = () => {
@@ -108,7 +103,7 @@ export const Story: React.FC<StoryProps> = ({ t }) => {
             {t.story.link} <span aria-hidden="true">↗</span>
           </button>
         </div>
-        <div className="order-1 relative h-[290px] w-full overflow-hidden md:order-none md:h-[370px]">
+        <div className="order-1 relative aspect-[3/2] w-full overflow-hidden md:order-none">
           <img
             src={photos[firstPhotoIndex]}
             alt={activePhotoSlot === 'first' ? t.story.photoAlt : ''}
