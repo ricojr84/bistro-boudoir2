@@ -146,18 +146,17 @@ export const Menu: React.FC<MenuProps> = ({ t, lang }) => {
                 loading="lazy"
                 decoding="async"
               />
-              <div className="min-w-0 border border-[#e9e3d7] bg-white">
-                <iframe
-                  src="/images/menu2027.pdf#page=1&view=Fit"
-                  title={lang === 'fr' ? 'Menu 2027' : lang === 'en' ? '2027 menu' : 'Menu 2027'}
-                  className="block h-[75vh] min-h-[280px] max-h-[900px] w-full bg-white"
-                  loading="eager"
-                  scrolling="yes"
-                >
-                  <a href="/images/menu2027.pdf" target="_blank" rel="noopener noreferrer">
-                    {lang === 'fr' ? 'Ouvrir le menu 2027' : lang === 'en' ? 'Open the 2027 menu' : 'Open menu 2027'}
-                  </a>
-                </iframe>
+              <div className="min-w-0 space-y-4">
+                {[1, 2].map((page) => (
+                  <img
+                    key={page}
+                    src={`/images/menu2027-pages/menu2027-page-${page}.png`}
+                    alt={`${lang === 'fr' ? 'Menu 2027' : lang === 'en' ? '2027 menu' : 'Menu 2027'} - ${page}`}
+                    className="block h-auto w-full"
+                    loading={page === 1 ? 'eager' : 'lazy'}
+                    decoding="async"
+                  />
+                ))}
               </div>
             </div>
           ) : (
