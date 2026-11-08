@@ -108,7 +108,7 @@ export const Story: React.FC<StoryProps> = ({ t }) => {
           <img
             src={photos[photoIndex]}
             alt={t.story.photoAlt}
-            className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-[1500ms] ease-in-out ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}
+            className={`story-photo absolute inset-0 h-full w-full object-cover transition-opacity duration-[1500ms] ease-in-out ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}
             loading="eager"
             decoding="async"
           />
@@ -117,7 +117,7 @@ export const Story: React.FC<StoryProps> = ({ t }) => {
               src={photos[nextPhotoIndex]}
               alt=""
               aria-hidden="true"
-              className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-[1500ms] ease-in-out ${isTransitioning ? 'opacity-100' : 'opacity-0'}`}
+              className={`story-photo absolute inset-0 h-full w-full object-cover transition-opacity duration-[1500ms] ease-in-out ${isTransitioning ? 'opacity-100' : 'opacity-0'}`}
               decoding="async"
             />
           )}
