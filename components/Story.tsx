@@ -25,8 +25,6 @@ export const Story: React.FC<StoryProps> = ({ t }) => {
       image.src = src;
     });
 
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
     let transitionTimeout = 0;
     const interval = window.setInterval(() => {
       setIsChanging(true);
