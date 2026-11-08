@@ -140,12 +140,13 @@ export const Menu: React.FC<MenuProps> = ({ t, lang }) => {
                 loading="lazy"
                 decoding="async"
               />
-              <div className="min-w-0 overflow-hidden border border-[#e9e3d7]">
+              <div className="min-w-0 border border-[#e9e3d7] bg-white">
                 <iframe
-                  src="/images/menu2027.pdf#page=1&view=Fit"
+                  src="/images/menu2027.pdf#page=1&view=FitH"
                   title={lang === 'fr' ? 'Menu 2027' : lang === 'en' ? '2027 menu' : 'Menu 2027'}
-                  className="block aspect-[3/4] w-full bg-white"
-                  loading="lazy"
+                  className="block h-[80vh] min-h-[480px] max-h-[1000px] w-full bg-white"
+                  loading="eager"
+                  scrolling="yes"
                 >
                   <a href="/images/menu2027.pdf" target="_blank" rel="noopener noreferrer">
                     {lang === 'fr' ? 'Ouvrir le menu 2027' : lang === 'en' ? 'Open the 2027 menu' : 'Open menu 2027'}
