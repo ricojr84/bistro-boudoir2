@@ -22,13 +22,14 @@ const photos = [
 ];
 
 export const Story: React.FC<StoryProps> = ({ t }) => {
-  const [photoIndex, setPhotoIndex] = useState(0);
-  const [nextPhotoIndex, setNextPhotoIndex] = useState<number | null>(null);
-  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [firstPhotoIndex, setFirstPhotoIndex] = useState(0);
+  const [secondPhotoIndex, setSecondPhotoIndex] = useState(0);
+  const [activePhotoSlot, setActivePhotoSlot] = useState<'first' | 'second'>('first');
 
   useEffect(() => {
     const fadeDuration = 1500;
     let currentIndex = 0;
+    let currentSlot: 'first' | 'second' = 'first';
     let isPreparingTransition = false;
     let isUnmounted = false;
     let transitionTimeout = 0;
@@ -41,20 +42,23 @@ export const Story: React.FC<StoryProps> = ({ t }) => {
 
       const offset = 1 + Math.floor(Math.random() * (photos.length - 1));
       const nextIndex = (currentIndex + offset) % photos.length;
+      const nextSlot = currentSlot === 'first' ? 'second' : 'first';
       pendingImage = new Image();
       pendingImage.onload = () => {
         if (!pendingImage || isUnmounted) return;
         const beginFade = () => {
           if (isUnmounted) return;
-          setNextPhotoIndex(nextIndex);
+          if (nextSlot === 'first') {
+            setFirstPhotoIndex(nextIndex);
+          } else {
+            setSecondPhotoIndex(nextIndex);
+          }
           firstFrame = window.requestAnimationFrame(() => {
             secondFrame = window.requestAnimationFrame(() => {
-              setIsTransitioning(true);
+              setActivePhotoSlot(nextSlot);
               transitionTimeout = window.setTimeout(() => {
                 currentIndex = nextIndex;
-                setPhotoIndex(nextIndex);
-                setIsTransitioning(false);
-                setNextPhotoIndex(null);
+                currentSlot = nextSlot;
                 isPreparingTransition = false;
                 pendingImage = null;
               }, fadeDuration);
@@ -106,21 +110,20 @@ export const Story: React.FC<StoryProps> = ({ t }) => {
         </div>
         <div className="order-1 relative h-[290px] w-full overflow-hidden md:order-none md:h-[370px]">
           <img
-            src={photos[photoIndex]}
-            alt={t.story.photoAlt}
-            className={`story-photo absolute inset-0 h-full w-full object-cover transition-opacity duration-[1500ms] ease-in-out ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}
+            src={photos[firstPhotoIndex]}
+            alt={activePhotoSlot === 'first' ? t.story.photoAlt : ''}
+            aria-hidden={activePhotoSlot !== 'first'}
+            className={`story-photo absolute inset-0 h-full w-full object-cover transition-opacity duration-[1500ms] ease-in-out ${activePhotoSlot === 'first' ? 'opacity-100' : 'opacity-0'}`}
             loading="eager"
             decoding="async"
           />
-          {nextPhotoIndex !== null && (
-            <img
-              src={photos[nextPhotoIndex]}
-              alt=""
-              aria-hidden="true"
-              className={`story-photo absolute inset-0 h-full w-full object-cover transition-opacity duration-[1500ms] ease-in-out ${isTransitioning ? 'opacity-100' : 'opacity-0'}`}
-              decoding="async"
-            />
-          )}
+          <img
+            src={photos[secondPhotoIndex]}
+            alt={activePhotoSlot === 'second' ? t.story.photoAlt : ''}
+            aria-hidden={activePhotoSlot !== 'second'}
+            className={`story-photo absolute inset-0 h-full w-full object-cover transition-opacity duration-[1500ms] ease-in-out ${activePhotoSlot === 'second' ? 'opacity-100' : 'opacity-0'}`}
+            decoding="async"
+          />
         </div>
       </div>
     </section>
